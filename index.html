@@ -9,7 +9,7 @@
         <!-- load fonts   -->
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:100,100italic,300,300italic,400,500,700,900,400italic">
 
-        <!-- load css externale bower css files -->
+        <!-- load external bower css files -->
         <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
         <link rel="stylesheet" href="bower_components/angular-dragula/dist/dragula.min.css" />
         <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.min.css" />
@@ -86,9 +86,28 @@
         <script src="config.triangular.settings.js"></script>
         <script src="config.triangular.themes.js"></script>
 
-        <!-- load introduction module js -->
-        <script src="introduction/introduction.module.js"></script>
-        <script src="introduction/introduction.config.js"></script>
-        <script src="introduction/introduction.controller.js"></script>
+        <!-- load dashboard module js -->
+        <script src="dashboards/dashboards.module.js"></script>
+        <script src="dashboards/dashboards.config.js"></script>
+
+        <!-- load dashboard controllers -->
+        <script src="dashboards/analytics/dashboard-analytics.controller.js"></script>
+        <script src="dashboards/server/dashboard-server.controller.js"></script>
+        <script src="dashboards/dashboard-draggable-controller.js"></script>
+
+        <!-- load widget js -->
+        <script src="dashboards/widgets/widget-calendar.directive.js"></script>
+        <script src="dashboards/widgets/widget-chartjs-line.directive.js"></script>
+        <script src="dashboards/widgets/widget-chartjs-pie.directive.js"></script>
+        <script src="dashboards/widgets/widget-chartjs-ticker.directive.js"></script>
+        <script src="dashboards/widgets/widget-chat.directive.js"></script>
+        <script src="dashboards/widgets/widget-contacts.directive.js"></script>
+        <script src="dashboards/widgets/widget-google-geochart.js"></script>
+        <script src="dashboards/widgets/widget-load-data-dialog.tmpl.html"></script>
+        <script src="dashboards/widgets/widget-load-data.directive.js"></script>
+        <script src="dashboards/widgets/widget-server.directive.js"></script>
+        <script src="dashboards/widgets/widget-todo.directive.js"></script>
+        <script src="dashboards/widgets/widget-twitter.directive.js"></script>
+        <script src="dashboards/widgets/widget-weather.directive.js"></script>
     </body>
 </html>

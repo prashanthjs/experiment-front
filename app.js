@@ -6,7 +6,7 @@
             'triangular',
             'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngMaterial',
             'ui.router', 'pascalprecht.translate', 'LocalStorageModule', 'googlechart', 'chart.js', 'linkify', 'ui.calendar', 'angularMoment', 'textAngular', 'uiGmapgoogle-maps', 'hljs', 'md.data.table', angularDragula(angular),
-            'app.examples.introduction'
+            'dashboards'
         ])
         // create a constant for languages so they can be added to both triangular & translate
         .constant('APP_LANGUAGES', [{
