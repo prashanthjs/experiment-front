@@ -1,4 +1,11 @@
 <project>
     <target name="build">
+        <delete includeEmptyDirs="true" failonerror="false">
+            <fileset dir="artifacts/build" />
+        </delete>
+
+        <copy todir="artifacts/build">
+            <fileset dir="." excludes=".git,.gitignore,build.xml,bower_components/**,artifacts/**"></fileset>
+        </copy>
     </target>
 </project>
