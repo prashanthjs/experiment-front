@@ -1,6 +1,3 @@
-// import animate scss
-@import "animatewithsass/animate.scss";
-
 $sidenav-mobile-width: 260px;
 $sidenav-desktop-width: 300px;
 
@@ -17,7 +14,6 @@ button, select, html, textarea, input {
 }
 
 // import app scss
-
 @import "scss/material-backgrounds";
 
 // Add your CSS here

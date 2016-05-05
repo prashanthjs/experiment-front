@@ -18,15 +18,14 @@ gulp.task('styles', function () {
   };
 
   var injectFiles = gulp.src([
+    'bower_components/triangular/triangular.scss',
     'app/**/*.scss',
-    '!app/app.scss',
-    '!app/**/_*.scss'
+    '!app/app.scss'
   ], { read: false });
 
   var injectOptions = {
     transform: function(filePath) {
       filePath = filePath.replace('app/', '');
-      console.log('filePath', filePath);
       return '@import \'' + filePath + '\';';
     },
     starttag: '// injector',
