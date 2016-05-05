@@ -5,7 +5,6 @@
     "John Langan <john.langan@oxygenna.com>"
   ],
   "description": "",
-  "main": "",
   "moduleType": [],
   "license": "Themeforest",
   "homepage": "",
@@ -18,10 +17,19 @@
     "tests"
   ],
   "resolutions": {
-    "angular": "1.4.8",
-    "angular-material": "1.1.0-rc1"
+    "angular": "1.5.5",
+    "angular-material": "1.1.0-rc4",
+    "angular-material-data-table": "0.10.5"
   },
-  "devDependencies": {
-    "triangular": "git@github.com:oxygenna/triangular-bower.git#~2.6.0"
+  "dependencies": {
+    "triangular": "git@github.com:oxygenna/triangular-bower.git#~2.7.0"
+  },
+  "overrides": {
+    "triangular": {
+      "main": [
+        "triangular.js",
+        "triangular.css"
+      ]
+    }
   }
 }
