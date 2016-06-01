@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app">
+<html ng-app="ammaCart">
     <head>
         <meta charset="utf-8">
         <title>Triangular Seed App</title>
@@ -10,13 +10,13 @@
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:100,100italic,300,300italic,400,500,700,900,400italic">
 
         <!-- inject:css -->
-        <link rel="stylesheet" href="app/app.css">
+        <link rel="stylesheet" href="app/index/index.css">
         <!-- endinject -->
 
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
         <link rel="stylesheet" href="bower_components/angular-dragula/dist/dragula.css" />
-
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
         <link rel="stylesheet" href="bower_components/angular-material-data-table/dist/md-data-table.css" />
         <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
         <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" />
@@ -33,6 +33,7 @@
         <div layout="row" class="full-height" ui-view="root"></div>
 
         <!-- bower:js -->
+        <script src="bower_components/commonjs/common.js"></script>
         <script src="bower_components/highlightjs/highlight.pack.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -77,6 +78,7 @@
         <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
         <script src="bower_components/angular-permission/dist/angular-permission.js"></script>
         <script src="bower_components/triangular/triangular.js"></script>
+        <script src="bower_components/restangular/dist/restangular.js"></script>
         <!-- endbower -->
 
         <!-- inject:js -->
@@ -84,6 +86,12 @@
         <script src="app/examples/email/layout/toolbar/toolbar.controller.js"></script>
         <script src="app/examples/calendar/calendar.module.js"></script>
         <script src="app/examples/calendar/layouts/toolbar/toolbar.controller.js"></script>
+        <script src="app/index/layouts/toolbar/toolbar.controller.js"></script>
+        <script src="app/index/layouts/rightsidenav/rightsidenav.controller.js"></script>
+        <script src="app/index/layouts/loader/loader.controller.js"></script>
+        <script src="app/index/layouts/leftsidenav/leftsidenav.controller.js"></script>
+        <script src="app/index/index.module.js"></script>
+        <script src="app/index/layouts/footer/footer.controller.js"></script>
         <script src="app/examples/menu/menu.module.js"></script>
         <script src="app/examples/menu/examples/dynamic-menu.controller.js"></script>
         <script src="app/examples/maps/maps.module.js"></script>
@@ -136,17 +144,11 @@
         <script src="app/examples/authentication/authentication.module.js"></script>
         <script src="app/examples/authentication/signup/signup.controller.js"></script>
         <script src="app/examples/authentication/profile/profile.controller.js"></script>
-        <script src="app/examples/authentication/login/login.controller.js"></script>
         <script src="app/examples/authentication/lock/lock.controller.js"></script>
+        <script src="app/examples/authentication/login/login.controller.js"></script>
         <script src="app/examples/authentication/forgot/forgot.controller.js"></script>
         <script src="app/permission/permission.module.js"></script>
         <script src="app/permission/pages/permission.controller.js"></script>
-        <script src="app/layouts/toolbar/toolbar.controller.js"></script>
-        <script src="app/layouts/rightsidenav/rightsidenav.controller.js"></script>
-        <script src="app/app.js"></script>
-        <script src="app/layouts/loader/loader.controller.js"></script>
-        <script src="app/layouts/leftsidenav/leftsidenav.controller.js"></script>
-        <script src="app/layouts/footer/footer.controller.js"></script>
         <script src="app/examples/ui/webfont-loader-module.js"></script>
         <script src="app/examples/ui/ui.module.js"></script>
         <script src="app/examples/ui/weather-icons.controller.js"></script>
@@ -167,11 +169,11 @@
         <script src="app/examples/menu/menu.config.js"></script>
         <script src="app/examples/menu/level.controller.js"></script>
         <script src="app/examples/menu/dynamicMenu.service.js"></script>
-        <script src="app/examples/maps/maps.config.js"></script>
-        <script src="app/examples/maps/map.controller.js"></script>
         <script src="app/examples/layouts/layouts.module.js"></script>
         <script src="app/examples/layouts/layouts.config.js"></script>
         <script src="app/examples/layouts/composer.controller.js"></script>
+        <script src="app/examples/maps/maps.config.js"></script>
+        <script src="app/examples/maps/map.controller.js"></script>
         <script src="app/examples/github/github.module.js"></script>
         <script src="app/examples/github/github.controller.js"></script>
         <script src="app/examples/github/github.config.js"></script>
@@ -211,19 +213,20 @@
         <script src="app/seed-module/seed.module.js"></script>
         <script src="app/seed-module/seed.config.js"></script>
         <script src="app/seed-module/seed-page.controller.js"></script>
+        <script src="app/seed-module/data.service.js"></script>
         <script src="app/permission/user.factory.js"></script>
         <script src="app/permission/permission.run.js"></script>
         <script src="app/permission/permission.config.js"></script>
+        <script src="app/index/value.googlechart.js"></script>
+        <script src="app/index/translate.filter.js"></script>
+        <script src="app/index/error-page.controller.js"></script>
+        <script src="app/index/config.triangular.themes.js"></script>
+        <script src="app/index/config.triangular.settings.js"></script>
+        <script src="app/index/config.triangular.layout.js"></script>
+        <script src="app/index/config.translate.js"></script>
+        <script src="app/index/config.route.js"></script>
+        <script src="app/index/config.chartjs.js"></script>
         <script src="app/examples/examples.module.js"></script>
-        <script src="app/value.googlechart.js"></script>
-        <script src="app/translate.filter.js"></script>
-        <script src="app/error-page.controller.js"></script>
-        <script src="app/config.triangular.themes.js"></script>
-        <script src="app/config.triangular.settings.js"></script>
-        <script src="app/config.triangular.layout.js"></script>
-        <script src="app/config.translate.js"></script>
-        <script src="app/config.route.js"></script>
-        <script src="app/config.chartjs.js"></script>
         <!-- endinject -->
     </body>
 </html>

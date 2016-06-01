@@ -9,12 +9,22 @@
     function moduleConfig($stateProvider, triMenuProvider) {
 
         $stateProvider
-        .state('triangular.admin-default.seed-page', {
+        .state('triangular.seed-page', {
             url: '/seed-module/seed-page',
             templateUrl: 'app/seed-module/seed-page.tmpl.html',
             // set the controller to load for this page
             controller: 'SeedPageController',
-            controllerAs: 'vm'
+            controllerAs: 'vm',
+            data: {
+                layout: {
+                    toolbarSize: 'default',
+                    toolbarShrink: false,
+                    toolbarClass: '',
+                    contentClass: '',
+                    sideMenuSize: 'full',
+                    footer: true
+                }
+            }
         });
 
         triMenuProvider.addMenu({
@@ -24,7 +34,7 @@
             priority: 1.1,
             children: [{
                 name: 'Start Page',
-                state: 'triangular.admin-default.seed-page',
+                state: 'triangular.seed-page',
                 type: 'link'
             }]
         });

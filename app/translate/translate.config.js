@@ -30,7 +30,7 @@
             urlTemplate: '{part}/i18n/{lang}.json'
         });
 
-        $translatePartialLoaderProvider.addPart('app');
+        $translatePartialLoaderProvider.addPart('app/index');
 
         // make sure all values used in translate are sanitized for security
         $translateProvider.useSanitizeValueStrategy('sanitize');

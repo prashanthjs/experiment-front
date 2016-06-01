@@ -1,13 +1,14 @@
-(function() {
-    'use strict';
-
+var seedModule;
+(function (seedModule) {
+    var SeedPageController = (function () {
+        /* @ngInject */
+        function SeedPageController($state) {
+            this.testData = ['triangular', 'is', 'great'];
+        }
+        return SeedPageController;
+    }());
+    seedModule.SeedPageController = SeedPageController;
     angular
         .module('seed-module')
         .controller('SeedPageController', SeedPageController);
-
-    /* @ngInject */
-    function SeedPageController() {
-        var vm = this;
-        vm.testData = ['triangular', 'is', 'great'];
-    }
-})();
+})(seedModule || (seedModule = {}));
