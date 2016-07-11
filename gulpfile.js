@@ -8,6 +8,7 @@ var browserSync = require('browser-sync');
 var superstatic = require('superstatic');
 var tsd = require('tsd');
 var path = require('path');
+var concat = require('gulp-concat');
 
 gulp.task('styles', function () {
 
@@ -39,8 +40,8 @@ gulp.task('styles', function () {
     });
 
     return gulp.src([
-            'app/index/app.scss'
-        ])
+        'app/index/app.scss'
+    ])
         .pipe(indexFilter)
         .pipe($.inject(injectFiles, injectOptions))
         .pipe($.debug({title: 'inject'}))
@@ -57,21 +58,21 @@ gulp.task('styles', function () {
 
 gulp.task('test', function () {
     return gulp.src([
-            'app/**/*.scss',
-            '!app/index/app.scss',
-            '!app/**/_*.scss'
-        ], {read: false})
+        'app/**/*.scss',
+        '!app/index/app.scss',
+        '!app/**/_*.scss'
+    ], {read: false})
         .pipe($.debug({title: 'test'}))
 });
 
-gulp.task('inject', ['styles'], function () {
+gulp.task('inject', ['styles', 'bundle'], function () {
     var injectStyles = gulp.src([
         'app/**/*.css'
     ], {read: false});
 
     var injectScripts = gulp.src([
-        'app/**/*.js',
-    ]).pipe($.angularFilesort());
+        'dist/**/*.js'
+    ]);
 
     var injectOptions = {
         addRootSlash: false
@@ -90,15 +91,25 @@ gulp.task('inject', ['styles'], function () {
 
 });
 
-gulp.task('watch', function () {
-    gulp.watch(['app/**/*.scss', 'app/**/*.js'], ['inject']);
+gulp.task('bundle', function () {
+    // Single point of entry (make sure not to src ALL your files, browserify will figure it out for you)
+    gulp.src(['app/**/*.module.js', 'app/**/*.config.js', 'app/**/*.js' ])
+        // Bundle to a single file
+        .pipe(concat('main.js'))
+        // Output it to our dist folder
+        .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('serve', ['watch'], function () {
+
+gulp.task('watch', function () {
+    gulp.watch(['app/**/*.scss', 'app/**/*.js'], ['bundle','inject']);
+});
+
+gulp.task('serve', ['bundle','watch'], function () {
     process.stdout.write('Starting browserSync and superstatic...\n');
     browserSync({
         port: 3000,
-        files: ['index.html', '**/*.js'],
+        files: ['index.html', 'dist/**/*.js'],
         injectChanges: true,
         logFileChanges: false,
         logLevel: 'silent',

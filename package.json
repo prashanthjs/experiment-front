@@ -29,5 +29,9 @@
     "superstatic": "^4.0.2",
     "tsd": "^0.6.5",
     "wiredep": "^4.0.0"
+  },
+  "dependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0"
   }
 }

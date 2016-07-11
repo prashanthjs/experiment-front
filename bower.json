@@ -27,13 +27,14 @@
         "angular-sanitize": "1.5.5"
     },
     "dependencies": {
-        "commonjs": "^0.2.0",
+        "jquery": "^2.1.0",
         "triangular": "https://github.com/oxygenna/triangular-bower.git",
-        "restangular": "^1.5.2"
+        "kendo-ui": "git@bitbucket.org:prashanthp/kendo-ui.git",
+        "restangular": "^1.5.2",
+        "async": "^1.5.2",
+        "angular-password": "^1.0.1"
     },
-    "devDependencies": {
-
-    },
+    "devDependencies": {},
     "overrides": {
         "triangular": {
             "main": [

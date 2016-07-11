@@ -46,8 +46,8 @@
 
 
         // set default routes when no path specified
-         $urlRouterProvider.when('', '/dashboards/analytics');
-         $urlRouterProvider.when('/', '/dashboards/analytics');
+         $urlRouterProvider.when('', '/seed-module/seed-page');
+         $urlRouterProvider.when('/', '/seed-module/seed-page');
 
         // always goto 404 if route not found
         $urlRouterProvider.otherwise('/404');

@@ -4,6 +4,7 @@ var seed;
         function DataService() {
         }
         DataService.prototype.test = function () {
+            console.log('test');
         };
         return DataService;
     }());
