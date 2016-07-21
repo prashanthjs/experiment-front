@@ -5,10 +5,8 @@ module AmmaStore.Common {
     export class StoreRestService extends RestService {
 
         /** @ngInject */
-        constructor(Restangular:restangular.IService, AmmaEventEmitterService:EventEmitterService, $q:ng.IQService) {
-            super(Restangular, AmmaEventEmitterService, $q);
-            this.endPoint = 'stores';
-            this.eventName = 'store';
+        constructor(Restangular:restangular.IService, STORE_END_POINT:string) {
+            super(Restangular, STORE_END_POINT);
         }
 
     }

@@ -15723,6 +15723,15 @@ button, select, html, textarea, input {
 .mb-bg-fb-30 {
   background-image: url(../assets/images/backgrounds/material-backgrounds-2/mb-bg-fb-30.jpg); }
 
+.bottom-right{
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    left: auto;
+    position: fixed;
+    z-index: 100;
+}
+
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

@@ -4,10 +4,10 @@ var AmmaCommon;
     (function (Common) {
         var GridService = (function () {
             /** @ngInject */
-            function GridService(restService, gridOptions) {
+            function GridService(commandService, gridOptions) {
                 var _this = this;
                 this.restCall = function (options) {
-                    var dataPromise = _this.getRestService().getList(options.data);
+                    var dataPromise = _this.getCommandService().getList(options.data);
                     dataPromise.then(function (resp) {
                         var plain = resp.plain();
                         options.success(plain);
@@ -17,7 +17,7 @@ var AmmaCommon;
                         options.error(msg);
                     });
                 };
-                this.setRestService(restService);
+                this.setCommandService(commandService);
                 this.setGridOptions(gridOptions);
                 this.injectRestService();
             }
@@ -32,11 +32,11 @@ var AmmaCommon;
             GridService.prototype.setGridOptions = function (gridOptions) {
                 this.gridOptions = gridOptions;
             };
-            GridService.prototype.setRestService = function (restService) {
-                this.restService = restService;
+            GridService.prototype.setCommandService = function (commandService) {
+                this.commandService = commandService;
             };
-            GridService.prototype.getRestService = function () {
-                return this.restService;
+            GridService.prototype.getCommandService = function () {
+                return this.commandService;
             };
             return GridService;
         }());

@@ -11,10 +11,32 @@ var AmmaStore;
         var StoreListController = (function (_super) {
             __extends(StoreListController, _super);
             /* @ngInject */
-            function StoreListController(AmmaStoreCommandService, AmmaMessageService) {
+            function StoreListController(AmmaStoreGridService, AmmaStoreCommandService, AmmaMessageService) {
                 _super.call(this, AmmaMessageService);
-                this.gridOptions = AmmaStoreCommandService.getGridOptions();
+                this.gridOptions = AmmaStoreGridService.getGridOptions();
+                this.commandService = AmmaStoreCommandService;
             }
+            StoreListController.prototype.edit = function (id, event) {
+                var _this = this;
+                var promise = this.commandService.openForm(id, event);
+                promise.then(function () {
+                    _this.grid.dataSource.read();
+                }, function () {
+                    _this.grid.dataSource.read();
+                });
+            };
+            StoreListController.prototype.create = function (event) {
+                this.edit(null, event);
+            };
+            StoreListController.prototype.remove = function (id, $event) {
+                var _this = this;
+                this.commandService.removeDialog(id, $event).then(function () {
+                    _this.messageService.displaySuccessMessage('Successfully deleted');
+                    _this.grid.dataSource.read();
+                }, function (error) {
+                    _this.messageService.displayErrorMessage('Cannot be deleted' + error.data.message);
+                });
+            };
             return StoreListController;
         }(BaseController));
         List.StoreListController = StoreListController;

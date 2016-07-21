@@ -12,6 +12,7 @@
             'restangular',
             'kendo.directives',
             'seed-module',
+            'lfNgMdFileInput',
             // uncomment above to activate the example seed module
             'app.translate',
             // only need one language?  if you want to turn off translations

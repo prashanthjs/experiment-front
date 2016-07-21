@@ -1,47 +1,55 @@
 {
-    "name": "triangular-seed",
-    "version": "0.0.0",
-    "authors": [
-        "John Langan <john.langan@oxygenna.com>"
-    ],
-    "description": "",
-    "moduleType": [],
-    "license": "Themeforest",
-    "homepage": "",
-    "private": true,
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "resolutions": {
-        "angular": "1.5.5",
-        "angular-material": "1.1.0-rc4",
-        "angular-material-data-table": "0.10.5",
-        "angular-animate": "1.5.5",
-        "angular-cookies": "1.5.5",
-        "angular-messages": "1.5.5",
-        "angular-resource": "1.5.5",
-        "angular-sanitize": "1.5.5"
+  "name": "triangular-seed",
+  "version": "0.0.0",
+  "authors": [
+    "John Langan <john.langan@oxygenna.com>"
+  ],
+  "description": "",
+  "moduleType": [],
+  "license": "Themeforest",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "1.5.5",
+    "angular-material": "1.1.0-rc4",
+    "angular-material-data-table": "0.10.5",
+    "angular-animate": "1.5.5",
+    "angular-cookies": "1.5.5",
+    "angular-messages": "1.5.5",
+    "angular-resource": "1.5.5",
+    "angular-sanitize": "1.5.5"
+  },
+  "dependencies": {
+    "jquery": "^2.1.0",
+    "triangular": "https://github.com/oxygenna/triangular-bower.git",
+    "kendo-ui": "git@bitbucket.org:prashanthp/kendo-ui.git",
+    "restangular": "^1.5.2",
+    "async": "^1.5.2",
+    "angular-password": "^1.0.1",
+    "font-awesome": "FortAwesome/Font-Awesome#^4.6.3",
+    "lf-ng-md-file-input": "^1.4.8"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "triangular": {
+      "main": [
+        "triangular.js",
+        "triangular.css",
+        "triangular.scss"
+      ]
     },
-    "dependencies": {
-        "jquery": "^2.1.0",
-        "triangular": "https://github.com/oxygenna/triangular-bower.git",
-        "kendo-ui": "git@bitbucket.org:prashanthp/kendo-ui.git",
-        "restangular": "^1.5.2",
-        "async": "^1.5.2",
-        "angular-password": "^1.0.1"
-    },
-    "devDependencies": {},
-    "overrides": {
-        "triangular": {
-            "main": [
-                "triangular.js",
-                "triangular.css",
-                "triangular.scss"
-            ]
-        }
+    "font-awesome": {
+      "main": [
+        "./css/font-awesome.css",
+        "./fonts/*"
+      ]
     }
+  }
 }

@@ -1,40 +1,55 @@
 module AmmaStore.Common {
-    import StoreGridService = AmmaStore.Common.StoreGridService;
-    import MessageService = AmmaCommon.Services.MessageService;
+
+    import CommandService = AmmaCommon.Common.CommandService;
     import RestService = AmmaCommon.Common.RestService;
-    import GridService = AmmaCommon.Common.GridService;
-    export class StoreCommandService {
+    import EventEmitterService = AmmaCommon.Services.EventEmitterService;
+    export class StoreCommandService extends CommandService {
 
-        protected gridService:GridService;
-        protected restService:RestService;
+        protected dialogService;
         /* @ngInject */
-        constructor(AmmaStoreRestService:RestService, AmmaStoreGridService:StoreGridService) {
-            this.setGridService(AmmaStoreGridService);
-            this.setRestService(AmmaStoreRestService);
+        constructor(AmmaStoreRestService:RestService, AmmaEventEmitterService:EventEmitterService, $q:ng.IQService, STORE_BASE_EVENT_NAME:string, $mdDialog) {
+            super(AmmaStoreRestService, AmmaEventEmitterService, $q, STORE_BASE_EVENT_NAME);
+            this.dialogService = $mdDialog;
         }
 
-        getGridService():GridService {
-            return this.gridService;
+
+        openForm(id:string, ev:any):ng.IPromise<any> {
+            return this.dialogService.show({
+                controller: 'AmmaStoreFormController',
+                controllerAs: 'ammaStoreFormController',
+                templateUrl: 'app/amma-store/form/store.form.tmpl.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                locals: {
+                    model: id ? this.getById(id) : null,
+                    stores: this.getList()
+                },
+                clickOutsideToClose: false
+            });
         }
 
-        setGridService(gridService:GridService) {
-            this.gridService = gridService;
+        removeDialog(id:string, event):ng.IPromise<any> {
+            const defer = this.$q.defer();
+            const confirm = this.dialogService.confirm()
+                .title('Would you like to delete ' + id + '?')
+                .ariaLabel('Delete ' + id)
+                .targetEvent(event)
+                .ok('Yes')
+                .cancel('No');
+            this.dialogService.show(confirm).then(() => {
+                this.restService.removeById(id).then((response)=> {
+                    defer.resolve(response);
+                }, (response) => {
+                    defer.reject(response);
+                });
+            }, () => {
+                defer.resolve();
+            });
+            return defer.promise;
         }
 
-        getRestService():RestService {
 
-            return this.restService;
-        }
-
-        setRestService(restService:RestService) {
-            this.restService = restService;
-        }
-
-        getGridOptions():Object {
-            return this.getGridService().getGridOptions();
-        }
     }
-
     angular.module('amma-store')
         .service('AmmaStoreCommandService', StoreCommandService);
 }

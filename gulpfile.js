@@ -105,7 +105,7 @@ gulp.task('watch', function () {
     gulp.watch(['app/**/*.scss', 'app/**/*.js'], ['bundle','inject']);
 });
 
-gulp.task('serve', ['bundle','watch'], function () {
+gulp.task('serve', ['styles','bundle','watch'], function () {
     process.stdout.write('Starting browserSync and superstatic...\n');
     browserSync({
         port: 3000,

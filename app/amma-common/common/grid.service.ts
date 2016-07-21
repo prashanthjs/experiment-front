@@ -1,18 +1,18 @@
 module AmmaCommon.Common {
     export class GridService {
 
-        protected restService:RestService;
+        protected commandService:CommandService;
         protected gridOptions:Object;
 
         /** @ngInject */
-        constructor(restService:RestService, gridOptions:Object) {
-            this.setRestService(restService);
+        constructor(commandService:CommandService, gridOptions:Object) {
+            this.setCommandService(commandService);
             this.setGridOptions(gridOptions);
             this.injectRestService();
         }
 
         restCall = (options) => {
-            const dataPromise = this.getRestService().getList(options.data);
+            const dataPromise = this.getCommandService().getList(options.data);
             dataPromise.then((resp:any) => {
                 var plain:any = resp.plain();
                 options.success(plain);
@@ -37,12 +37,12 @@ module AmmaCommon.Common {
             this.gridOptions = gridOptions;
         }
 
-        setRestService(restService:RestService) {
-            this.restService = restService;
+        setCommandService(commandService:CommandService) {
+            this.commandService = commandService;
         }
 
-        getRestService():RestService {
-            return this.restService;
+        getCommandService():CommandService {
+            return this.commandService;
         }
     }
 }

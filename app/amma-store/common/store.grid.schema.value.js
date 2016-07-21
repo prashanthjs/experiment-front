@@ -45,6 +45,12 @@ var AmmaStore;
                     title: 'Status',
                     template: '<md-switch class="md-primary margin-0" ng-model="dataItem.isActive" aria-label="isActive?" ng-disabled="true"/>'
                 },
+                {
+                    command: [{
+                            text: '',
+                            template: '<div ng-include="\'app/amma-store/list/store.list.command.tmpl.html\'"></div>'
+                        }]
+                }
             ]
         };
         angular.module('amma-store')

@@ -2,7 +2,7 @@ module AmmaCommon.Common {
     import MessageService = AmmaCommon.Services.MessageService;
     export class BaseController {
 
-        protected messageService;
+        protected messageService:MessageService;
 
         /* @ngInject */
         constructor(AmmaMessageService:MessageService) {

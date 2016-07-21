@@ -1,9 +1,10 @@
 module AmmaStore.Common {
     import GridService = AmmaCommon.Common.GridService;
+    import CommandService = AmmaCommon.Common.CommandService;
     export class StoreGridService extends GridService {
         /** @ngInject */
-        constructor(AmmaStoreRestService:StoreRestService, AmmaStoreGridSchemaValue:Object) {
-            super(AmmaStoreRestService, AmmaStoreGridSchemaValue);
+        constructor(AmmaStoreCommandService:CommandService, AmmaStoreGridSchemaValue:Object) {
+            super(AmmaStoreCommandService, AmmaStoreGridSchemaValue);
         }
     }
     

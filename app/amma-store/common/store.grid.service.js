@@ -11,8 +11,8 @@ var AmmaStore;
         var StoreGridService = (function (_super) {
             __extends(StoreGridService, _super);
             /** @ngInject */
-            function StoreGridService(AmmaStoreRestService, AmmaStoreGridSchemaValue) {
-                _super.call(this, AmmaStoreRestService, AmmaStoreGridSchemaValue);
+            function StoreGridService(AmmaStoreCommandService, AmmaStoreGridSchemaValue) {
+                _super.call(this, AmmaStoreCommandService, AmmaStoreGridSchemaValue);
             }
             return StoreGridService;
         }(GridService));

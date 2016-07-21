@@ -21,7 +21,7 @@ module AmmaCommon.Services {
             this.displayMessage(message);
         }
 
-        displayMessage(message, type = 'info', position = 'bottom right', hideDelay = 500) {
+        displayMessage(message, type = 'info', position = 'bottom right', hideDelay = 1500) {
             this.messageService.show({
                 template: '<md-toast class="md-toast ' + type + '">' + message + '</md-toast>',
                 position: position,

@@ -11,10 +11,8 @@ var AmmaStore;
         var StoreRestService = (function (_super) {
             __extends(StoreRestService, _super);
             /** @ngInject */
-            function StoreRestService(Restangular, AmmaEventEmitterService, $q) {
-                _super.call(this, Restangular, AmmaEventEmitterService, $q);
-                this.endPoint = 'stores';
-                this.eventName = 'store';
+            function StoreRestService(Restangular, STORE_END_POINT) {
+                _super.call(this, Restangular, STORE_END_POINT);
             }
             return StoreRestService;
         }(RestService));

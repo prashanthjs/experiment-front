@@ -1,4 +1,4 @@
-module AmmaStore {
+module AmmaStore.Config {
 
     angular
         .module('amma-store')

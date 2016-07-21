@@ -19,7 +19,7 @@ var AmmaCommon;
             MessageService.prototype.displayMessage = function (message, type, position, hideDelay) {
                 if (type === void 0) { type = 'info'; }
                 if (position === void 0) { position = 'bottom right'; }
-                if (hideDelay === void 0) { hideDelay = 500; }
+                if (hideDelay === void 0) { hideDelay = 1500; }
                 this.messageService.show({
                     template: '<md-toast class="md-toast ' + type + '">' + message + '</md-toast>',
                     position: position,
