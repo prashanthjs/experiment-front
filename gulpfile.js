@@ -102,7 +102,7 @@ gulp.task('bundle', function () {
 
 
 gulp.task('watch', function () {
-    gulp.watch(['app/**/*.scss', 'app/**/*.js'], ['bundle','inject']);
+    gulp.watch(['app/**/*.scss', 'app/**/*.js', 'app/**/*.tmpl.html', 'app/**/*.json'], ['bundle','inject']);
 });
 
 gulp.task('serve', ['styles','bundle','watch'], function () {

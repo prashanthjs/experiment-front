@@ -4,13 +4,22 @@ var AmmaCommon;
     (function (Services) {
         var MessageService = (function () {
             /* @ngInject */
-            function MessageService($mdToast) {
+            function MessageService($mdToast, $log) {
                 this.messageService = $mdToast;
+                this.logService = $log;
             }
-            MessageService.prototype.displayErrorMessage = function (message) {
+            MessageService.prototype.displayErrorMessage = function (message, error) {
+                if (error === void 0) { error = null; }
+                if (error) {
+                    this.logService.error(error);
+                }
                 this.displayMessage(message, 'error');
             };
-            MessageService.prototype.displaySuccessMessage = function (message) {
+            MessageService.prototype.displaySuccessMessage = function (message, info) {
+                if (info === void 0) { info = null; }
+                if (info) {
+                    this.logService.error(info);
+                }
                 this.displayMessage(message, 'success');
             };
             MessageService.prototype.displayInfoMessage = function (message) {

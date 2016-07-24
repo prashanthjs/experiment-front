@@ -3,17 +3,25 @@ module AmmaCommon.Services {
     export class MessageService {
 
         protected messageService;
+        protected logService;
 
         /* @ngInject */
-        constructor($mdToast) {
+        constructor($mdToast, $log:ng.ILogService) {
             this.messageService = $mdToast;
+            this.logService = $log;
         }
 
-        displayErrorMessage(message) {
+        displayErrorMessage(message, error = null) {
+            if(error){
+                this.logService.error(error);
+            }
             this.displayMessage(message, 'error');
         }
 
-        displaySuccessMessage(message) {
+        displaySuccessMessage(message, info = null) {
+            if(info){
+                this.logService.error(info);
+            }
             this.displayMessage(message, 'success');
         }
 

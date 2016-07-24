@@ -2,11 +2,41 @@
     <div layout="row" layout-align="center center">
         <h2 class="md-display-3" translate>Welcome to the triangular test page</h2>
     </div>
-    <div class="margin-20" layout="row" layout-align="center center">
-        <ul class="seed-list">
-            <li class="md-headline" ng-repeat="test in vm.testData">
-                {{test}}
-            </li>
-        </ul>
-    </div>
+
+    <form name="myForm" ng-submit="submit()">
+        <input type="button" class="md-primary md-raised" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                   ngf-accept="'image/*'" ngf-max-size="10MB" ngf-min-height="100"
+                   amma-file-token="test"
+                   amma-file-type="image"
+                   amma-file="vm.file"
+                   amma-file-busy="vm.isBusy" ng-show="!vm.isBusy" amma-file-remove-func="vm.fileRemove" amma-file-validator="true">Select
+        </input>
+
+        <div ng-if="myForm.file.$processing">
+            Validating from Server....
+        </div>
+
+        <div>
+            <md-progress-linear md-mode="indeterminate" ng-show="vm.isBusy"></md-progress-linear>
+            <md-grid-list flex md-cols="9" md-cols-xs="9" md-row-height="4:3" md-gutter="10px"
+                          ng-if="vm.file.length">
+                <md-grid-tile
+                    md-rowspan="1" md-colspan="1"
+                    ng-repeat="file in vm.file"
+                    ng-style="::{ 'background-image': 'url(' + file.url + ')', 'background-size' : 'cover', 'cursor':'pointer' }"
+                    layout-padding="10">
+                    <div class="img-wrap">
+                        <md-button class="md-icon-button md-warn md-img-remove" aria-label="More"
+                                   ng-click="vm.fileRemove(file.filename, $event)">
+                            <md-icon md-font-icon="zmdi zmdi-close-circle"></md-icon>
+                        </md-button>
+                    </div>
+
+                </md-grid-tile>
+            </md-grid-list>
+        </div>
+
+        <button type="submit" ng-disabled="myForm.$invalid || myForm.$pending">Sign Up</button>
+    </form>
+
 </md-content>
