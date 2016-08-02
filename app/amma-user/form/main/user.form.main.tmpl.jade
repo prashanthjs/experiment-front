@@ -1,0 +1,155 @@
+ng-controller(ng-controller='AmmaUserFormMainController as ammaUserFormMainController')
+    md-tab(md-on-select='ammaUserFormMainController.init()', ng-init='ammaUserFormMainController.init()')
+        md-tab-label
+            | Main
+        md-tab-body
+            md-content.md-padding
+                form(name='ammaUserForm', novalidate='', flex='66')
+                    .md-dialog-content(layout='column', flex='')
+                        section(layout='column', flex='')
+                            div(layout='row', flex='')
+                                md-input-container(flex='')
+                                    label Username
+                                    input(type='text', ng-model='ammaUserFormMainController.model._id', name='username', required='', ng-readonly='ammaUserFormMainController.id')
+                                    div(ng-messages='ammaUserForm.username.$error', md-auto-hide='false', ng-show='ammaUserForm.username.$touched')
+                                        div(ng-message='required')
+                                            | Please enter username
+
+                                md-input-container(flex='')
+                                    label Email
+                                    input(type='email', name='email', ng-model='ammaUserFormMainController.model.email', required='')
+                                    div(ng-messages='ammaUserForm.email.$error', md-auto-hide='false', ng-show='ammaUserForm.email.$touched')
+                                        div(ng-message='required')
+                                            | Please enter Email
+                                        div(ng-message='email')
+                                            | Please enter valid email
+                                md-input-container(flex='')
+                                    label Contact number
+                                    input(type='text', ng-model='ammaUserFormMainController.model.contactNumber', name='contactNumber', required='')
+                                    div(ng-messages='ammaUserForm.contactNumber.$error', md-auto-hide='false', ng-show='ammaUserForm.contactNumber.$touched')
+                                        div(ng-message='required')
+                                            | Please enter contactNumber
+
+
+                            div(layout='row', flex='')
+                                md-input-container(flex='')
+                                    label First Name
+                                    input(type='text', ng-model='ammaUserFormMainController.model.firstName', name='firstName', required='')
+                                    div(ng-messages='ammaUserForm.firstName.$error', md-auto-hide='false', ng-show='ammaUserForm.firstName.$touched')
+                                        div(ng-message='required')
+                                            | Please enter first name
+                                md-input-container(flex='')
+                                    label Middle Name
+                                    input(type='text', ng-model='ammaUserFormMainController.model.middleName', name='middleName')
+                                    div(ng-messages='ammaUserForm.middleName.$error', md-auto-hide='false', ng-show='ammaUserForm.middleName.$touched')
+
+                                md-input-container(flex='')
+                                    label Last Name
+                                    input(type='text', ng-model='ammaUserFormMainController.model.lastName', name='lastName', required='')
+                                    div(ng-messages='ammaUserForm.lastName.$error', md-auto-hide='false', ng-show='ammaUserForm.lastName.$touched')
+                                        div(ng-message='required')
+                                            | Please enter last name
+
+                            div(layout='row', flex='')
+                                md-input-container(flex='')
+                                    label Password
+                                    input(type='text', ng-model='ammaUserFormMainController.model.password', name='password', required='')
+                                    div(ng-messages='ammaUserForm.password.$error', md-auto-hide='false', ng-show='ammaUserForm.password.$touched')
+                                        div(ng-message='required')
+                                            | Please enter password
+
+                                md-input-container(flex='')
+                                    label Re-enter Password
+                                    input(type='text', name='password', ng-model='ammaUserFormMainController.model.password', required='')
+                                    div(ng-messages='ammaUserForm.password.$error', md-auto-hide='false', ng-show='ammaUserForm.password.$touched')
+                                        div(ng-message='required')
+                                            | Please enter re-password
+                                        div(ng-message='passwordMatch')
+                                            | Password did not match
+
+                            div(layout='row', flex='')
+                                md-input-container(flex='')
+                                    label Gender
+                                    md-select(name='gender', ng-model='ammaUserFormMainController.model.gender', required)
+                                        md-option(value='male')
+                                            | Male
+                                        md-option(value='female')
+                                            | Female
+                                        md-option(value='other')
+                                            | Other
+                                    div(ng-messages='ammaUserForm.gender.$error', md-auto-hide='false', ng-show='ammaUserForm.gender.$touched')
+                                        div(ng-message='required')
+                                            | Please select gender
+                                md-datepicker(name='dob',ng-model='ammaUserFormMainController.model.dob', md-placeholder='Enter Dob', flex)
+
+                            div(layout='row', flex='')
+                                md-input-container(flex='')
+                                    label Store
+                                    md-select(name='store', ng-model='ammaUserFormMainController.model.available.store.name')
+                                        md-option(ng-repeat='store in ammaUserFormMainController.stores',  value='{{store._id}}', required)
+                                            | {{store.title}}
+                                    div(ng-messages='ammaUserForm.store.$error', md-auto-hide='false', ng-show='ammaUserForm.store.$touched')
+                                        div(ng-message='required')
+                                            | Please select store
+                                    div(flex)
+                                        md-checkbox.md-warn(ng-model='ammaUserFormMainController.model.available.store.availableToChildren',aria-label='', ng-true-value='true', ng-false-value='true')
+                                        | Is Available to sub stores?
+                                md-input-container(flex='')
+                                    label User Group
+                                    md-select(name='userGroup', ng-model='ammaUserFormMainController.model.userGroup')
+                                        md-option(ng-repeat='userGroup in ammaUserFormMainController.userGroups',  value='{{userGroup._id}}', required)
+                                            | {{userGroup.title}}
+                                    div(ng-messages='ammaUserForm.userGroup.$error', md-auto-hide='false', ng-show='ammaUserForm.userGroup.$touched')
+                                        div(ng-message='required')
+                                            | Please select User Group
+                            div(layout='row')
+                                div(layout='row', flex='50')
+                                    label(flex='') Is Active?
+                                    md-switch.md-primary.margin-0(ng-model='ammaUserFormMainController.model.isActive', aria-label='isActive?', flex='')
+
+                        section(flex='', layout='column')
+                            h2 Address
+                            div(flex='', layout='row')
+                                md-input-container(flex='')
+                                    label Address Line 1
+                                    input(type='text', name='addressLine1', ng-model='ammaUserFormMainController.model.address.addressLine1', required='')
+                                    div(ng-messages='ammaUserForm.addressLine1.$error', md-auto-hide='false', ng-show='ammaUserForm.addressLine1.$touched')
+                                        div(ng-message='required')
+                                            | Please enter address line 1
+                                md-input-container(flex='')
+                                    label Address Line 2
+                                    input(type='text', name='addressLine2', ng-model='ammaUserFormMainController.model.address.addressLine2', required='')
+                                    div(ng-messages='ammaUserForm.addressLine2.$error', md-auto-hide='false', ng-show='ammaUserForm.addressLine2.$touched')
+                                        div(ng-message='required')
+                                            | Please enter address line 2
+                            div(flex='', layout='row')
+                                md-input-container(flex='')
+                                    label Town
+                                    input(type='text', name='town', required='', ng-model='ammaUserFormMainController.model.address.town')
+                                    div(ng-messages='ammaUserForm.town.$error', md-auto-hide='false', ng-show='ammaUserForm.town.$touched')
+                                        div(ng-message='required')
+                                            | Please enter town
+                                md-input-container(flex='')
+                                    label County
+                                    input(type='text', name='county', ng-model='ammaUserFormMainController.model.address.county')
+                                    div(ng-messages='ammaUserForm.county.$error', md-auto-hide='false', ng-show='ammaUserForm.county.$touched')
+                            div(flex='', layout='row')
+                                md-input-container(flex='')
+                                    label Country
+                                    input(type='text', name='country', ng-model='ammaUserFormMainController.model.address.country', required='')
+                                    div(ng-messages='ammaUserForm.country.$error', md-auto-hide='false', ng-show='ammaUserForm.country.$touched')
+                                        div(ng-message='required')
+                                            | Please enter country
+                                md-input-container(flex='')
+                                    label Postcode
+                                    input(type='text', name='postcode', ng-model='ammaUserFormMainController.model.address.postcode', required='')
+                                    div(ng-messages='ammaUserForm.postcode.$error', md-auto-hide='false', ng-show='ammaUserForm.postcode.$touched')
+                                        div(ng-message='required')
+                                            | Please enter postcode
+
+                    .amma-dialog-actions
+                        md-button.md-primary.md-raised(ng-click='ammaUserFormMainController.submit($event)', ng-disabled='ammaUserForm.$invalid', md-autofocus='')
+                            | Save
+
+                        md-button.md-warn.md-raised(ng-click='ammaUserFormMainController.cancel()')
+                            | Cancel

@@ -117,6 +117,12 @@ var AmmaCommon;
                 if (name === void 0) { name = null; }
                 return this.eventName + '-' + name;
             };
+            CommandService.prototype.openForm = function (id, ev) {
+                return;
+            };
+            CommandService.prototype.removeDialog = function (id, event) {
+                return;
+            };
             return CommandService;
         }());
         Common.CommandService = CommandService;

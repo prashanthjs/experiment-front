@@ -1,0 +1,21 @@
+<md-dialog aria-label="role form" ng-cloak flex>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 ng-if="!ammaUserGroupFormController.id">Create User Group</h2>
+            <h2 ng-if="ammaUserGroupFormController.id">Edit User Group</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelDialog()">
+                <md-icon md-font-icon="zmdi zmdi-close"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-tabs md-dynamic-height md-border-bottom amma-dialog-actions>
+            <amma-content amma-content-event="amma.user-group.form.template"
+                          amma-content-data="{id: ammaUserGroupFormController.id}"></amma-content>
+        </md-tabs>
+    </md-dialog-content>
+    <md-dialog-actions>
+
+    </md-dialog-actions>
+</md-dialog>

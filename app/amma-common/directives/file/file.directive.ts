@@ -15,7 +15,7 @@ module AmmaCommon.directives.File {
             link: function (scope:ng.IScope, element, attrs, ngModelController) {
                 // console.log(model(scope));//to get value
                 // model.assign(scope,'test');
-                let token = attrs.ammaFileToken;
+                let tokenModel = $parse(attrs.ammaFileToken);
                 const type = attrs.ammaFileType;
                 const ngModel = attrs.ngModel;
                 const filesModel = $parse(attrs.ammaFile);
@@ -24,6 +24,13 @@ module AmmaCommon.directives.File {
                 const ammaFileRemoveBind = attrs.ammaFileRemoveFunc;
                 const ammaFileViewUrlBind = attrs.ammaFileViewUrlFunc;
 
+                const setToken = (token:string) =>{
+                  tokenModel.assign(scope, token);
+                };
+
+                const getToken = () =>{
+                    return tokenModel(scope);
+                };
 
                 const isBusy = (bool:boolean) => {
                     busyModel.assign(scope, bool);
@@ -54,7 +61,7 @@ module AmmaCommon.directives.File {
                 };
 
                 const upload = (file)=> {
-                    const promise = AmmaFileUploadService.upload(type, token, file);
+                    const promise = AmmaFileUploadService.upload(type, getToken(), file);
                     isBusy(true);
                     promise.then((response)=> {
                         addFile(response.data.file);
@@ -69,7 +76,7 @@ module AmmaCommon.directives.File {
                 const createToken = () => {
                     isBusy(true);
                     AmmaFileUploadService.createToken(type).then((response:any)=> {
-                        token = response.data.token;
+                        setToken(response.data.token);
                         isBusy(false);
                         loadFiles();
                     }, (response) => {
@@ -81,7 +88,7 @@ module AmmaCommon.directives.File {
 
                 const loadFiles = () => {
                     isBusy(true);
-                    AmmaFileUploadService.getFilesList(type, token).then((response:any)=> {
+                    AmmaFileUploadService.getFilesList(type, getToken()).then((response:any)=> {
                         setFiles(response.data.files);
                         isBusy(false);
                     }, (response) => {
@@ -95,7 +102,7 @@ module AmmaCommon.directives.File {
                     if ($event) {
                         $event.preventDefault();
                     }
-                    AmmaFileUploadService.removeFile(type, token, file).then((response:any)=> {
+                    AmmaFileUploadService.removeFile(type, getToken(), file).then((response:any)=> {
                         removeFileFromModel(file);
                         ngModelController.$validate();
                         isBusy(false);
@@ -106,11 +113,11 @@ module AmmaCommon.directives.File {
                 };
 
                 const isValid = () => {
-                    return AmmaFileUploadService.isValidCheck(type, token);
+                    return AmmaFileUploadService.isValidCheck(type, getToken());
                 };
 
                 const viewFileUrl = (file:string) => {
-                    return AmmaFileUploadService.viewFileUrl(type, token, file);
+                    return AmmaFileUploadService.viewFileUrl(type, getToken(), file);
                 };
 
                 if (ammaFileRemoveBind) {
@@ -121,7 +128,7 @@ module AmmaCommon.directives.File {
                     $parse(ammaFileViewUrlBind).assign(scope, viewFileUrl);
                 }
                 // code starts
-                if (!token) {
+                if (!getToken()) {
                     createToken();
                 } else {
                     loadFiles();

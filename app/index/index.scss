@@ -27,6 +27,15 @@ button, select, html, textarea, input {
     z-index: 100;
 }
 
+
+.md-toast {
+    position: absolute;
+    z-index: 100000;
+}
+
+.triangular-loader {
+    z-index: 1000000 !important;
+}
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

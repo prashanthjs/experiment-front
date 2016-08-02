@@ -12,13 +12,19 @@ var AmmaCommon;
                     link: function (scope, element, attrs, ngModelController) {
                         // console.log(model(scope));//to get value
                         // model.assign(scope,'test');
-                        var token = attrs.ammaFileToken;
+                        var tokenModel = $parse(attrs.ammaFileToken);
                         var type = attrs.ammaFileType;
                         var ngModel = attrs.ngModel;
                         var filesModel = $parse(attrs.ammaFile);
                         var busyModel = $parse(attrs.ammaFileBusy);
                         var ammaFileRemoveBind = attrs.ammaFileRemoveFunc;
                         var ammaFileViewUrlBind = attrs.ammaFileViewUrlFunc;
+                        var setToken = function (token) {
+                            tokenModel.assign(scope, token);
+                        };
+                        var getToken = function () {
+                            return tokenModel(scope);
+                        };
                         var isBusy = function (bool) {
                             busyModel.assign(scope, bool);
                         };
@@ -45,7 +51,7 @@ var AmmaCommon;
                             }
                         };
                         var upload = function (file) {
-                            var promise = AmmaFileUploadService.upload(type, token, file);
+                            var promise = AmmaFileUploadService.upload(type, getToken(), file);
                             isBusy(true);
                             promise.then(function (response) {
                                 addFile(response.data.file);
@@ -59,7 +65,7 @@ var AmmaCommon;
                         var createToken = function () {
                             isBusy(true);
                             AmmaFileUploadService.createToken(type).then(function (response) {
-                                token = response.data.token;
+                                setToken(response.data.token);
                                 isBusy(false);
                                 loadFiles();
                             }, function (response) {
@@ -69,7 +75,7 @@ var AmmaCommon;
                         };
                         var loadFiles = function () {
                             isBusy(true);
-                            AmmaFileUploadService.getFilesList(type, token).then(function (response) {
+                            AmmaFileUploadService.getFilesList(type, getToken()).then(function (response) {
                                 setFiles(response.data.files);
                                 isBusy(false);
                             }, function (response) {
@@ -82,7 +88,7 @@ var AmmaCommon;
                             if ($event) {
                                 $event.preventDefault();
                             }
-                            AmmaFileUploadService.removeFile(type, token, file).then(function (response) {
+                            AmmaFileUploadService.removeFile(type, getToken(), file).then(function (response) {
                                 removeFileFromModel(file);
                                 ngModelController.$validate();
                                 isBusy(false);
@@ -92,10 +98,10 @@ var AmmaCommon;
                             });
                         };
                         var isValid = function () {
-                            return AmmaFileUploadService.isValidCheck(type, token);
+                            return AmmaFileUploadService.isValidCheck(type, getToken());
                         };
                         var viewFileUrl = function (file) {
-                            return AmmaFileUploadService.viewFileUrl(type, token, file);
+                            return AmmaFileUploadService.viewFileUrl(type, getToken(), file);
                         };
                         if (ammaFileRemoveBind) {
                             $parse(ammaFileRemoveBind).assign(scope, removeFile);
@@ -104,7 +110,7 @@ var AmmaCommon;
                             $parse(ammaFileViewUrlBind).assign(scope, viewFileUrl);
                         }
                         // code starts
-                        if (!token) {
+                        if (!getToken()) {
                             createToken();
                         }
                         else {

@@ -22,7 +22,7 @@ gulp.task('styles', function () {
     var injectFiles = gulp.src([
         'bower_components/triangular/triangular.scss',
         'app/**/*.scss',
-        '!app/index/app.scss'
+        '!app/index/index.scss'
     ], {read: false});
 
     var injectOptions = {
@@ -35,12 +35,12 @@ gulp.task('styles', function () {
         addRootSlash: false
     };
 
-    var indexFilter = $.filter('app.scss', {
+    var indexFilter = $.filter('index.scss', {
         restore: true
     });
 
     return gulp.src([
-        'app/index/app.scss'
+        'app/index/index.scss'
     ])
         .pipe(indexFilter)
         .pipe($.inject(injectFiles, injectOptions))

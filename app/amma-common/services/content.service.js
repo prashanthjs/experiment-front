@@ -7,14 +7,14 @@ var AmmaCommon;
             function ContentService($rootScope) {
                 this.$rootScope = $rootScope;
             }
-            ContentService.prototype.get = function (eventName, options, initContent) {
+            ContentService.prototype.get = function (eventName, initContent) {
+                if (initContent === void 0) { initContent = []; }
                 var content = [];
                 if (initContent) {
                     content = initContent;
                 }
                 this.$rootScope.$emit(eventName, {
-                    content: content,
-                    options: options
+                    content: content
                 });
                 content.sort(this.sortFunc('priority'));
                 return content;

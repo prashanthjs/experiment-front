@@ -6,9 +6,19 @@
         .config(routeConfig);
 
     /* @ngInject */
-    function routeConfig($stateProvider, $urlRouterProvider) {
+    function routeConfig($stateProvider, $urlRouterProvider, $mdDateLocaleProvider) {
         // Setup the apps routes
 
+        $mdDateLocaleProvider.formatDate = function (date) {
+            return moment(date).format('DD/MM/YYYY');
+        };
+
+        $mdDateLocaleProvider.parseDate = function (dateString) {
+            var m = moment(dateString, 'DD/MM/YYYY', true);
+            return m.isValid() ? m.toDate() : new Date(NaN);
+        };
+
+        
         // 404 & 500 pages
         $stateProvider
         .state('404', {

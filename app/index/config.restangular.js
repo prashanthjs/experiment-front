@@ -15,6 +15,9 @@
                 if (data._embedded && data._embedded.result) {
                     extractedData = data._embedded.result;
                 }
+                else {
+                    extractedData = data.results;
+                }
                 if (data.meta) {
                     extractedData.meta = data.meta;
                 }

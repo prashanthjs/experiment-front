@@ -22,11 +22,14 @@ var AmmaStore;
                     templateUrl: 'app/amma-store/form/store.form.tmpl.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
+                    autoWrap: true,
+                    openFrom: ev,
                     locals: {
-                        model: id ? this.getById(id) : null,
-                        stores: this.getList()
+                        id: id
                     },
-                    clickOutsideToClose: false
+                    escapeToClose: false,
+                    clickOutsideToClose: false,
+                    fullscreen: true
                 });
             };
             StoreCommandService.prototype.removeDialog = function (id, event) {

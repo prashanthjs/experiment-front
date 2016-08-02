@@ -126,5 +126,13 @@ module AmmaCommon.Common {
             return this.eventName + '-' + name;
         }
 
+        openForm(id:string, ev:any):ng.IPromise<any> {
+           return;
+        }
+
+        removeDialog(id:string, event):ng.IPromise<any> {
+            return
+        }
+
     }
 }

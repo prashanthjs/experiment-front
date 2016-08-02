@@ -3,8 +3,6 @@ module AmmaCommon.Services {
     export interface IContent {
         templateUrl:string;
         priority?:number;
-        data?:{};
-        options?:{}
     }
 
     export class ContentService {
@@ -13,14 +11,13 @@ module AmmaCommon.Services {
         constructor(private $rootScope:ng.IRootScopeService) {
         }
 
-        public get(eventName:string, options:any, initContent:IContent[]) {
+        public get(eventName:string, initContent:IContent[] = []) {
             let content:IContent[] = [];
             if (initContent) {
                 content = initContent;
             }
             this.$rootScope.$emit(eventName, {
-                content: content,
-                options: options
+                content: content
             });
             content.sort(this.sortFunc('priority'));
             return content;

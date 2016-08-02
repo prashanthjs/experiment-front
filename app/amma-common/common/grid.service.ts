@@ -2,7 +2,7 @@ module AmmaCommon.Common {
     export class GridService {
 
         protected commandService:CommandService;
-        protected gridOptions:Object;
+        protected gridOptions:any;
 
         /** @ngInject */
         constructor(commandService:CommandService, gridOptions:Object) {

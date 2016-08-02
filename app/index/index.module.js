@@ -24,7 +24,9 @@
             // https://github.com/Narzerus/angular-permission see here for why
             //      'app.examples'
             'amma-common',
-            'amma-store'
+            'amma-store',
+            'amma-user-group',
+            'amma-user'
         ])
 
         // set a constant for the API we are connecting to
