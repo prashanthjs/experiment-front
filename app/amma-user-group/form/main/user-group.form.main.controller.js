@@ -9,22 +9,22 @@ var AmmaUserGroup;
     (function (Form) {
         var Main;
         (function (Main) {
-            var FormContentController = AmmaCommon.Common.FormContentController;
+            var FormMainContentController = AmmaCommon.Common.FormMainContentController;
             var UserGroupFormMainController = (function (_super) {
                 __extends(UserGroupFormMainController, _super);
                 /* @ngInject */
-                function UserGroupFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserGroupCommandService, AmmaRoleCommandService) {
-                    _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserGroupCommandService);
+                function UserGroupFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserGroupCommandService, AmmaRoleCommandService, $rootScope, USER_GROUP_FORM_EVENT_NAME) {
+                    _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserGroupCommandService, $rootScope, USER_GROUP_FORM_EVENT_NAME);
                     this.roleCommandService = AmmaRoleCommandService;
                 }
-                UserGroupFormMainController.prototype.init = function () {
-                    _super.prototype.init.call(this);
+                UserGroupFormMainController.prototype.handleInit = function () {
                     this.loadRoles();
                 };
                 UserGroupFormMainController.prototype.loadRoles = function () {
                     var _this = this;
                     this.roleCommandService.getList().then(function (response) {
                         _this.roles = response;
+                        _this.loadModel();
                     }, function (error) {
                         _this.messageService.displayErrorMessage('Cannot retrieve:' + error.data.message, error);
                     });
@@ -33,7 +33,7 @@ var AmmaUserGroup;
                     if (!this.model.roles) {
                         this.model.roles = [];
                     }
-                    var idx = this.model.roles.indexOf(this.model.roles);
+                    var idx = this.model.roles.indexOf(item);
                     if (idx > -1) {
                         this.model.roles.splice(idx, 1);
                     }
@@ -42,13 +42,13 @@ var AmmaUserGroup;
                     }
                 };
                 UserGroupFormMainController.prototype.exists = function (item) {
-                    if (this.model.roles && this.model.roles.length) {
+                    if (this.model && this.model.roles && this.model.roles.length) {
                         return this.model.roles.indexOf(item) > -1;
                     }
                     return false;
                 };
                 return UserGroupFormMainController;
-            }(FormContentController));
+            }(FormMainContentController));
             Main.UserGroupFormMainController = UserGroupFormMainController;
             angular
                 .module('amma-user-group')

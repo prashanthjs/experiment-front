@@ -10,49 +10,40 @@ var AmmaCommon;
         var FormContentController = (function (_super) {
             __extends(FormContentController, _super);
             /* @ngInject */
-            function FormContentController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaStoreCommandService) {
+            function FormContentController($scope, $mdDialog, AmmaMessageService, triLoaderService, CommandService, $rootScope, eventName) {
                 _super.call(this, AmmaMessageService);
                 this.dialogService = $mdDialog;
-                this.commandService = AmmaStoreCommandService;
+                this.commandService = CommandService;
                 this.loaderService = triLoaderService;
                 this.$scope = $scope;
+                this.$rootScope = $rootScope;
+                this.eventName = eventName;
+                this.registerEvents();
             }
-            FormContentController.prototype.setId = function (id) {
-                this.id = id;
-                this.$scope.ammaContentData.id = id;
-            };
-            FormContentController.prototype.init = function () {
-                this.id = this.$scope.ammaContentData.id || null;
-                if (this.id) {
-                    this.loadModel();
-                }
-            };
-            FormContentController.prototype.loadModel = function () {
+            FormContentController.prototype.registerEvents = function () {
                 var _this = this;
-                this.loaderService.setLoaderActive(true);
-                this.commandService.getById(this.id).then(function (response) {
-                    _this.model = response;
-                    _this.loaderService.setLoaderActive(false);
-                }, function (error) {
-                    _this.loaderService.setLoaderActive(false);
-                    _this.messageService.displayErrorMessage('Cannot retrieve:' + error.data.message, error);
+                var unbindInitFunc = this.$rootScope.$on(this.eventName + '.init', function (event, data) {
+                    _this.eventData = data;
+                    _this.handleInit();
+                });
+                var unbindDataFunc = this.$rootScope.$on(this.eventName + '.data', function (event, data) {
+                    _this.eventData = data;
+                    _this.handleDataChange();
+                });
+                this.$scope.$on('$destroy', function () {
+                    unbindInitFunc();
+                    unbindDataFunc();
                 });
             };
-            FormContentController.prototype.cancel = function () {
-                this.dialogService.cancel();
+            FormContentController.prototype.notify = function (data) {
+                this.$rootScope.$emit(this.eventName + '.data', data);
             };
-            FormContentController.prototype.submit = function () {
-                var _this = this;
-                this.loaderService.setLoaderActive(true);
-                this.commandService.save(this.model).then(function (resp) {
-                    _this.setId(resp._id);
-                    _this.model = resp;
-                    _this.messageService.displaySuccessMessage('Successfully saved');
-                    _this.loaderService.setLoaderActive(false);
-                }, function (error) {
-                    _this.loaderService.setLoaderActive(false);
-                    _this.messageService.displayErrorMessage('Cannot be updated:' + error.data.message);
-                });
+            FormContentController.prototype.handleInit = function () {
+            };
+            FormContentController.prototype.handleDataChange = function () {
+            };
+            FormContentController.prototype.hide = function () {
+                this.dialogService.hide({ data: this.eventData });
             };
             return FormContentController;
         }(Common.BaseController));

@@ -1,0 +1,16 @@
+block vars
+
+md-dialog(ng-cloak='', flex='')
+    md-toolbar
+        .md-toolbar-tools
+            h2(ng-if='!' + controllerAlias + '.eventData.id')
+                =createTitle
+            h2(ng-if= controllerAlias + '.eventData.id')
+                =editTitle
+            span(flex='')
+            md-button.md-icon-button(ng-click='hideDialog()')
+                md-icon(md-font-icon='zmdi zmdi-close')
+    md-dialog-content
+        md-tabs(md-dynamic-height='', md-border-bottom='', amma-dialog-actions='')
+            amma-content(amma-content-event=eventName, amma-content-data=controllerAlias + '.eventData')
+    md-dialog-actions

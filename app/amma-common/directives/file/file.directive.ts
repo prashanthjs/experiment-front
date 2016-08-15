@@ -3,16 +3,16 @@ module AmmaCommon.directives.File {
     import FileUploadService = AmmaCommon.Services.FileUploadService;
     import MessageService = AmmaCommon.Services.MessageService;
     export interface IScope extends ng.IScope {
-        ammaFileToken:string;
-        ammaValidFiles:any[];
+        ammaFileToken: string;
+        ammaValidFiles: any[];
     }
 
     /** @ngInject */
-    export function AmmaFile($parse:ng.IParseService, AmmaFileUploadService:FileUploadService, AmmaMessageService:MessageService, $q:ng.IQService):ng.IDirective {
+    export function AmmaFile($parse: ng.IParseService, AmmaFileUploadService: FileUploadService, AmmaMessageService: MessageService, $q: ng.IQService): ng.IDirective {
         return {
             restrict: 'A',
             require: 'ngModel',
-            link: function (scope:ng.IScope, element, attrs, ngModelController) {
+            link: function (scope: ng.IScope, element, attrs, ngModelController) {
                 // console.log(model(scope));//to get value
                 // model.assign(scope,'test');
                 let tokenModel = $parse(attrs.ammaFileToken);
@@ -23,30 +23,38 @@ module AmmaCommon.directives.File {
 
                 const ammaFileRemoveBind = attrs.ammaFileRemoveFunc;
                 const ammaFileViewUrlBind = attrs.ammaFileViewUrlFunc;
+                let canceler;
 
-                const setToken = (token:string) =>{
-                  tokenModel.assign(scope, token);
+                const setToken = (token: string) => {
+                    tokenModel.assign(scope, token);
                 };
 
-                const getToken = () =>{
+                const getToken = () => {
+                    if(!tokenModel(scope)){
+                        tokenModel.assign(scope, getUniqueToken());
+                    }
                     return tokenModel(scope);
                 };
 
-                const isBusy = (bool:boolean) => {
+                const isBusy = (bool: boolean) => {
                     busyModel.assign(scope, bool);
                 };
 
-                const setFiles = (files:any[]) => {
+                const setFiles = (files: any[]) => {
                     filesModel.assign(scope, files);
                 };
 
+                const getFiles = () => {
+                    return filesModel(scope)||[];
+                };
+
                 const addFile = (file)=> {
-                    let files = filesModel(scope);
+                    let files = getFiles();
                     files.push(file);
                     setFiles(files);
                 };
                 const removeFileFromModel = (file) => {
-                    let files = filesModel(scope);
+                    let files = getFiles();
                     let index = -1;
                     for (let i = 0; i < files.length; i++) {
                         if (files[i].filename && files[i].filename === file) {
@@ -67,28 +75,24 @@ module AmmaCommon.directives.File {
                         addFile(response.data.file);
                         isBusy(false);
                         AmmaMessageService.displaySuccessMessage('file uploaded successfully');
-                    }, (response:any)=> {
+                    }, (response: any)=> {
                         AmmaMessageService.displayErrorMessage('Cannot upload file', response);
                         isBusy(false);
                     });
                 };
 
-                const createToken = () => {
-                    isBusy(true);
-                    AmmaFileUploadService.createToken(type).then((response:any)=> {
-                        setToken(response.data.token);
-                        isBusy(false);
-                        loadFiles();
-                    }, (response) => {
-                        AmmaMessageService.displayErrorMessage('Cannot get file token', response);
-                        isBusy(false);
-                    });
-
+                const getUniqueToken = () => {
+                    let string = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase();
+                    return string;
                 };
 
                 const loadFiles = () => {
                     isBusy(true);
-                    AmmaFileUploadService.getFilesList(type, getToken()).then((response:any)=> {
+                    if (canceler) {
+                        canceler.resolve();
+                    }
+                    canceler = $q.defer();
+                    AmmaFileUploadService.getFilesList(type, getToken(), canceler).then((response: any)=> {
                         setFiles(response.data.files);
                         isBusy(false);
                     }, (response) => {
@@ -102,7 +106,7 @@ module AmmaCommon.directives.File {
                     if ($event) {
                         $event.preventDefault();
                     }
-                    AmmaFileUploadService.removeFile(type, getToken(), file).then((response:any)=> {
+                    AmmaFileUploadService.removeFile(type, getToken(), file).then((response: any)=> {
                         removeFileFromModel(file);
                         ngModelController.$validate();
                         isBusy(false);
@@ -116,7 +120,7 @@ module AmmaCommon.directives.File {
                     return AmmaFileUploadService.isValidCheck(type, getToken());
                 };
 
-                const viewFileUrl = (file:string) => {
+                const viewFileUrl = (file: string) => {
                     return AmmaFileUploadService.viewFileUrl(type, getToken(), file);
                 };
 
@@ -126,12 +130,6 @@ module AmmaCommon.directives.File {
 
                 if (ammaFileViewUrlBind) {
                     $parse(ammaFileViewUrlBind).assign(scope, viewFileUrl);
-                }
-                // code starts
-                if (!getToken()) {
-                    createToken();
-                } else {
-                    loadFiles();
                 }
 
                 if (attrs.ammaFileValidator) {
@@ -152,9 +150,16 @@ module AmmaCommon.directives.File {
                     }
                 });
 
+                const unbindTokenWatch = scope.$watch(tokenModel, (newValue, oldValue)=> {
+                    if (newValue !== oldValue) {
+                        loadFiles();
+                    }
+                });
+
 
                 scope.$on('$destroy', ()=> {
                     unbindWatch();
+                    unbindTokenWatch();
                 });
 
 

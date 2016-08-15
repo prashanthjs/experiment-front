@@ -1,0 +1,134 @@
+- var scope = {controllerAlias: 'ammaUserViewController'}
+section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='column', flex='')
+    section(layout='row', layout-align='end center')
+        md-card(flex='20')
+            md-card-content(layout='row', layou-align='center center')
+                div(flex='') Is Locked
+                div(flex='20')
+                    md-switch.md-primary.margin-0(ng-model=scope.controllerAlias + '.model.isLocked', aria-label='isLocked?', ng-disabled='true')
+        md-card(flex='20')
+            md-card-content(layout='row', layou-align='center center')
+                div(flex='') Status
+                div(flex='20')
+                    md-switch.md-primary.margin-0(ng-model=scope.controllerAlias + '.model.isActive', aria-label='isActive?', ng-disabled='true')
+    section(flex='', layout='row')
+        md-card(flex='')
+            h2.md-title.left-padding Details
+            md-divider
+            md-card-content
+                div(layout='row', layout-margin='')
+                    div(flex='')
+                        md-list(layout='column', flex='')
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Username
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model._id}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') First name
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.firstName}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Middle name
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.middleName}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Last name
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.lastName}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Email
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.email}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Gender
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.gender}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Dob
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.dob|date: "mediumDate"}}'
+                            md-divider
+                    md-divider(vertial='')
+                    div(flex='')
+                        div(layout='column')
+                            div(flex='')
+                                md-list(layout='column', flex='')
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Address Line 1
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.address.addressLine1}}'
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Address Line 2
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.address.addressLine2}}'
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Town
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.address.town}}'
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') County
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.address.county}}'
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Country
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.address.country}}'
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Postcode
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.address.postcode}}'
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Contact Number
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                ='{{' + scope.controllerAlias + '.model.contactNumber}}'
+                                    md-divider
+    section
+        div(layout='column')
+            md-card(layout='column', flex='')
+                div(flex='2')
+                    h2.md-title.left-padding Images
+                    md-divider
+                md-card-content(flex='90', layout='column')
+                    md-grid-list(flex='', md-cols='9', md-cols-xs='9', md-row-height='4:3', md-gutter='10px')
+                        md-grid-tile(md-rowspan='1', md-colspan='1', ng-repeat='image in ' + scope.controllerAlias + '.images', ng-click=scope.controllerAlias + '.openImage(image, $event)', ng-style="{ 'background-image': 'url(' + image.url + ')', 'background-size' : 'cover', 'cursor':'pointer' }", layout-padding='10')
+
+.bottom-right
+    md-button.md-fab.md-warn(aria-label='create', ng-click=scope.controllerAlias + '.create($event)')
+        md-icon(md-font-icon='zmdi zmdi-plus')
+
+    md-button.md-fab.md-accent(aria-label='list', ui-sref='{{'+scope.controllerAlias +'.listRoute}}')
+            md-icon(md-font-icon='fa fa-table')
+
+    md-button.md-fab.md-warn.md-hue-2(aria-label='Remove', ng-click=scope.controllerAlias + '.remove($event)')
+        md-icon(md-font-icon='fa fa-times')
+
+
+
+    md-button.md-fab.md-primary(aria-label='Edit', ng-click=scope.controllerAlias + '.edit($event)')
+        md-icon(md-font-icon='zmdi zmdi-edit')

@@ -9,27 +9,27 @@ var AmmaStore;
     (function (Form) {
         var Main;
         (function (Main) {
-            var FormContentController = AmmaCommon.Common.FormContentController;
+            var FormMainContentController = AmmaCommon.Common.FormMainContentController;
             var StoreFormMainController = (function (_super) {
                 __extends(StoreFormMainController, _super);
                 /* @ngInject */
-                function StoreFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaStoreCommandService) {
-                    _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaStoreCommandService);
+                function StoreFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaStoreCommandService, $rootScope, STORE_FORM_EVENT_NAME) {
+                    _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaStoreCommandService, $rootScope, STORE_FORM_EVENT_NAME);
                 }
-                StoreFormMainController.prototype.init = function () {
-                    _super.prototype.init.call(this);
+                StoreFormMainController.prototype.handleInit = function () {
                     this.loadStores();
                 };
                 StoreFormMainController.prototype.loadStores = function () {
                     var _this = this;
                     this.commandService.getList().then(function (response) {
                         _this.stores = response;
+                        _this.loadModel();
                     }, function (error) {
                         _this.messageService.displayErrorMessage('Cannot retrieve:' + error.data.message, error);
                     });
                 };
                 return StoreFormMainController;
-            }(FormContentController));
+            }(FormMainContentController));
             Main.StoreFormMainController = StoreFormMainController;
             angular
                 .module('amma-store')

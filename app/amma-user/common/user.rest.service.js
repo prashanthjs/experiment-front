@@ -14,6 +14,9 @@ var AmmaUser;
             function UserRestService(Restangular, USER_END_POINT) {
                 _super.call(this, Restangular, USER_END_POINT);
             }
+            UserRestService.prototype.changePassword = function (id, password) {
+                return this.restService.one(id).one('change-password').customPUT({ password: password });
+            };
             return UserRestService;
         }(RestService));
         Common.UserRestService = UserRestService;

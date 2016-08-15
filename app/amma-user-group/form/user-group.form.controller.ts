@@ -4,8 +4,8 @@ module AmmaUserGroup.Form {
     export class UserGroupFormController extends FormBaseController{
 
         /* @ngInject */
-        constructor(id, $mdDialog, $scope) {
-            super(id, $mdDialog, $scope);
+        constructor(id, $mdDialog, $scope, $rootScope, USER_GROUP_FORM_EVENT_NAME) {
+            super(id, $mdDialog, $scope, $rootScope, USER_GROUP_FORM_EVENT_NAME);
         }
 
 

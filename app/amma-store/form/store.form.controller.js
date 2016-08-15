@@ -11,8 +11,8 @@ var AmmaStore;
         var StoreFormController = (function (_super) {
             __extends(StoreFormController, _super);
             /* @ngInject */
-            function StoreFormController(id, $mdDialog, $scope) {
-                _super.call(this, id, $mdDialog, $scope);
+            function StoreFormController(id, $mdDialog, $scope, $rootScope, STORE_FORM_EVENT_NAME) {
+                _super.call(this, id, $mdDialog, $scope, $rootScope, STORE_FORM_EVENT_NAME);
             }
             return StoreFormController;
         }(FormBaseController));

@@ -1,0 +1,16 @@
+include ./common
+
+block vars
+    - var scope = {controllerAlias:''};
+section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='column')
+    md-toolbar.toolbar-default.margin-bottom-30
+        .md-toolbar-tools
+            h2
+                span
+                    block title
+    block content
+        .md-whiteframe-z1(kendo-grid=scope.controllerAlias + '.grid', flex='', options=scope.controllerAlias + '.gridOptions', k-rebind=scope.controllerAlias + '.gridOptions')
+.bottom-right
+        block bottomContent
+            md-button.md-fab.md-warn(aria-label='Create User', ng-click=scope.controllerAlias + '.create($event)')
+                md-icon(md-font-icon='zmdi zmdi-plus')

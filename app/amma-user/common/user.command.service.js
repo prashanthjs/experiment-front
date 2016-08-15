@@ -48,9 +48,12 @@ var AmmaUser;
                         defer.reject(response);
                     });
                 }, function () {
-                    defer.resolve();
+                    defer.reject();
                 });
                 return defer.promise;
+            };
+            UserCommandService.prototype.changePassword = function (id, password) {
+                return this.restService.changePassword(id, password);
             };
             return UserCommandService;
         }(CommandService));

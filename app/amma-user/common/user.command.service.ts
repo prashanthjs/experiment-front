@@ -6,8 +6,9 @@ module AmmaUser.Common {
     export class UserCommandService extends CommandService {
 
         protected dialogService;
+        protected restService: UserRestService;
         /* @ngInject */
-        constructor(AmmaUserRestService:RestService, AmmaEventEmitterService:EventEmitterService, $q:ng.IQService, USER_BASE_EVENT_NAME:string, $mdDialog) {
+        constructor(AmmaUserRestService:UserRestService, AmmaEventEmitterService:EventEmitterService, $q:ng.IQService, USER_BASE_EVENT_NAME:string, $mdDialog) {
             super(AmmaUserRestService, AmmaEventEmitterService, $q, USER_BASE_EVENT_NAME);
             this.dialogService = $mdDialog;
         }
@@ -46,11 +47,14 @@ module AmmaUser.Common {
                     defer.reject(response);
                 });
             }, () => {
-                defer.resolve();
+                defer.reject();
             });
             return defer.promise;
         }
 
+        changePassword(id, password):ng.IPromise<any> {
+            return this.restService.changePassword(id,password);
+        }
 
     }
     angular.module('amma-user')

@@ -9,6 +9,10 @@ module AmmaUser.Common {
             super(Restangular, USER_END_POINT);
         }
 
+        changePassword(id, password):ng.IPromise<any> {
+            return this.restService.one(id).one('change-password').customPUT({password: password});
+        }
+
     }
 
     angular.module('amma-user')

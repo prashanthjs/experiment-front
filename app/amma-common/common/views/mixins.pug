@@ -1,0 +1,121 @@
+mixin ng-controller(scope)
+    ng-controller(ng-controller= scope.controller + ' as ' + scope.controllerAlias)
+        block
+
+mixin amma-form(scope)
+    form(name = scope.formName, novalidate='')&attributes(attributes)
+        block
+
+mixin amma-error-wrapper(scope, name)
+    div(ng-messages=scope.formName + '.' + name + '.$error', md-auto-hide='false', ng-show=scope.formName + '.' + name + '.$touched')
+        block
+
+mixin amma-error-item(type)
+    div(ng-message=type)
+        block
+
+mixin amma-form-item-container(scope)
+    md-input-container(flex='')&attributes(attributes)
+        block
+
+mixin amma-input(scope, name, label, type, model)
+    if label
+        label=label
+    if !type
+        - type='text'
+    if !model
+        - model = scope.controllerAlias +'.model.'+name
+    input(type=type, ng-model = model, name=name)&attributes(attributes)
+
+
+mixin amma-select(scope, name, label, model)
+    if label
+        label=label
+    if !type
+        - type='text'
+    if !model
+        - model =  scope.controllerAlias + '.model.'+name
+    md-select(ng-model=model, name=name)&attributes(attributes)
+        block
+
+mixin amma-datepicker(scope, name, label, model)
+    if !type
+        - type='text'
+    if !model
+        - model = scope.controllerAlias + '.model.'+name
+    md-datepicker(name=name,ng-model= model, md-placeholder=label, flex='')&attributes(attributes)
+
+mixin amma-checkbox(scope, name, label, model)
+    if !type
+        - type='text'
+    if !model
+        - model = scope.controllerAlias + '.model.'+name
+    md-checkbox(ng-model=model,aria-label='', ng-true-value='true', ng-false-value='false')&attributes(attributes)
+    =label
+
+
+mixin amma-switch(scope, name, label, model)
+    if !type
+        - type='text'
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    label(flex='')=label
+    md-switch(flex = '', ng-model=model,ng-true-value=1, ng-false-value=0, aria-label=label)&attributes(attributes)
+
+mixin amma-form-submit(scope, label)
+    md-button.md-primary.md-raised(ng-click=scope.controllerAlias + '.submit($event)', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
+        =label
+
+mixin amma-form-cancel(scope, label)
+    md-button.md-warn.md-raised(ng-click=scope.controllerAlias + '.hide($event)')
+        =label
+
+
+mixin amma-file-upload(scope, name, label, scopeVariable,fileType, model )
+    - scopeVariable = scope.controllerAlias +'.'+scopeVariable
+
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+
+    md-button.md-primary.md-raised(ngf-select='', ng-model= scopeVariable+ '.files', amma-file-token=model,amma-file-type=fileType,amma-file=scopeVariable + ".all",amma-file-busy= scopeVariable + ".isBusy",ng-show="!" + scopeVariable + ".isBusy",amma-file-remove-func=scopeVariable + ".removeFunc",amma-file-validator="true" )
+        =label
+    md-progress-linear(md-mode="indeterminate",ng-show=scopeVariable + '.isBusy')
+    md-grid-list(flex,md-cols="9",md-cols-xs="9",md-row-height="4:3",md-gutter="10px", ng-if=scopeVariable + ".all.length")
+        md-grid-tile(md-rowspan="1", md-colspan="1", ng-repeat="file in " + scopeVariable + ".all", ng-style="::{ 'background-image': 'url(' + file.url + ')', 'background-size' : 'cover', 'cursor':'pointer' }", layout-padding="10")
+            div.img-wrap
+                md-button.md-icon-button.md-warn.md-img-remove(ng-click=scopeVariable+ ".removeFunc(file.filename, $event)")
+                    md-icon(md-font-icon="zmdi zmdi-close-circle")
+
+
+mixin amma-address(scope, modelPath)
+    div(flex='', layout='row')
+        +amma-form-item-container(scope)
+            +amma-input(scope, 'addressLine1', 'Address Line 1', null, modelPath + '.addressLine1')(required='')
+            +amma-error-wrapper(scope, 'addressLine1')
+                +amma-error-item('required') Please enter address Line 1
+
+        +amma-form-item-container(scope)
+            +amma-input(scope, 'addressLine2', 'Address Line 2', null, modelPath + '.addressLine2')
+            +amma-error-wrapper(scope, 'addressLine2')
+                +amma-error-item('required') Please enter address Line 2
+
+    div(flex='', layout='row')
+        +amma-form-item-container(scope)
+            +amma-input(scope, 'town', 'Town/City', null, modelPath + '.town')
+
+        +amma-form-item-container(scope)
+            +amma-input(scope, 'county', 'County', null, modelPath + '.county')
+
+
+    div(flex='', layout='row')
+        +amma-form-item-container(scope)
+            +amma-input(scope, 'country', 'Country', null, modelPath + '.country')
+            +amma-error-wrapper(scope, 'country')
+                +amma-error-item('required') Please enter Country
+        +amma-form-item-container(scope)
+            +amma-input(scope, 'postcode', 'Postcode', null, modelPath + '.postcode')
+            +amma-error-wrapper(scope, 'postcode')
+                +amma-error-item('required') Please enter Postcode
+
+
+

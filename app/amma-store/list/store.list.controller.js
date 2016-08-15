@@ -7,38 +7,15 @@ var AmmaStore;
 (function (AmmaStore) {
     var List;
     (function (List) {
-        var BaseController = AmmaCommon.Common.BaseController;
+        var ListController = AmmaCommon.Common.ListController;
         var StoreListController = (function (_super) {
             __extends(StoreListController, _super);
             /* @ngInject */
-            function StoreListController(AmmaStoreGridService, AmmaStoreCommandService, AmmaMessageService) {
-                _super.call(this, AmmaMessageService);
-                this.gridOptions = AmmaStoreGridService.getGridOptions();
-                this.commandService = AmmaStoreCommandService;
+            function StoreListController(AmmaStoreGridService, AmmaStoreCommandService, AmmaMessageService, $state) {
+                _super.call(this, AmmaStoreGridService, AmmaStoreCommandService, AmmaMessageService, $state);
             }
-            StoreListController.prototype.edit = function (id, event) {
-                var _this = this;
-                var promise = this.commandService.openForm(id, event);
-                promise.then(function () {
-                    _this.grid.dataSource.read();
-                }, function () {
-                    _this.grid.dataSource.read();
-                });
-            };
-            StoreListController.prototype.create = function (event) {
-                this.edit(null, event);
-            };
-            StoreListController.prototype.remove = function (id, $event) {
-                var _this = this;
-                this.commandService.removeDialog(id, $event).then(function () {
-                    _this.messageService.displaySuccessMessage('Successfully deleted');
-                    _this.grid.dataSource.read();
-                }, function (error) {
-                    _this.messageService.displayErrorMessage('Cannot be deleted' + error.data.message);
-                });
-            };
             return StoreListController;
-        }(BaseController));
+        }(ListController));
         List.StoreListController = StoreListController;
         angular
             .module('amma-store')

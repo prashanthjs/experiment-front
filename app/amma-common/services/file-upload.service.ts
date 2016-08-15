@@ -40,8 +40,9 @@ module AmmaCommon.Services {
             });
         }
 
-        getFilesList(type:string, token:string):ng.IHttpPromise<any> {
-            const url = this.resolveUrl(this.getListUrl, {type: type, token: token});
+        getFilesList(type:string, token:string, canceler: ng.IDeferred<any>):ng.IHttpPromise<any> {
+
+            const url = this.resolveUrl(this.getListUrl, {type: type, token: token, timeout: canceler.promise});
             return this.httpService({
                 method: 'GET',
                 url: url

@@ -6,12 +6,15 @@ module AmmaCommon.Common {
         public gridOptions:Object;
         public grid;
         public commandService:CommandService;
+        protected $state;
+        public viewRoute = '';
 
         /* @ngInject */
-        constructor(GridService:GridService, CommandService:CommandService, MessageService:MessageService) {
+        constructor(GridService:GridService, CommandService:CommandService, MessageService:MessageService, $state) {
             super(MessageService);
             this.gridOptions = GridService.getGridOptions();
             this.commandService = CommandService;
+            this.$state = $state;
         }
 
         edit(id:string, event) {
@@ -25,6 +28,10 @@ module AmmaCommon.Common {
 
         create(event) {
             this.edit(null, event);
+        }
+
+        view(id: string, event) {
+            this.$state.go(this.viewRoute, {id: id});
         }
 
         remove(id, $event) {

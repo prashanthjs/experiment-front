@@ -11,8 +11,8 @@ var AmmaUser;
         var UserFormController = (function (_super) {
             __extends(UserFormController, _super);
             /* @ngInject */
-            function UserFormController(id, $mdDialog, $scope) {
-                _super.call(this, id, $mdDialog, $scope);
+            function UserFormController(id, $mdDialog, $scope, $rootScope, USER_FORM_EVENT_NAME) {
+                _super.call(this, id, $mdDialog, $scope, $rootScope, USER_FORM_EVENT_NAME);
             }
             return UserFormController;
         }(FormBaseController));

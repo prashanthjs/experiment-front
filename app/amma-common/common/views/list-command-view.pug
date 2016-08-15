@@ -1,0 +1,12 @@
+include ./common
+
+block vars
+    - var scope = {controllerAlias: ''};
+div(layout='row', layout-align='center center')
+    block listActions
+        md-button.md-fab.md-primary.md-raised.md-mini(aria-label='Edit', ng-click=scope.controllerAlias + '.edit(dataItem._id, $event)')
+            md-icon(md-font-icon='fa fa-edit')
+        md-button.md-fab.md-primary.md-raised.md-mini(aria-label='View', ng-click=scope.controllerAlias + '.view(dataItem._id, $event)')
+            md-icon(md-font-icon='fa fa-eye')
+        md-button.md-fab.md-warn.md-raised.md-mini(aria-label='Delete', ng-click=scope.controllerAlias + '.remove(dataItem._id, $event)')
+            md-icon(md-font-icon='fa fa-times')

@@ -14,16 +14,16 @@ module AmmaUser.Config {
                 // set the controller to load for this page
                 controller: 'AmmaUserListController',
                 controllerAs: 'ammaUserListController',
-                data: {
-                    layout: {
-                        toolbarSize: 'default',
-                        toolbarShrink: false,
-                        toolbarClass: '',
-                        contentClass: '',
-                        sideMenuSize: 'full',
-                        footer: true
-                    }
-                }
+
+            });
+
+        $stateProvider
+            .state('triangular.amma-user-view', {
+                url: '/users/:id',
+                templateUrl: 'app/amma-user/view/user.view.tmpl.html',
+                // set the controller to load for this page
+                controller: 'AmmaUserViewController',
+                controllerAs: 'ammaUserViewController'
             });
 
         triMenuProvider.addMenu({

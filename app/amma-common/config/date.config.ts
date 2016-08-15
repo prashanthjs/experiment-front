@@ -1,12 +1,10 @@
-(function () {
-    'use strict';
+module AmmaCommon.Config {
 
     angular
-        .module('ammaCart')
+        .module('amma-common')
         .config(DateConfig);
     /* @ngInject */
     function DateConfig($mdDateLocaleProvider) {
-        alert('prashanth');
         $mdDateLocaleProvider.formatDate = function (date) {
             return moment(date).format('DD/MM/YYYY');
         };
@@ -18,5 +16,5 @@
 
     }
 
-});
+}
 

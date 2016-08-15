@@ -1,0 +1,19 @@
+include ./common
+
+block vars
+    - var scope = {controller:'', controllerAlias:'', formName: ''};
+    - var tabAttributes = {};
+
++ng-controller(scope)
+    md-tab(md-on-select= scope.controllerAlias + '.loadModel()')&attributes(tabAttributes)
+        md-tab-label
+            block title
+        md-tab-body
+            md-content.md-padding
+                +amma-form(scope)(flex='66')
+                    .md-dialog-content(layout='column', flex='')
+                        block formContent
+                    .amma-dialog-actions
+                        block formActions
+                            +amma-form-submit(scope, 'Save')
+                            +amma-form-cancel(scope, 'Cancel')

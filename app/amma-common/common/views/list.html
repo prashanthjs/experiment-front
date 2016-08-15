@@ -1,0 +1,13 @@
+<section class="overlay-10 padded-content-page overflow-hidden full-height" layout="column">
+    <md-toolbar class="toolbar-default margin-bottom-30">
+        <div class="md-toolbar-tools"><h2><span>Manage User Groups</span></h2></div>
+        <div class="md-whiteframe-z1" kendo-grid="ammaUserGroupListController.grid" flex=""
+             options="ammaUserGroupListController.gridOptions" k-rebind="ammaUserGroupListController.gridOptions"></div>
+    </md-toolbar>
+    <div class="bottom-right">
+        <md-button class="md-fab md-warn" aria-label="Create UserGroup"
+                   ng-click="ammaUserGroupListController.create($event)">
+            <md-icon md-font-icon="zmdi zmdi-plus"></md-icon>
+        </md-button>
+    </div>
+</section>

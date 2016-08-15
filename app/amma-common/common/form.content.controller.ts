@@ -5,59 +5,57 @@ module AmmaCommon.Common {
         protected commandService;
         protected loaderService;
         protected dialogService;
-        protected $scope:IFormScope;
+        protected $scope: IFormScope;
+        protected $rootScope: ng.IRootScopeService;
 
-        public id;
-        public model;
+        public eventData;
+        protected eventName;
 
 
         /* @ngInject */
-        constructor($scope:IFormScope, $mdDialog, AmmaMessageService, triLoaderService, AmmaStoreCommandService) {
+        constructor($scope: IFormScope, $mdDialog, AmmaMessageService, triLoaderService, CommandService, $rootScope, eventName) {
             super(AmmaMessageService);
             this.dialogService = $mdDialog;
-            this.commandService = AmmaStoreCommandService;
+            this.commandService = CommandService;
             this.loaderService = triLoaderService;
             this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.eventName = eventName;
+            this.registerEvents();
         }
 
-        setId(id){
-            this.id = id;
-            this.$scope.ammaContentData.id = id;
-        }
+        registerEvents() {
+            let unbindInitFunc = this.$rootScope.$on(this.eventName + '.init', (event, data)=> {
+                this.eventData = data;
+                this.handleInit();
+            });
 
-        init() {
-            this.id = this.$scope.ammaContentData.id || null;
-            if (this.id) {
-                this.loadModel();
-            }
-        }
+            let unbindDataFunc = this.$rootScope.$on(this.eventName + '.data', (event, data)=> {
+                this.eventData = data;
+                this.handleDataChange();
+            });
 
-        loadModel() {
-            this.loaderService.setLoaderActive(true);
-            this.commandService.getById(this.id).then((response)=> {
-                this.model = response;
-                this.loaderService.setLoaderActive(false);
-            }, (error) => {
-                this.loaderService.setLoaderActive(false);
-                this.messageService.displayErrorMessage('Cannot retrieve:' + error.data.message, error);
+            this.$scope.$on('$destroy', () => {
+                unbindInitFunc();
+                unbindDataFunc();
             });
         }
 
-        cancel() {
-            this.dialogService.cancel();
+
+        notify(data) {
+            this.$rootScope.$emit(this.eventName + '.data', data);
         }
 
-        submit() {
-            this.loaderService.setLoaderActive(true);
-            this.commandService.save(this.model).then((resp)=> {
-                this.setId(resp._id);
-                this.model = resp;
-                this.messageService.displaySuccessMessage('Successfully saved');
-                this.loaderService.setLoaderActive(false);
-            }, (error)=> {
-                this.loaderService.setLoaderActive(false);
-                this.messageService.displayErrorMessage('Cannot be updated:' + error.data.message);
-            });
+        handleInit() {
+
+        }
+
+        handleDataChange() {
+
+        }
+
+        hide() {
+            this.dialogService.hide({data: this.eventData});
         }
     }
 }

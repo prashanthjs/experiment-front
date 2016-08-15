@@ -10,10 +10,12 @@ var AmmaCommon;
         var ListController = (function (_super) {
             __extends(ListController, _super);
             /* @ngInject */
-            function ListController(GridService, CommandService, MessageService) {
+            function ListController(GridService, CommandService, MessageService, $state) {
                 _super.call(this, MessageService);
+                this.viewRoute = '';
                 this.gridOptions = GridService.getGridOptions();
                 this.commandService = CommandService;
+                this.$state = $state;
             }
             ListController.prototype.edit = function (id, event) {
                 var _this = this;
@@ -26,6 +28,9 @@ var AmmaCommon;
             };
             ListController.prototype.create = function (event) {
                 this.edit(null, event);
+            };
+            ListController.prototype.view = function (id, event) {
+                this.$state.go(this.viewRoute, { id: id });
             };
             ListController.prototype.remove = function (id, $event) {
                 var _this = this;

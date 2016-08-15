@@ -7,14 +7,14 @@ var AmmaUser;
 (function (AmmaUser) {
     var List;
     (function (List) {
-        var BaseController = AmmaCommon.Common.BaseController;
+        var ListController = AmmaCommon.Common.ListController;
         var UserListController = (function (_super) {
             __extends(UserListController, _super);
             /* @ngInject */
-            function UserListController(AmmaUserGridService, AmmaUserCommandService, AmmaMessageService) {
-                _super.call(this, AmmaMessageService);
-                this.gridOptions = AmmaUserGridService.getGridOptions();
-                this.commandService = AmmaUserCommandService;
+            function UserListController(AmmaUserGridService, AmmaUserCommandService, AmmaMessageService, $state) {
+                _super.call(this, AmmaUserGridService, AmmaUserCommandService, AmmaMessageService, $state);
+                this.viewRoute = '';
+                this.viewRoute = 'triangular.amma-user-view';
             }
             UserListController.prototype.edit = function (id, event) {
                 var _this = this;
@@ -28,6 +28,9 @@ var AmmaUser;
             UserListController.prototype.create = function (event) {
                 this.edit(null, event);
             };
+            UserListController.prototype.view = function (id, event) {
+                this.$state.go(this.viewRoute, { id: id });
+            };
             UserListController.prototype.remove = function (id, $event) {
                 var _this = this;
                 this.commandService.removeDialog(id, $event).then(function () {
@@ -38,7 +41,7 @@ var AmmaUser;
                 });
             };
             return UserListController;
-        }(BaseController));
+        }(ListController));
         List.UserListController = UserListController;
         angular
             .module('amma-user')

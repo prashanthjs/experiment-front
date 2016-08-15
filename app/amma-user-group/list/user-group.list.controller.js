@@ -7,38 +7,15 @@ var AmmaUserGroup;
 (function (AmmaUserGroup) {
     var List;
     (function (List) {
-        var BaseController = AmmaCommon.Common.BaseController;
+        var ListController = AmmaCommon.Common.ListController;
         var UserGroupListController = (function (_super) {
             __extends(UserGroupListController, _super);
             /* @ngInject */
-            function UserGroupListController(AmmaUserGroupGridService, AmmaUserGroupCommandService, AmmaMessageService) {
-                _super.call(this, AmmaMessageService);
-                this.gridOptions = AmmaUserGroupGridService.getGridOptions();
-                this.commandService = AmmaUserGroupCommandService;
+            function UserGroupListController(AmmaUserGroupGridService, AmmaUserGroupCommandService, AmmaMessageService, $state) {
+                _super.call(this, AmmaUserGroupGridService, AmmaUserGroupCommandService, AmmaMessageService, $state);
             }
-            UserGroupListController.prototype.edit = function (id, event) {
-                var _this = this;
-                var promise = this.commandService.openForm(id, event);
-                promise.then(function () {
-                    _this.grid.dataSource.read();
-                }, function () {
-                    _this.grid.dataSource.read();
-                });
-            };
-            UserGroupListController.prototype.create = function (event) {
-                this.edit(null, event);
-            };
-            UserGroupListController.prototype.remove = function (id, $event) {
-                var _this = this;
-                this.commandService.removeDialog(id, $event).then(function () {
-                    _this.messageService.displaySuccessMessage('Successfully deleted');
-                    _this.grid.dataSource.read();
-                }, function (error) {
-                    _this.messageService.displayErrorMessage('Cannot be deleted' + error.data.message);
-                });
-            };
             return UserGroupListController;
-        }(BaseController));
+        }(ListController));
         List.UserGroupListController = UserGroupListController;
         angular
             .module('amma-user-group')

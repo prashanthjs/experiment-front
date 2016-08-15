@@ -1,0 +1,96 @@
+extends ../../../amma-common/common/views/tab-form
+
+block vars
+    - var scope = {controller:'AmmaUserFormMainController', controllerAlias:'ammaUserFormMainController', formName: 'ammaUserMainForm'};;
+
+block title
+    | Main
+
+block formContent
+    section(layout='column', flex='')
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'firstName', 'First name')(required='')
+                +amma-error-wrapper(scope, 'firstName')
+                    +amma-error-item('required') Please enter your first name
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'middleName', 'Middle name')
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'lastName', 'Last name')(required='')
+                +amma-error-wrapper(scope, 'lastName')
+                    +amma-error-item('required') Please enter your last name
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'username', 'Username', null,scope.controllerAlias + '.model._id')(required='', ng-disabled='!!' + scope.controllerAlias + '.id')
+                +amma-error-wrapper(scope, 'username')
+                    +amma-error-item('required') Please enter your username
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'email', 'Email', 'email')(required='')
+                +amma-error-wrapper(scope, 'email')
+                    +amma-error-item('required') Please enter your email
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'contactNumber', 'Contact Number')(required='')
+                +amma-error-wrapper(scope, 'contactNumber')
+                    +amma-error-item('required') Please enter your contact number
+
+
+        div(layout='row', flex='', ng-if='!' + scope.controllerAlias + '.id')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'password', 'Password', 'password')(required='')
+                +amma-error-wrapper(scope, 'password')
+                    +amma-error-item('required') Please enter your password
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'rePassword', 'Re-enter Password', 'password', scope.controllerAlias + '.model.internal.rePassword' )(required='', passwordMatch='password')
+                +amma-error-wrapper(scope, 'rePassword')
+                    +amma-error-item('required') Please re-enter your password
+                    +amma-error-item('passwordMatch') Password did not match
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-select(scope, 'gender', 'Gender')(required='')
+                    md-option(value='male')
+                        | Male
+                    md-option(value='female')
+                        | Female
+                    md-option(value='other')
+                        | Other
+                +amma-error-wrapper(scope, 'gender')
+                    +amma-error-item('required') Please select gender
+
+            +amma-datepicker(scope,'dob','Enter Dob')('md-max-date'=scope.controllerAlias + '.maxDob')
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-select(scope, 'store', 'Store', scope.controllerAlias + '.model.available.store.name' )(required='')
+                    md-option(value='')
+                    md-option(ng-repeat='store in ' + scope.controllerAlias + '.stores',  ng-value='store._id')
+                        | {{store.title}}
+                +amma-error-wrapper(scope, 'store')
+                    +amma-error-item('required') Please select store
+                div(flex)
+                    +amma-checkbox(scope, 'availableToChildren', 'Is Available to sub stores?', scope.controllerAlias + '.model.available.store.availableToChildren')
+            +amma-form-item-container(scope)
+                +amma-select(scope, 'userGroup', 'User Group' )(required='')
+                    md-option(value='')
+                    md-option(ng-repeat='userGroup in ' + scope.controllerAlias + '.userGroups',  ng-value='userGroup._id', required)
+                        | {{userGroup.title}}
+                +amma-error-wrapper(scope, 'userGroup')
+                    +amma-error-item('required') Please select a user group
+
+        div(layout='row')
+            div(layout='row', flex='50')
+                +amma-checkbox(scope, 'isActive', 'Is Active?')
+
+    section
+        h2 Upload Profile Pic
+        +amma-file-upload(scope, 'profilePicToken', 'Select avatar', 'profile', 'image')(ngf-pattern="'image/*'",ngf-accept="'image/*'",ngf-max-size="2MB")
+
+    section(flex='', layout='column')
+        h2 Address
+        +amma-address(scope, scope.controllerAlias + '.model.address')

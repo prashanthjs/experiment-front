@@ -21,8 +21,8 @@ var AmmaCommon;
                     url: url
                 });
             };
-            FileUploadService.prototype.getFilesList = function (type, token) {
-                var url = this.resolveUrl(this.getListUrl, { type: type, token: token });
+            FileUploadService.prototype.getFilesList = function (type, token, canceler) {
+                var url = this.resolveUrl(this.getListUrl, { type: type, token: token, timeout: canceler.promise });
                 return this.httpService({
                     method: 'GET',
                     url: url

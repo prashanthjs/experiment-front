@@ -4,20 +4,24 @@ module AmmaUser.List {
     import UserGridService = AmmaUser.Common.UserGridService;
     import UserRestService = AmmaUser.Common.UserRestService;
     import UserCommandService = AmmaUser.Common.UserCommandService;
-    export class UserListController extends BaseController {
+    import ListController = AmmaCommon.Common.ListController;
 
-        public gridOptions:Object;
+    export class UserListController extends ListController {
+
+        protected $state;
+        public gridOptions: Object;
         public grid;
-        public commandService:UserCommandService;
+        public commandService: UserCommandService;
+        public viewRoute = '';
+
 
         /* @ngInject */
-        constructor(AmmaUserGridService:UserGridService, AmmaUserCommandService:UserCommandService, AmmaMessageService) {
-            super(AmmaMessageService);
-            this.gridOptions = AmmaUserGridService.getGridOptions();
-            this.commandService = AmmaUserCommandService;
+        constructor(AmmaUserGridService: UserGridService, AmmaUserCommandService: UserCommandService, AmmaMessageService, $state) {
+            super(AmmaUserGridService, AmmaUserCommandService, AmmaMessageService, $state);
+            this.viewRoute = 'triangular.amma-user-view';
         }
 
-        edit(id:string, event) {
+        edit(id: string, event) {
             const promise = this.commandService.openForm(id, event);
             promise.then(()=> {
                 this.grid.dataSource.read();
@@ -28,6 +32,10 @@ module AmmaUser.List {
 
         create(event) {
             this.edit(null, event);
+        }
+
+        view(id: string, event) {
+            this.$state.go(this.viewRoute, {id: id});
         }
 
         remove(id, $event) {

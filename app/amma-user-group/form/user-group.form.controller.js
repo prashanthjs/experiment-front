@@ -11,8 +11,8 @@ var AmmaUserGroup;
         var UserGroupFormController = (function (_super) {
             __extends(UserGroupFormController, _super);
             /* @ngInject */
-            function UserGroupFormController(id, $mdDialog, $scope) {
-                _super.call(this, id, $mdDialog, $scope);
+            function UserGroupFormController(id, $mdDialog, $scope, $rootScope, USER_GROUP_FORM_EVENT_NAME) {
+                _super.call(this, id, $mdDialog, $scope, $rootScope, USER_GROUP_FORM_EVENT_NAME);
             }
             return UserGroupFormController;
         }(FormBaseController));

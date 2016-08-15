@@ -5,12 +5,13 @@ var AmmaCommon;
         var Content;
         (function (Content) {
             /** @ngInject */
-            function ContentDirective() {
+            function ContentDirective($parse) {
                 return {
                     restrict: 'E',
-                    scope: {
-                        ammaContentEvent: '@',
-                        ammaContentData: '='
+                    link: function (scope, el, attrs, controller) {
+                        scope.ammaContentEvent = attrs.ammaContentEvent;
+                        scope.ammaContentData = $parse(attrs.ammaContentData)(scope);
+                        controller.prepareContent();
                     },
                     templateUrl: 'app/amma-common/directives/content/content.tmpl.html',
                     controller: ContentController,
@@ -20,17 +21,34 @@ var AmmaCommon;
             Content.ContentDirective = ContentDirective;
             var ContentController = (function () {
                 /** @ngInject */
-                function ContentController($scope, AmmaContentService) {
+                function ContentController($scope, $rootScope, AmmaContentService, $mdUtil) {
                     this.content = [];
                     this.$scope = $scope;
                     this.contentService = AmmaContentService;
-                    this.eventName = this.$scope.ammaContentEvent;
-                    this.data = this.$scope.ammaContentData;
-                    this.prepareContent();
-                    this.$scope.ammaContentData = this.data;
+                    this.$mdUtil = $mdUtil;
+                    this.$rootScope = $rootScope;
                 }
                 ContentController.prototype.prepareContent = function () {
-                    this.content = this.contentService.get(this.eventName);
+                    var _this = this;
+                    var data = this.$scope.ammaContentData;
+                    var eventName = this.$scope.ammaContentEvent;
+                    var loadingIncludeCount = 0;
+                    this.$scope.$on("$includeContentRequested", function () {
+                        loadingIncludeCount++;
+                    });
+                    this.$scope.$on("$includeContentLoaded", function () {
+                        loadingIncludeCount--;
+                        if (loadingIncludeCount <= 0) {
+                            _this.$rootScope.$emit(eventName + '.init', data);
+                        }
+                    });
+                    this.$scope.$on("$includeContentError", function () {
+                        loadingIncludeCount--;
+                        if (loadingIncludeCount <= 0) {
+                            _this.$rootScope.$emit(eventName + '.init', data);
+                        }
+                    });
+                    this.content = this.contentService.get(eventName + '.template');
                 };
                 return ContentController;
             }());

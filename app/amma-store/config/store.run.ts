@@ -12,10 +12,6 @@ module AmmaStore.Config {
              templateUrl: '/app/amma-store/form/main/store.form.main.tmpl.html',
              priority: 0,
          });
-         // data.content.push({
-         //     templateUrl: '/app/amma-store/form/test.tmpl.html',
-         //     priority: 10
-         // })
      });
     }
 }
