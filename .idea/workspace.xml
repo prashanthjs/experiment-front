@@ -2,99 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2897bbba-8743-4dd9-a08f-ad6e200811bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/gallery.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/view.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/common.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/gallery.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/list-command-view.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/list-command.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/list.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/main-form.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/mixins.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/tab-form.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/services/gallery.command.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-store/form/store.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-store/list/store.list.command.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-store/list/store.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/list/user.list.command.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/list/user.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.pug" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-store/form/store.form.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-store/form/test.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-store/list/store.list.command.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-store/list/store.list.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-user/list/user.list.command.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amma-user/list/user.list.tmpl.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/index/config.date.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.command.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.command.tmpl.pug" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.jade" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/index/config.date.ts" afterPath="$PROJECT_DIR$/app/amma-common/config/date.config.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/form.base.controller.js" afterPath="$PROJECT_DIR$/app/amma-common/common/form.base.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/form.base.controller.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/form.base.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/form.content.controller.js" afterPath="$PROJECT_DIR$/app/amma-common/common/form.content.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/form.content.controller.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/form.content.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/list.controller.js" afterPath="$PROJECT_DIR$/app/amma-common/common/list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/list.controller.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/list.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/directives/content/content.directive.js" afterPath="$PROJECT_DIR$/app/amma-common/directives/content/content.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/directives/content/content.directive.ts" afterPath="$PROJECT_DIR$/app/amma-common/directives/content/content.directive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/directives/file/file.directive.js" afterPath="$PROJECT_DIR$/app/amma-common/directives/file/file.directive.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/directives/file/file.directive.ts" afterPath="$PROJECT_DIR$/app/amma-common/directives/file/file.directive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/services/file-upload.service.js" afterPath="$PROJECT_DIR$/app/amma-common/services/file-upload.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/services/file-upload.service.ts" afterPath="$PROJECT_DIR$/app/amma-common/services/file-upload.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/config/store.constants.js" afterPath="$PROJECT_DIR$/app/amma-store/config/store.constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/config/store.constants.ts" afterPath="$PROJECT_DIR$/app/amma-store/config/store.constants.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/config/store.run.js" afterPath="$PROJECT_DIR$/app/amma-store/config/store.run.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/config/store.run.ts" afterPath="$PROJECT_DIR$/app/amma-store/config/store.run.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.controller.js" afterPath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.controller.ts" afterPath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/form/store.form.controller.js" afterPath="$PROJECT_DIR$/app/amma-store/form/store.form.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/form/store.form.controller.ts" afterPath="$PROJECT_DIR$/app/amma-store/form/store.form.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/list/store.list.controller.js" afterPath="$PROJECT_DIR$/app/amma-store/list/store.list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/list/store.list.controller.ts" afterPath="$PROJECT_DIR$/app/amma-store/list/store.list.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/config/user-group.constants.js" afterPath="$PROJECT_DIR$/app/amma-user-group/config/user-group.constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/config/user-group.constants.ts" afterPath="$PROJECT_DIR$/app/amma-user-group/config/user-group.constants.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.controller.js" afterPath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.controller.js" afterPath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.js" afterPath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/common/user.command.service.js" afterPath="$PROJECT_DIR$/app/amma-user/common/user.command.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/common/user.command.service.ts" afterPath="$PROJECT_DIR$/app/amma-user/common/user.command.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/common/user.rest.service.js" afterPath="$PROJECT_DIR$/app/amma-user/common/user.rest.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/common/user.rest.service.ts" afterPath="$PROJECT_DIR$/app/amma-user/common/user.rest.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.config.js" afterPath="$PROJECT_DIR$/app/amma-user/config/user.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.config.ts" afterPath="$PROJECT_DIR$/app/amma-user/config/user.config.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.constants.js" afterPath="$PROJECT_DIR$/app/amma-user/config/user.constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.constants.ts" afterPath="$PROJECT_DIR$/app/amma-user/config/user.constants.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.run.js" afterPath="$PROJECT_DIR$/app/amma-user/config/user.run.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.run.ts" afterPath="$PROJECT_DIR$/app/amma-user/config/user.run.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.js" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug" afterPath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/user.form.controller.js" afterPath="$PROJECT_DIR$/app/amma-user/form/user.form.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/user.form.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user/form/user.form.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/list/user.list.controller.js" afterPath="$PROJECT_DIR$/app/amma-user/list/user.list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/list/user.list.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user/list/user.list.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/config.route.js" afterPath="$PROJECT_DIR$/app/index/config.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/index.css" afterPath="$PROJECT_DIR$/app/index/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/index.scss" afterPath="$PROJECT_DIR$/app/index/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/tsd.d.ts" afterPath="$PROJECT_DIR$/typings/tsd.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.js" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/index.module.js" afterPath="$PROJECT_DIR$/app/index/index.module.js" />
     </list>
     <ignored path="experiment-front.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,11 +31,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="user.view.controller.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="user.form.main.controller.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-300">
+                  <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.view.controller.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="57" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="57" />
+                <state relative-caret-position="390">
+                  <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
                   <folding />
                 </state>
               </provider>
@@ -151,16 +76,50 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="225">
                   <caret line="15" column="21" selection-start-line="14" selection-start-column="7" selection-end-line="15" selection-end-column="21" />
+                  <folding>
+                    <marker date="1471226107000" expanded="true" signature="410:789" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user-group.list.controller.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="300">
+                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                  <folding>
+                    <marker date="1471226210000" expanded="true" signature="454:748" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.module.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/index/index.module.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user-group.list.controller.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.ts">
+          <file leaf-file-name="user.form.change.password.tmpl.pug" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="164" selection-start-line="18" selection-start-column="150" selection-end-line="18" selection-end-column="164" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.form.main.tmpl.pug" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="48" column="164" selection-start-line="48" selection-start-column="164" selection-end-line="48" selection-end-column="164" />
                   <folding />
                 </state>
               </provider>
@@ -171,46 +130,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="30">
                   <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="list-command.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/list-command.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="list-command-view.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/list-command-view.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.view.tmpl.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1860">
-                  <caret line="124" column="101" selection-start-line="124" selection-start-column="101" selection-end-line="124" selection-end-column="101" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="view.controller.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/view.controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-154">
-                  <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -330,7 +249,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/amma-common/common/views/common.pug" />
         <option value="$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.html" />
         <option value="$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.pug" />
         <option value="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.html" />
@@ -361,7 +279,6 @@
         <option value="$PROJECT_DIR$/app/amma-common/config/date.config.ts" />
         <option value="$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts" />
-        <option value="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" />
         <option value="$PROJECT_DIR$/app/amma-common/common/gallery.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-common/services/gallery.command.service.ts" />
         <option value="$PROJECT_DIR$/app/amma-common/common/views/gallery.tmpl.pug" />
@@ -371,9 +288,7 @@
         <option value="$PROJECT_DIR$/app/amma-common/common/views/main-form.pug" />
         <option value="$PROJECT_DIR$/app/amma-common/common/form.base.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.pug" />
-        <option value="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug" />
         <option value="$PROJECT_DIR$/app/amma-common/common/view.controller.ts" />
-        <option value="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-common/common/views/list-command.pug" />
         <option value="$PROJECT_DIR$/app/amma-common/common/views/list-command-view.pug" />
         <option value="$PROJECT_DIR$/app/amma-user/list/user.list.command.tmpl.pug" />
@@ -381,6 +296,10 @@
         <option value="$PROJECT_DIR$/app/amma-user/list/user.list.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-store/list/store.list.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.ts" />
+        <option value="$PROJECT_DIR$/app/index/index.module.js" />
+        <option value="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug" />
+        <option value="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" />
+        <option value="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" />
       </list>
     </option>
   </component>
@@ -526,24 +445,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -566,59 +467,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="amma-user-group" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-user-group" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="list" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-user-group" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="form" />
+              <option name="myItemId" value="index" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -991,350 +840,6 @@
               <option name="myItemId" value="experiment-front" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="list-command.pug" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="experiment-front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-cart-frontv3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amma-util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -1477,7 +982,7 @@
       <workItem from="1470779829780" duration="7856000" />
       <workItem from="1470860967904" duration="6595000" />
       <workItem from="1470870049953" duration="1683000" />
-      <workItem from="1471162681356" duration="21934000" />
+      <workItem from="1471162681356" duration="22442000" />
     </task>
     <task id="LOCAL-00001" summary="new structure">
       <created>1468243068861</created>
@@ -1490,7 +995,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220984000" />
+    <option name="totallyTimeSpent" value="221492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1503,14 +1008,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825205" sideWeight="0.53833866" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825205" sideWeight="0.46166134" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28150406" sideWeight="0.4685836" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28150406" sideWeight="0.4685836" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22630458" sideWeight="0.5385779" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
@@ -1599,14 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index/index.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1783,14 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-common/common/form.base.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1823,14 +1312,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1851,14 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1935,14 +1408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-common/common/base.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1971,14 +1436,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="21" selection-start-line="14" selection-start-column="7" selection-end-line="15" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1471226107000" expanded="true" signature="410:789" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-user-group/list/user-group.list.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="300">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1471226210000" expanded="true" signature="454:748" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index/index.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="164" selection-start-line="18" selection-start-column="150" selection-end-line="18" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="48" column="164" selection-start-line="48" selection-start-column="164" selection-end-line="48" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
           <folding />
         </state>
       </provider>

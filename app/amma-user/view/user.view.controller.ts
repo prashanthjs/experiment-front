@@ -25,7 +25,6 @@ module AmmaUser.View {
                 this.galleryCommandService.get(this.uploadType, this.model.profilePicToken, null)
                     .then((response)=> {
                         this.images = response.data.files;
-                        console.log(this.images);
                     }, (error)=> {
                         this.messageService.displayErrorMessage('Cannot load images' + error.data.message, error);
                     });

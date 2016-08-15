@@ -46,7 +46,7 @@ block formContent
                     +amma-error-item('required') Please enter your password
 
             +amma-form-item-container(scope)
-                +amma-input(scope, 'rePassword', 'Re-enter Password', 'password', scope.controllerAlias + '.model.internal.rePassword' )(required='', passwordMatch='password')
+                +amma-input(scope, 'rePassword', 'Re-enter Password', 'password', scope.controllerAlias + '.model.internal.rePassword' )(required='', match-password='password')
                 +amma-error-wrapper(scope, 'rePassword')
                     +amma-error-item('required') Please re-enter your password
                     +amma-error-item('passwordMatch') Password did not match

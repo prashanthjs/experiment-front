@@ -24,7 +24,6 @@ var AmmaUser;
                     this.galleryCommandService.get(this.uploadType, this.model.profilePicToken, null)
                         .then(function (response) {
                         _this.images = response.data.files;
-                        console.log(_this.images);
                     }, function (error) {
                         _this.messageService.displayErrorMessage('Cannot load images' + error.data.message, error);
                     });
