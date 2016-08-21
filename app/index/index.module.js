@@ -27,7 +27,11 @@
             'amma-common',
             'amma-store',
             'amma-user-group',
-            'amma-user'
+            'amma-user',
+            'amma-category',
+            'amma-product',
+            'amma-tag',
+            'amma-feature'
         ])
 
         // set a constant for the API we are connecting to

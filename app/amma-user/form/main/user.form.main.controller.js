@@ -13,13 +13,15 @@ var AmmaUser;
             var UserFormMainController = (function (_super) {
                 __extends(UserFormMainController, _super);
                 /* @ngInject */
-                function UserFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserCommandService, AmmaUserGroupCommandService, AmmaStoreCommandService, $q, $mdUtil, $rootScope, USER_FORM_EVENT_NAME) {
+                function UserFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserCommandService, AmmaUserGroupCommandService, AmmaStoreCommandService, $q, $mdUtil, $rootScope, USER_FORM_EVENT_NAME, USER_PROFILE_IMAGE_TYPE) {
                     _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserCommandService, $rootScope, USER_FORM_EVENT_NAME);
+                    this.imageType = '';
                     this.userGroupCommandService = AmmaUserGroupCommandService;
                     this.storeCommandService = AmmaStoreCommandService;
                     this.$q = $q;
                     this.$mdUtil = $mdUtil;
                     this.maxDob = new Date();
+                    this.imageType = USER_PROFILE_IMAGE_TYPE;
                 }
                 UserFormMainController.prototype.handleInit = function () {
                     var _this = this;

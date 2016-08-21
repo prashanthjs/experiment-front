@@ -4,16 +4,15 @@ module AmmaUser.View {
     import UserCommandService = AmmaUser.Common.UserCommandService;
     import GalleryCommandService = AmmaCommon.Services.GalleryCommandService;
     import CommandService = AmmaCommon.Common.CommandService;
-    import ViewController = AmmaCommon.Common.ViewController;
+    import ViewMainController = AmmaCommon.Common.ViewMainController;
 
-    export class UserViewController extends ViewController {
+    export class UserViewController extends ViewMainController {
 
-        protected uploadType = 'image';
-
+        protected uploadType = 'userProfile';
 
         /* @ngInject */
-        constructor(AmmaUserCommandService: UserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService: GalleryCommandService, $state) {
-            super(AmmaUserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state);
+        constructor(AmmaUserCommandService: UserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService: GalleryCommandService, $state, $rootScope, $scope, USER_CONTENT_EVENT_NAME) {
+            super(AmmaUserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state, $rootScope, $scope, USER_CONTENT_EVENT_NAME);
             this.listRoute = 'triangular.amma-user-list';
             this.viewRoute = 'triangular.amma-user-view';
 

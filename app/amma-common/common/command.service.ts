@@ -2,9 +2,9 @@ module AmmaCommon.Common {
     import EventEmitterService = AmmaCommon.Services.EventEmitterService;
     export class CommandService {
 
-        protected eventName:string;
-        protected restService:RestService;
-        protected eventEmitterService:EventEmitterService;
+        protected eventName: string;
+        protected restService: RestService;
+        protected eventEmitterService: EventEmitterService;
         protected $q;
         protected postGetListEventName = 'post-get-list';
         protected postGetIdEventName = 'post-get-id';
@@ -16,17 +16,17 @@ module AmmaCommon.Common {
         protected postSaveEventName = 'post-save';
 
         /* @ngInject */
-        constructor(restService:RestService, eventEmitterService:EventEmitterService, $q:ng.IQService, eventName:string) {
+        constructor(restService: RestService, eventEmitterService: EventEmitterService, $q: ng.IQService, eventName: string) {
             this.restService = restService;
             this.eventName = eventName;
             this.$q = $q;
             this.eventEmitterService = eventEmitterService;
         }
 
-        getList = (data = {}):ng.IPromise<any> => {
+        getList = (data = {}): ng.IPromise<any> => {
             const defer = this.$q.defer();
             const dataPromise = this.restService.getList(data);
-            dataPromise.then((resp:any) => {
+            dataPromise.then((resp: any) => {
                 this.eventEmitterService.emit(this.getEventName(this.postGetListEventName), resp, (err, response)=> {
                     if (err) {
                         defer.reject(err);
@@ -35,16 +35,36 @@ module AmmaCommon.Common {
                         defer.resolve(response);
                     }
                 });
-            }, (resp:any) => {
+            }, (resp: any) => {
                 defer.reject(resp);
             });
             return defer.promise;
         };
 
-        getById(id:string):ng.IPromise<any> {
+        search = (text, limit = 5) => {
+
+            const data = {
+                filter: {
+                    logic: "and",
+                    filters: [{
+                        "field": "_id",
+                        "operator": "contains",
+                        "value": text
+                    }],
+                },
+                page: 1,
+                pageSize: limit,
+                skip: 0,
+                take: limit
+            };
+            console.log(this.restService);
+            return this.getList(data);
+        };
+
+        getById(id: string): ng.IPromise<any> {
             const defer = this.$q.defer();
             const dataPromise = this.restService.getById(id);
-            dataPromise.then((resp:any) => {
+            dataPromise.then((resp: any) => {
                 this.eventEmitterService.emit(this.getEventName(this.postGetIdEventName), resp, (err, response)=> {
                     if (err) {
                         defer.reject(err);
@@ -54,17 +74,17 @@ module AmmaCommon.Common {
                         defer.resolve(response);
                     }
                 });
-            }, (resp:any) => {
+            }, (resp: any) => {
                 defer.reject(resp);
             });
             return defer.promise;
         }
 
-        removeById(id:string):ng.IPromise<any> {
+        removeById(id: string): ng.IPromise<any> {
             const defer = this.$q.defer();
             const dataPromise = this.restService.removeById(id);
 
-            dataPromise.then((resp:any) => {
+            dataPromise.then((resp: any) => {
                 this.eventEmitterService.emit(this.postRemoveEventName, {
                     _id: id,
                     response: resp
@@ -76,13 +96,13 @@ module AmmaCommon.Common {
                         defer.resolve(response);
                     }
                 });
-            }, (resp:any) => {
+            }, (resp: any) => {
                 defer.reject(resp);
             });
             return defer.promise;
         }
 
-        save(model:any):ng.IPromise<any> {
+        save(model: any): ng.IPromise<any> {
             let isNew = true;
             if (model.put) {
                 isNew = false;
@@ -99,7 +119,7 @@ module AmmaCommon.Common {
                     let q;
                     q = this.restService.save(reformattedModel, isNew);
 
-                    q.then((response:any)=> {
+                    q.then((response: any)=> {
                         // internal is used as temp;
                         if (!reformattedModel.internal) {
                             reformattedModel.internal = {};
@@ -126,11 +146,11 @@ module AmmaCommon.Common {
             return this.eventName + '-' + name;
         }
 
-        openForm(id:string, ev:any):ng.IPromise<any> {
-           return;
+        openForm(id: string, ev: any): ng.IPromise<any> {
+            return;
         }
 
-        removeDialog(id:string, event):ng.IPromise<any> {
+        removeDialog(id: string, event): ng.IPromise<any> {
             return
         }
 

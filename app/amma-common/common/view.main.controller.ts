@@ -3,32 +3,41 @@ module AmmaCommon.Common {
     import GalleryCommandService = AmmaCommon.Services.GalleryCommandService;
     import CommandService = AmmaCommon.Common.CommandService;
 
-    export class ViewController extends BaseController {
+    export class ViewMainController extends BaseController {
 
         protected params;
         public commandService: CommandService;
-        public id;
         public model;
         public images;
         protected galleryCommandService: GalleryCommandService;
         protected $state;
         public viewRoute = '';
         public listRoute = '';
+        public eventName;
+        protected $rootScope;
+        protected $scope;
+        public eventData;
 
         /* @ngInject */
-        constructor(CommandService , AmmaMessageService, $stateParams, GalleryCommandService, $state) {
+        constructor(CommandService, AmmaMessageService, $stateParams, GalleryCommandService, $state, $rootScope, $scope, eventName) {
             super(AmmaMessageService);
             this.commandService = CommandService;
             this.params = $stateParams;
-            this.id = $stateParams.id;
+            this.eventData = $stateParams;
             this.galleryCommandService = GalleryCommandService;
             this.$state = $state;
+            this.eventName = eventName;
+            this.$rootScope = $rootScope;
+            this.$scope = $scope;
             this.load();
+            this.registerEvents();
         }
 
         load() {
-            this.commandService.getById(this.id).then((response)=> {
+            this.commandService.getById(this.eventData.id).then((response)=> {
                 this.model = response;
+                this.eventData.model = this.model;
+                this.notify(this.eventData);
                 this.afterLoad();
             }, (error)=> {
                 this.messageService.displayErrorMessage('Cannot load user' + error.data.message, error);
@@ -40,7 +49,7 @@ module AmmaCommon.Common {
         }
 
         edit($event) {
-            const promise = this.commandService.openForm(this.id, $event);
+            const promise = this.commandService.openForm(this.eventData.id, $event);
             promise.then(()=> {
                 this.load();
             }, ()=> {
@@ -51,7 +60,6 @@ module AmmaCommon.Common {
         create($event) {
             const promise = this.commandService.openForm(null, $event);
             promise.then((response)=> {
-                console.log(response);
                 if (response && response.data && response.data.id) {
                     this.$state.go(this.viewRoute, {id: response.data.id});
                 }
@@ -61,7 +69,7 @@ module AmmaCommon.Common {
         }
 
         remove($event) {
-            const promise = this.commandService.removeDialog(this.id, $event);
+            const promise = this.commandService.removeDialog(this.eventData.id, $event);
             promise.then(()=> {
                 this.$state.go(this.listRoute);
             }, (error)=> {
@@ -73,6 +81,46 @@ module AmmaCommon.Common {
 
         openImage(image, $event) {
             this.galleryCommandService.open(this.images, image, $event);
+        }
+
+        registerEvents() {
+            let unbindInitFunc = this.$rootScope.$on(this.eventName + '.init', (event, data)=> {
+                this.eventData = data;
+                this.handleInit();
+            });
+
+            let unbindDataFunc = this.$rootScope.$on(this.eventName + '.data', (event, data)=> {
+                this.eventData = data;
+                this.handleDataChange();
+            });
+
+            let unbindReloadDataFunc = this.$rootScope.$on(this.eventName + '.reload', (event, data)=> {
+                this.eventData = data;
+                this.handleReload();
+            });
+
+            this.$scope.$on('$destroy', () => {
+                unbindInitFunc();
+                unbindDataFunc();
+                unbindReloadDataFunc();
+            });
+        }
+
+
+        notify(data) {
+            this.$rootScope.$emit(this.eventName + '.data', data);
+        }
+
+        handleInit() {
+
+        }
+
+        handleDataChange() {
+
+        }
+
+        handleReload(){
+            this.load();
         }
     }
 }

@@ -12,6 +12,13 @@ section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='colum
                 div(flex='20')
                     md-switch.md-primary.margin-0(ng-model=scope.controllerAlias + '.model.isActive', aria-label='isActive?', ng-disabled='true')
     section(flex='', layout='row')
+        md-card(flex='30')
+            h2.md-title.left-padding Profile
+            md-divider
+            md-card-content
+                div
+                    img(ng-repeat='image in ' + scope.controllerAlias + '.images', ng-click=scope.controllerAlias + '.openImage(image, $event)', src="{{image.url}}", style="cursor:pointer")
+
         md-card(flex='')
             h2.md-title.left-padding Details
             md-divider
@@ -108,22 +115,13 @@ section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='colum
                                             .md-body-2
                                                 ='{{' + scope.controllerAlias + '.model.contactNumber}}'
                                     md-divider
-    section
-        div(layout='column')
-            md-card(layout='column', flex='')
-                div(flex='2')
-                    h2.md-title.left-padding Images
-                    md-divider
-                md-card-content(flex='90', layout='column')
-                    md-grid-list(flex='', md-cols='9', md-cols-xs='9', md-row-height='4:3', md-gutter='10px')
-                        md-grid-tile(md-rowspan='1', md-colspan='1', ng-repeat='image in ' + scope.controllerAlias + '.images', ng-click=scope.controllerAlias + '.openImage(image, $event)', ng-style="{ 'background-image': 'url(' + image.url + ')', 'background-size' : 'cover', 'cursor':'pointer' }", layout-padding='10')
-
+    amma-content(amma-content-event=controllerAlias + '.eventName', amma-content-data=controllerAlias + '.eventData')
 .bottom-right
     md-button.md-fab.md-warn(aria-label='create', ng-click=scope.controllerAlias + '.create($event)')
         md-icon(md-font-icon='zmdi zmdi-plus')
 
-    md-button.md-fab.md-accent(aria-label='list', ui-sref='{{'+scope.controllerAlias +'.listRoute}}')
-            md-icon(md-font-icon='fa fa-table')
+    md-button.md-fab.md-accent(aria-label='list', ui-sref='{{' + scope.controllerAlias + '.listRoute}}')
+        md-icon(md-font-icon='fa fa-table')
 
     md-button.md-fab.md-warn.md-hue-2(aria-label='Remove', ng-click=scope.controllerAlias + '.remove($event)')
         md-icon(md-font-icon='fa fa-times')

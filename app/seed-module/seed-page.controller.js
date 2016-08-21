@@ -4,6 +4,7 @@ var seedModule;
         /* @ngInject */
         function SeedPageController($state, dataService) {
             this.testData = ['triangular', 'is', 'great'];
+            this.category = [];
             dataService.test();
         }
         return SeedPageController;

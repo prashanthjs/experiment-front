@@ -17,17 +17,20 @@ var AmmaCommon;
                 this.commandService = CommandService;
                 this.$state = $state;
             }
-            ListController.prototype.edit = function (id, event) {
+            ListController.prototype.edit = function (id, $event) {
                 var _this = this;
-                var promise = this.commandService.openForm(id, event);
+                if ($event) {
+                    $event.preventDefault();
+                }
+                var promise = this.commandService.openForm(id, $event);
                 promise.then(function () {
                     _this.grid.dataSource.read();
                 }, function () {
                     _this.grid.dataSource.read();
                 });
             };
-            ListController.prototype.create = function (event) {
-                this.edit(null, event);
+            ListController.prototype.create = function ($event) {
+                this.edit(null, $event);
             };
             ListController.prototype.view = function (id, event) {
                 this.$state.go(this.viewRoute, { id: id });

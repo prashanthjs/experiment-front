@@ -93,8 +93,8 @@ gulp.task('inject', ['styles', 'bundle'], function () {
 
 gulp.task('bundle', function () {
     // Single point of entry (make sure not to src ALL your files, browserify will figure it out for you)
-    gulp.src(['app/**/*.module.js', 'app/**/*.config.js', 'app/**/*.js' ])
-        // Bundle to a single file
+    gulp.src(['app/index/*.module.js', 'app/amma-common/*.module.js', 'app/**/*.module.js', 'app/index/**/*.config.js', 'app/amma-common/**/*.config.js', 'app/**/*.config.js', 'app/index/**/*.js', 'app/amma-common/**/*.js', 'app/**/*.js'])
+    // Bundle to a single file
         .pipe(concat('main.js'))
         // Output it to our dist folder
         .pipe(gulp.dest('dist/js'));
@@ -102,10 +102,10 @@ gulp.task('bundle', function () {
 
 
 gulp.task('watch', function () {
-    gulp.watch(['app/**/*.scss', 'app/**/*.js', 'app/**/*.tmpl.html', 'app/**/*.json'], ['bundle','inject']);
+    gulp.watch(['app/**/*.scss', 'app/**/*.js', 'app/**/*.tmpl.html', 'app/**/*.json'], ['bundle', 'inject']);
 });
 
-gulp.task('serve', ['styles','bundle','watch'], function () {
+gulp.task('serve', ['styles', 'bundle', 'watch'], function () {
     process.stdout.write('Starting browserSync and superstatic...\n');
     browserSync({
         port: 3000,

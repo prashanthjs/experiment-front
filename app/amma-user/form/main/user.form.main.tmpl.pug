@@ -89,7 +89,7 @@ block formContent
 
     section
         h2 Upload Profile Pic
-        +amma-file-upload(scope, 'profilePicToken', 'Select avatar', 'profile', 'image')(ngf-pattern="'image/*'",ngf-accept="'image/*'",ngf-max-size="2MB")
+        +amma-file-upload(scope, 'profilePicToken', 'Select avatar', 'profile', '{{'+scope.controllerAlias +'.imageType}}')(ngf-pattern="'image/*'",ngf-accept="'image/*'",ngf-max-size="2MB")
 
     section(flex='', layout='column')
         h2 Address

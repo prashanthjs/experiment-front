@@ -1,0 +1,145 @@
+extends ../../../amma-common/common/views/tab-form
+
+block vars
+    - var scope = {controller:'AmmaProductFormMainController', controllerAlias:'ammaProductFormMainController', formName: 'ammaProductMainForm'};;
+
+block title
+    | Main
+
+block formContent
+    section(layout='column', flex='')
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'id', 'ID', null,scope.controllerAlias + '.model._id')(required='', ng-disabled='!!' + scope.controllerAlias + '.id')
+                +amma-error-wrapper(scope, 'id')
+                    +amma-error-item('required') Please enter id
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'title', 'Title')(required='')
+                +amma-error-wrapper(scope, 'title')
+                    +amma-error-item('required') Please enter title
+
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)(flex='50')
+                +amma-input(scope, 'sku', 'SKU')(required='')
+                +amma-error-wrapper(scope, 'sku')
+                    +amma-error-item('required') Please enter SKU
+
+
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'sellPrice', 'Sell price', 'number', scope.controllerAlias + '.model.price.sell')(required='', min='0')
+                +amma-error-wrapper(scope, 'sellPrice')
+                    +amma-error-item('required') Please enter sell price
+                    +amma-error-item('min') Invalid sell price
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'costPrice', 'Cost price', 'number', scope.controllerAlias + '.model.price.cost')(min='0')
+                +amma-error-wrapper(scope, 'costPrice')
+                    +amma-error-item('min') Invalid cost price
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'listPrice', 'List price', 'number', scope.controllerAlias + '.model.price.list')(min='0')
+                +amma-error-wrapper(scope, 'listPrice')
+                    +amma-error-item('min') Invalid list price
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-categories(scope, 'categories', 'Categories')(amma-cards-min-length="1")
+                +amma-error-wrapper(scope, 'categories')
+                    +amma-error-item('amma-cards-min-length') Please select a category
+
+
+    section
+        h3 Upload Images
+        div(layout='row', flex='')
+            +amma-file-upload(scope, 'imageToken', 'Select Images', 'productToken', '{{' + scope.controllerAlias + '.imageType}}')(ngf-pattern="'image/*'",ngf-accept="'image/*'",ngf-max-size="2MB")
+
+    section
+        h3 Inventory
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'stock', 'In Stock','number', null,scope.controllerAlias + '.model.inventory.stock')(required='', min='-1')
+                +amma-error-wrapper(scope, 'stock')
+                    +amma-error-item('required') Please enter stock
+                    +amma-error-item('min') Invalid stock
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'quantityStep', 'Quantity step','number', null,scope.controllerAlias + '.model.inventory.quantity.step')(required='', min='1')
+                +amma-error-wrapper(scope, 'quantityStep')
+                    +amma-error-item('required') Please enter quantity step
+                    +amma-error-item('min') Invalid Quantity step
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'quantityMin', 'Minimum quantity','number', null,scope.controllerAlias + '.model.inventory.quantity.min')(required='', min='1')
+                +amma-error-wrapper(scope, 'quantityMin')
+                    +amma-error-item('required') Please enter minimum quantity
+                    +amma-error-item('min') Invalid quantity
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'quantityMax', 'Maximum quantity','number', null,scope.controllerAlias + '.model.inventory.quantity.max')(required='', min='-1')
+                +amma-error-wrapper(scope, 'quantityStep')
+                    +amma-error-item('required') Please enter maximum quantity
+                    +amma-error-item('min') Invalid quantity
+
+    section
+        h3 Shipping
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'weight', 'Weight','number', null,scope.controllerAlias + '.model.shipping.weight')(required='', min='0')
+                +amma-error-wrapper(scope, 'weight')
+                    +amma-error-item('required') Please enter weight
+                    +amma-error-item('min') Invalid weight
+
+            +amma-form-item-container(scope)
+                md-switch.md-primary(ng-model=scope.controllerAlias + '.model.shipping.freeShipping', aria-label='Is Free shipping?')
+                    | Free Shipping?
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'boxLength', 'Box length','number', null,scope.controllerAlias + '.model.inventory.box.length')(required='', min='0')
+                +amma-error-wrapper(scope, 'boxLength')
+                    +amma-error-item('required') Please enter box length
+                    +amma-error-item('min') Invalid box length
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'boxWidth', 'Box width','number', null,scope.controllerAlias + '.model.inventory.box.width')(required='', min='0')
+                +amma-error-wrapper(scope, 'boxWidth')
+                    +amma-error-item('required') Please enter box width
+                    +amma-error-item('min') Invalid box width
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'boxHeight', 'Box height','number', null,scope.controllerAlias + '.model.inventory.box.height')(required='', min='0')
+                +amma-error-wrapper(scope, 'boxHeight')
+                    +amma-error-item('required') Please enter box height
+                    +amma-error-item('min') Invalid box height
+    section
+        h3 Available
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-stores(scope, 'stores', 'Stores', scope.controllerAlias + '.model.available.store.name')(amma-cards-min-length="1")
+                +amma-error-wrapper(scope, 'stores')
+                    +amma-error-item('amma-cards-min-length') Please select stores
+                md-switch.md-primary(ng-model=scope.controllerAlias + '.model.available.store.availableToChildren', aria-label='Is Available to childer?')
+                    | Is Available to sub stores?
+
+            +amma-form-item-container(scope)
+                +amma-user-groups(scope, 'userGroup', 'User Groups', scope.controllerAlias + '.model.available.userGroup')(amma-cards-min-length="1")
+                +amma-error-wrapper(scope, 'userGroup')
+                    +amma-error-item('amma-cards-min-length') Please select user groups
+    section
+        h3 Description
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)(flex='50')
+                +amma-input(scope, 'promoText', 'Promo Text')
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-text-area(scope, 'shortDescription', 'Short Description')(md-maxlength='150')
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-text-angular(scope, 'description', 'Description')(md-maxlength='150')
+

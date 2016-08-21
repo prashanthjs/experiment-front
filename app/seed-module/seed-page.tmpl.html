@@ -3,7 +3,7 @@
         <h2 class="md-display-3" translate>Welcome to the triangular test page</h2>
     </div>
 
-    <form name="myForm" ng-submit="submit()">
+    <form name="myForm" ng-submit="$event.preventDefault">
         <input type="button" class="md-primary md-raised" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
                    ngf-accept="'image/*'" ngf-max-size="10MB" ngf-min-height="100"
                    amma-file-token="test"
@@ -35,6 +35,7 @@
                 </md-grid-tile>
             </md-grid-list>
         </div>
+
 
         <button type="submit" ng-disabled="myForm.$invalid || myForm.$pending">Sign Up</button>
     </form>

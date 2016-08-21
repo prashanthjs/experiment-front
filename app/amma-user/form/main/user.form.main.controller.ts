@@ -20,14 +20,17 @@ module AmmaUser.Form.Main {
         public userGroups;
         public maxDob;
 
+        public imageType = '';
+
         /* @ngInject */
-        constructor($scope: IFormScope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserCommandService, AmmaUserGroupCommandService, AmmaStoreCommandService, $q, $mdUtil, $rootScope, USER_FORM_EVENT_NAME) {
+        constructor($scope: IFormScope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserCommandService, AmmaUserGroupCommandService, AmmaStoreCommandService, $q, $mdUtil, $rootScope, USER_FORM_EVENT_NAME, USER_PROFILE_IMAGE_TYPE) {
             super($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaUserCommandService, $rootScope, USER_FORM_EVENT_NAME);
             this.userGroupCommandService = AmmaUserGroupCommandService;
             this.storeCommandService = AmmaStoreCommandService;
             this.$q = $q;
             this.$mdUtil = $mdUtil;
             this.maxDob = new Date();
+            this.imageType = USER_PROFILE_IMAGE_TYPE;
         }
 
         handleInit() {

@@ -31,6 +31,25 @@ var AmmaCommon;
                     });
                     return defer.promise;
                 };
+                this.search = function (text, limit) {
+                    if (limit === void 0) { limit = 5; }
+                    var data = {
+                        filter: {
+                            logic: "and",
+                            filters: [{
+                                    "field": "_id",
+                                    "operator": "contains",
+                                    "value": text
+                                }],
+                        },
+                        page: 1,
+                        pageSize: limit,
+                        skip: 0,
+                        take: limit
+                    };
+                    console.log(_this.restService);
+                    return _this.getList(data);
+                };
                 this.restService = restService;
                 this.eventName = eventName;
                 this.$q = $q;

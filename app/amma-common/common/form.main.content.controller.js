@@ -33,8 +33,9 @@ var AmmaCommon;
             };
             FormMainContentController.prototype.afterLoadModel = function () {
             };
-            FormMainContentController.prototype.submit = function () {
+            FormMainContentController.prototype.submit = function ($event, close) {
                 var _this = this;
+                if (close === void 0) { close = false; }
                 this.loaderService.setLoaderActive(true);
                 this.commandService.save(this.model).then(function (resp) {
                     _this.messageService.displaySuccessMessage('Successfully saved');
@@ -42,8 +43,13 @@ var AmmaCommon;
                     _this.eventData.id = resp._id;
                     _this.eventData.model = resp;
                     _this.notify(_this.eventData);
-                    _this.loadModel();
                     _this.afterSubmit();
+                    if (!close) {
+                        _this.loadModel();
+                    }
+                    else {
+                        _this.hide();
+                    }
                 }, function (error) {
                     _this.loaderService.setLoaderActive(false);
                     _this.messageService.displayErrorMessage('Cannot be updated:' + error.data.message);

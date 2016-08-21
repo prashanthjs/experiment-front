@@ -7,13 +7,13 @@ var AmmaUser;
 (function (AmmaUser) {
     var View;
     (function (View) {
-        var ViewController = AmmaCommon.Common.ViewController;
+        var ViewMainController = AmmaCommon.Common.ViewMainController;
         var UserViewController = (function (_super) {
             __extends(UserViewController, _super);
             /* @ngInject */
-            function UserViewController(AmmaUserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state) {
-                _super.call(this, AmmaUserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state);
-                this.uploadType = 'image';
+            function UserViewController(AmmaUserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state, $rootScope, $scope, USER_CONTENT_EVENT_NAME) {
+                _super.call(this, AmmaUserCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state, $rootScope, $scope, USER_CONTENT_EVENT_NAME);
+                this.uploadType = 'userProfile';
                 this.listRoute = 'triangular.amma-user-list';
                 this.viewRoute = 'triangular.amma-user-view';
             }
@@ -30,7 +30,7 @@ var AmmaUser;
                 }
             };
             return UserViewController;
-        }(ViewController));
+        }(ViewMainController));
         View.UserViewController = UserViewController;
         angular
             .module('amma-user')

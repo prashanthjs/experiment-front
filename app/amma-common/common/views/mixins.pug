@@ -3,7 +3,7 @@ mixin ng-controller(scope)
         block
 
 mixin amma-form(scope)
-    form(name = scope.formName, novalidate='')&attributes(attributes)
+    form(name = scope.formName, novalidate='', ng-submit="$event.preventDefault()")&attributes(attributes)
         block
 
 mixin amma-error-wrapper(scope, name)
@@ -26,6 +26,21 @@ mixin amma-input(scope, name, label, type, model)
     if !model
         - model = scope.controllerAlias +'.model.'+name
     input(type=type, ng-model = model, name=name)&attributes(attributes)
+
+mixin amma-text-angular(scope, name, label, model)
+    if label
+        label=label
+    if !model
+        - model = scope.controllerAlias +'.model.'+name
+    text-angular(name="description", ng-model=model, ta-target-toolbars="editor-toolbar")
+
+mixin amma-text-area(scope, name, label, model)
+    if label
+        label=label
+    if !model
+        - model = scope.controllerAlias +'.model.'+name
+    textarea(ng-model=model,rows="5",md-select-on-focus='')&attributes(attributes)
+
 
 
 mixin amma-select(scope, name, label, model)
@@ -66,6 +81,10 @@ mixin amma-form-submit(scope, label)
     md-button.md-primary.md-raised(ng-click=scope.controllerAlias + '.submit($event)', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
         =label
 
+mixin amma-form-submit-save(scope, label)
+    md-button.md-accent.md-raised(ng-click=scope.controllerAlias + '.submit($event, true)', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
+        =label
+
 mixin amma-form-cancel(scope, label)
     md-button.md-warn.md-raised(ng-click=scope.controllerAlias + '.hide($event)')
         =label
@@ -77,14 +96,93 @@ mixin amma-file-upload(scope, name, label, scopeVariable,fileType, model )
     if !model
         - model =  scope.controllerAlias +'.model.'+name
 
-    md-button.md-primary.md-raised(ngf-select='', ng-model= scopeVariable+ '.files', amma-file-token=model,amma-file-type=fileType,amma-file=scopeVariable + ".all",amma-file-busy= scopeVariable + ".isBusy",ng-show="!" + scopeVariable + ".isBusy",amma-file-remove-func=scopeVariable + ".removeFunc",amma-file-validator="true" )
+    md-button.md-primary.md-raised(ngf-select='', ng-model= scopeVariable + '.files', amma-file-token=model,amma-file-type=fileType,amma-file=scopeVariable + ".all",amma-file-busy= scopeVariable + ".isBusy",ng-show="!" + scopeVariable + ".isBusy",amma-file-remove-func=scopeVariable + ".removeFunc",amma-file-validator="true" )
         =label
     md-progress-linear(md-mode="indeterminate",ng-show=scopeVariable + '.isBusy')
     md-grid-list(flex,md-cols="9",md-cols-xs="9",md-row-height="4:3",md-gutter="10px", ng-if=scopeVariable + ".all.length")
         md-grid-tile(md-rowspan="1", md-colspan="1", ng-repeat="file in " + scopeVariable + ".all", ng-style="::{ 'background-image': 'url(' + file.url + ')', 'background-size' : 'cover', 'cursor':'pointer' }", layout-padding="10")
             div.img-wrap
-                md-button.md-icon-button.md-warn.md-img-remove(ng-click=scopeVariable+ ".removeFunc(file.filename, $event)")
+                md-button.md-icon-button.md-warn.md-img-remove(ng-click=scopeVariable + ".removeFunc(file.filename, $event)")
                     md-icon(md-font-icon="zmdi zmdi-close-circle")
+
+mixin amma-categories(scope, name, label, model)
+    label
+        =label
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    md-chips(
+    name=name,
+    md-autocomplete-snap='',
+    ng-model=model,
+    md-require-match='true',
+    )&attributes(attributes)
+        md-autocomplete(
+        md-selected-item= name + '_selectedItem',
+        md-search-text= name + '_searchText',
+        md-items='item in ' + name + '_categorySearch(' + name + '_searchText)',
+        md-item-text='item._id',
+        placeholder='Select categories',
+        amma-category-search = name + '_categorySearch')
+            span(md-highlight-text=name + '_searchText') {{item._id}}
+        md-chip-template
+            span
+                | {{$chip._id || $chip}}
+
+mixin amma-stores(scope, name, label, model)
+    label
+        =label
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    md-chips(
+    name=name,
+    md-autocomplete-snap='',
+    ng-model=model,
+    md-require-match='true',
+    )&attributes(attributes)
+        md-autocomplete(
+        md-selected-item= name + '_selectedItem',
+        md-search-text= name + '_searchText',
+        md-items='item in ' + name + '_storeSearch(' + name + '_searchText)',
+        md-item-text='item._id',
+        placeholder='Select stores',
+        amma-store-search = name + '_storeSearch')
+            span(md-highlight-text=name + '_searchText') {{item._id}}
+        md-chip-template
+            span
+                | {{$chip._id || $chip}}
+
+mixin amma-user-groups(scope, name, label, model)
+    label
+        =label
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    md-chips(
+    name=name,
+    md-autocomplete-snap='',
+    ng-model=model,
+    md-require-match='true',
+    )&attributes(attributes)
+        md-autocomplete(
+        md-selected-item= name + '_selectedItem',
+        md-search-text= name + '_searchText',
+        md-items='item in ' + name + '_userGroupSearch(' + name + '_searchText)',
+        md-item-text='item._id',
+        placeholder='Select user groups',
+        amma-user-group-search = name + '_userGroupSearch')
+            span(md-highlight-text=name + '_searchText') {{item._id}}
+        md-chip-template
+            span
+                | {{$chip._id || $chip}}
+
+mixin amma-chips(scope, name, label, model)
+    label
+        =label
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    md-chips(
+    name=name,
+    ng-model=model,
+    )&attributes(attributes)
 
 
 mixin amma-address(scope, modelPath)

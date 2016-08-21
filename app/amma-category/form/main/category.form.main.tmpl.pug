@@ -1,0 +1,38 @@
+extends ../../../amma-common/common/views/tab-form
+
+block vars
+    - var scope = {controller:'AmmaCategoryFormMainController', controllerAlias:'ammaCategoryFormMainController', formName: 'ammaCategoryMainForm'};;
+
+block title
+    | Main
+
+block formContent
+    section(layout='column', flex='')
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'name', 'Name', null,scope.controllerAlias + '.model._id')(required='', ng-disabled='!!' + scope.controllerAlias + '.id')
+                +amma-error-wrapper(scope, 'name')
+                    +amma-error-item('required') Please enter name
+
+            +amma-form-item-container(scope)
+                +amma-input(scope, 'title', 'Title')(required='')
+                +amma-error-wrapper(scope, 'title')
+                    +amma-error-item('required') Please enter title
+
+
+        div(layout='row', flex='')
+            +amma-form-item-container(scope)
+                +amma-select(scope, 'parent', 'Parent Category' )
+                    md-option(value='')
+                    md-option(ng-repeat='category in ' + scope.controllerAlias + '.categories',  ng-value='category._id', ng-if=scope.controllerAlias+".eventData.id != category._id")
+                        | {{category.title}}
+
+
+        div(layout='row')
+            div(layout='row', flex='50')
+                +amma-checkbox(scope, 'isActive', 'Is Active?')
+
+        div(layout='row')
+            div(layout='row', flex='')
+                +amma-form-item-container(scope)
+                    +amma-text-angular(scope, 'description', 'Description')

@@ -29,7 +29,7 @@ module AmmaCommon.Common {
 
         }
 
-        submit() {
+        submit($event, close = false) {
             this.loaderService.setLoaderActive(true);
             this.commandService.save(this.model).then((resp)=> {
                 this.messageService.displaySuccessMessage('Successfully saved');
@@ -37,8 +37,13 @@ module AmmaCommon.Common {
                 this.eventData.id = resp._id;
                 this.eventData.model = resp;
                 this.notify(this.eventData);
-                this.loadModel();
                 this.afterSubmit();
+                if(!close) {
+                    this.loadModel();
+
+                } else {
+                    this.hide();
+                }
             }, (error)=> {
                 this.loaderService.setLoaderActive(false);
                 this.messageService.displayErrorMessage('Cannot be updated:' + error.data.message);

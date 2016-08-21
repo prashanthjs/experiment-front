@@ -40,6 +40,14 @@ button, select, html, textarea, input {
 .left-padding{
   padding-left: 15px;
 }
+
+md-dialog.fullscreen-dialog {
+    max-width: 95%;
+    width: 95%;
+    border-radius: 0;
+}
+
+
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
