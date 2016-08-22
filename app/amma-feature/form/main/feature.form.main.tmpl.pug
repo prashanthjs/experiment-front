@@ -19,14 +19,3 @@ block formContent
                 +amma-input(scope, 'title', 'Title')
                 +amma-error-wrapper(scope, 'title')
                     +amma-error-item('required') Please enter title
-
-
-        div(layout='row', flex='')
-            +amma-form-item-container(scope)
-                +amma-chips(scope, 'items', 'Options')
-
-block formActions
-    +amma-form-submit(scope, 'Save')
-    +amma-form-submit-save(scope, 'Save and close')
-    +amma-form-cancel(scope, 'Cancel')
-    md-button.md-warn.md-raised(ng-click=scope.controllerAlias + '.openSecondDialog($event)')

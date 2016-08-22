@@ -89,6 +89,18 @@ mixin amma-form-cancel(scope, label)
     md-button.md-warn.md-raised(ng-click=scope.controllerAlias + '.hide($event)')
         =label
 
+mixin amma-button-primary(label)
+    md-button.md-primary.md-raised()&attributes(attributes)
+        =label
+
+mixin amma-button-accent(label)
+    md-button.md-accent.md-raised()&attributes(attributes)
+        =label
+
+mixin amma-button-warning(label)
+    md-button.md-warning.md-raised()&attributes(attributes)
+        =label
+
 
 mixin amma-file-upload(scope, name, label, scopeVariable,fileType, model )
     - scopeVariable = scope.controllerAlias +'.'+scopeVariable

@@ -1,0 +1,17 @@
+include ./common
+
+block vars
+    - var scope = {controller:'', controllerAlias:'', formName: ''};
+    - var tabAttributes = {}
+
++ng-controller(scope)
+    md-tab(md-on-select= scope.controllerAlias + '.loadModel()',ng-disabled= '!' + scope.controllerAlias + '.eventData.id')&attributes(tabAttributes)
+        md-tab-label
+            block title
+        md-tab-body
+            md-content.md-padding
+                block tabContent
+
+                .amma-dialog-actions
+                    block tabActions
+

@@ -2,180 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2897bbba-8743-4dd9-a08f-ad6e200811bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/category.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/category.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.command.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.command.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.grid.schema.value.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.grid.schema.value.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.grid.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.grid.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.rest.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/common/category.rest.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/config/category.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/config/category.config.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/config/category.constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/config/category.constants.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/config/category.run.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/config/category.run.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/directives/amma-category-search.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/category.form.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/category.form.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/category.form.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/category.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/main/category.form.main.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/main/category.form.main.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/main/category.form.main.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/form/main/category.form.main.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/list/category.list.command.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/list/category.list.command.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/list/category.list.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/list/category.list.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/list/category.list.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-category/list/category.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/search.directive.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/directives/cards-min-length/cards-length.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.command.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.command.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.grid.schema.value.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.grid.schema.value.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.grid.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.grid.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.rest.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/common/feature.rest.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.config.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.constants.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.run.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.run.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/directives/feature-search.directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/directives/feature-search.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/feature.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/feature.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/feature.form.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/feature.form.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/feature.form.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/feature.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/list/feature.list.command.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/list/feature.list.command.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/list/feature.list.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/list/feature.list.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/list/feature.list.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/list/feature.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.command.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.command.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.grid.schema.value.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.grid.schema.value.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.grid.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.grid.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.rest.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/common/product.rest.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/config/user.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/config/user.config.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/config/user.constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/config/user.constants.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/config/user.run.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/config/user.run.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/main/product.form.main.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/main/product.form.main.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/main/product.form.main.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/main/product.form.main.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/product.form.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/product.form.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/product.form.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/form/product.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/list/product.list.command.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/list/product.list.command.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/list/product.list.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/list/product.list.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/list/product.list.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/list/product.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/product.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/product.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/view/product.view.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/view/product.view.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/view/product.view.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/view/product.view.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-product/view/user.view.tmpl_bk.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-store/directives/store-search.directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-store/directives/store-search.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.command.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.command.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.grid.schema.value.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.grid.schema.value.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.grid.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.grid.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.rest.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/common/tag.rest.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/config/tag.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/config/tag.config.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/config/tag.constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/config/tag.constants.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/config/tag.run.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/config/tag.run.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/directives/tag-search.directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/directives/tag-search.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/main/tag.form.main.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/main/tag.form.main.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/main/tag.form.main.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/main/tag.form.main.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/tag.form.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/tag.form.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/tag.form.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/form/tag.form.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/list/tag.list.command.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/list/tag.list.command.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/list/tag.list.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/list/tag.list.controller.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/list/tag.list.tmpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/list/tag.list.tmpl.pug" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/tag.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-tag/tag.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user-group/directives/user-group-search.directive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user-group/directives/user-group-search.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl_bk.pug" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/amma-common/common/view.controller.js" afterPath="$PROJECT_DIR$/app/amma-common/common/view.main.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/amma-common/common/view.controller.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/view.main.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/experiment-front.iml" afterPath="$PROJECT_DIR$/.idea/experiment-front.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-common/common/views/tab-content.pug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.controller.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.tmpl.pug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.controller.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.tmpl.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/command.service.js" afterPath="$PROJECT_DIR$/app/amma-common/common/command.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/command.service.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/command.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.js" afterPath="$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/list.controller.js" afterPath="$PROJECT_DIR$/app/amma-common/common/list.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/list.controller.ts" afterPath="$PROJECT_DIR$/app/amma-common/common/list.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/views/main-form.pug" afterPath="$PROJECT_DIR$/app/amma-common/common/views/main-form.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/views/mixins.pug" afterPath="$PROJECT_DIR$/app/amma-common/common/views/mixins.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-common/common/views/tab-form.pug" afterPath="$PROJECT_DIR$/app/amma-common/common/views/tab-form.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-store/form/store.form.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-store/form/store.form.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user-group/form/main/user-group.form.main.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user-group/form/user-group.form.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.constants.js" afterPath="$PROJECT_DIR$/app/amma-user/config/user.constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/config/user.constants.ts" afterPath="$PROJECT_DIR$/app/amma-user/config/user.constants.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.js" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" afterPath="$PROJECT_DIR$/app/amma-user/form/main/user.form.main.tmpl.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user/form/user.form.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.js" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.pug" afterPath="$PROJECT_DIR$/app/amma-user/view/user.view.tmpl.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/index.css" afterPath="$PROJECT_DIR$/app/index/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/index.module.js" afterPath="$PROJECT_DIR$/app/index/index.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index/index.scss" afterPath="$PROJECT_DIR$/app/index/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/seed-module/seed-page.controller.js" afterPath="$PROJECT_DIR$/app/seed-module/seed-page.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/seed-module/seed-page.controller.ts" afterPath="$PROJECT_DIR$/app/seed-module/seed-page.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/seed-module/seed-page.tmpl.html" afterPath="$PROJECT_DIR$/app/seed-module/seed-page.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-feature/config/feature.run.js" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.run.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-feature/config/feature.run.ts" afterPath="$PROJECT_DIR$/app/amma-feature/config/feature.run.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.html" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug" afterPath="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug" />
     </list>
     <ignored path="experiment-front.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -194,146 +32,108 @@
     <favorites_list name="experiment-front" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="feature.form.main.controller.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" column="12" selection-start-line="12" selection-start-column="7" selection-end-line="26" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="feature.form.main.tmpl.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="31" column="83" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="83" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tab-form.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/tab-form.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="62" selection-start-line="16" selection-start-column="24" selection-end-line="19" selection-end-column="62" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mixins.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/mixins.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2745">
-                  <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="mixins.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/mixins.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="990">
-                  <caret line="66" column="56" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="feature.command.service.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-feature/common/feature.command.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="feature.form.controller.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-feature/form/feature.form.controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="form.base.controller.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/form.base.controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="feature.list.command.tmpl.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.command.tmpl.pug">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="feature.list.controller.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="command.service.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/command.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2220">
-                  <caret line="148" column="8" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="category.command.service.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/amma-category/common/category.command.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="list.controller.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/amma-common/common/list.controller.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="feature.form.main.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.main.content.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" column="15" selection-start-line="33" selection-start-column="11" selection-end-line="49" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feature.form.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/form/feature.form.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.base.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-common/common/form.base.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feature.form.items.tmpl.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.tmpl.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="85" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feature.list.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feature.form.items.controller.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="656">
+              <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feature.form.items.item.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feature.form.items.item.tmpl.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.tmpl.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.controller.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/amma-common/common/list.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="15" selection-start-line="24" selection-start-column="11" selection-end-line="28" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -341,12 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/amma-store/directives/store-search.directive.ts" />
-        <option value="$PROJECT_DIR$/app/amma-common/common/search.directive.controller.ts" />
-        <option value="$PROJECT_DIR$/app/amma-common/common/command.service.ts" />
-        <option value="$PROJECT_DIR$/app/amma-store/config/store.constants.ts" />
-        <option value="$PROJECT_DIR$/app/amma-store/common/store.command.service.ts" />
-        <option value="$PROJECT_DIR$/app/amma-store/common/store.rest.service.ts" />
         <option value="$PROJECT_DIR$/app/amma-store/form/main/store.form.main.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-store/form/store.form.controller.ts" />
         <option value="$PROJECT_DIR$/app/amma-product/form/main/product.form.main.tmpl.pug" />
@@ -389,9 +183,15 @@
         <option value="$PROJECT_DIR$/app/amma-tag/directives/tag-search.directive.ts" />
         <option value="$PROJECT_DIR$/app/amma-user-group/directives/user-group-search.directive.ts" />
         <option value="$PROJECT_DIR$/app/amma-feature/directives/feature-search.directive.ts" />
-        <option value="$PROJECT_DIR$/app/amma-common/common/views/mixins.pug" />
-        <option value="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug" />
         <option value="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts" />
+        <option value="$PROJECT_DIR$/app/amma-feature/config/feature.run.ts" />
+        <option value="$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug" />
+        <option value="$PROJECT_DIR$/app/amma-common/common/views/tab-content.pug" />
+        <option value="$PROJECT_DIR$/app/amma-common/common/views/mixins.pug" />
+        <option value="$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.tmpl.pug" />
+        <option value="$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.tmpl.pug" />
+        <option value="$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.controller.ts" />
+        <option value="$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.controller.ts" />
       </list>
     </option>
   </component>
@@ -445,8 +245,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="1440" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -608,6 +409,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="amma-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amma-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="amma-feature" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -716,7 +565,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -742,7 +595,93 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="items" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="item" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amma-common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amma-common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="experiment-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amma-common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -844,23 +783,23 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="/usr/local/lib/node_modules/gulp" />
-    <property name="SearchEverywhereHistoryKey" value="comma&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-feature/common/feature.command.service.ts&#10;mix&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;mixin&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;AmmaCategorySear&#9;null&#9;null&#10;AmmaUserGroupSea&#9;null&#9;null&#10;pro&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-product/form/main/product.form.main.tmpl.pug&#10;mi&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;mixi&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;StoreCo&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-store/common/store.command.service.ts&#10;storeco&#9;null&#9;null&#10;user.p&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-product/form/change-password/user.form.change.password.tmpl.html&#10;messa&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/services/message.service.ts&#10;content&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/services/content.service.ts" />
+    <property name="SearchEverywhereHistoryKey" value="Com&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-category/common/category.command.service.ts&#10;mixi&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;comma&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-feature/common/feature.command.service.ts&#10;mix&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;mixin&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;AmmaCategorySear&#9;null&#9;null&#10;AmmaUserGroupSea&#9;null&#9;null&#10;pro&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-product/form/main/product.form.main.tmpl.pug&#10;mi&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/common/views/mixins.pug&#10;StoreCo&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-store/common/store.command.service.ts&#10;storeco&#9;null&#9;null&#10;user.p&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-product/form/change-password/user.form.change.password.tmpl.html&#10;messa&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/services/message.service.ts&#10;content&#9;FILE&#9;file:///Users/prashanth/Code/experiment-front/app/amma-common/services/content.service.ts" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/amma-feature/form/items/item" />
+      <recent name="$PROJECT_DIR$/app/amma-common/common/views" />
+      <recent name="$PROJECT_DIR$/app/amma-feature/form/items" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/amma-user-group" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/amma-common/config" />
       <recent name="$PROJECT_DIR$/app/amma-common/common" />
       <recent name="$PROJECT_DIR$/app/amma-user/form" />
       <recent name="$PROJECT_DIR$/app/amma-store/form/main" />
       <recent name="$PROJECT_DIR$/app/index" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/amma-user-group" />
-      <recent name="$PROJECT_DIR$/app/amma-store" />
-      <recent name="$PROJECT_DIR$/app/amma-common/directives/amma-card-min-length" />
-      <recent name="$PROJECT_DIR$/app/amma-user/view" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.gulp">
@@ -975,7 +914,7 @@
       <workItem from="1471638755734" duration="3502000" />
       <workItem from="1471726776100" duration="28965000" />
       <workItem from="1471808235011" duration="6329000" />
-      <workItem from="1471814875179" duration="17000" />
+      <workItem from="1471814875179" duration="7051000" />
     </task>
     <task id="LOCAL-00001" summary="new structure">
       <created>1468243068861</created>
@@ -988,7 +927,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271913000" />
+    <option name="totallyTimeSpent" value="278947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1000,30 +939,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22630458" sideWeight="0.5385779" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2453505" sideWeight="0.4614221" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26727644" sideWeight="0.5404686" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26727644" sideWeight="0.45953143" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2296748" sideWeight="0.4685836" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22630458" sideWeight="0.5385779" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1826411" sideWeight="0.4614221" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28150406" sideWeight="0.4685836" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29674795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26727644" sideWeight="0.45953143" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
@@ -1069,70 +1008,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/amma-store/directives/store-search.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-store/common/store.command.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-store/common/store.rest.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-store/form/main/store.form.main.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-store/form/store.form.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-user-group/common/user-group.command.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-user-group/directives/amma-category-chip.tmpl.html" />
-    <entry file="file://$PROJECT_DIR$/app/amma-user-group/config/user-group.constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-product/form/main/product.form.main.tmpl.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
-          <caret line="131" column="87" selection-start-line="131" selection-start-column="87" selection-end-line="131" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-tag/common/tag.grid.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-tag/config/tag.config.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1186,6 +1061,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,13 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-feature/common/feature.grid.schema.value.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-feature/common/feature.grid.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1266,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-feature/config/feature.run.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-feature/feature.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1287,13 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/feature.form.tmpl.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.tmpl.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1301,24 +1156,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-category/form/category.form.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-tag/directives/tag-search.directive.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-category/directives/amma-category-search.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1336,26 +1177,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/tab-form.pug">
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.command.tmpl.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="62" selection-start-line="16" selection-start-column="24" selection-end-line="19" selection-end-column="62" />
+        <state relative-caret-position="45">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug">
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/command.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="83" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/mixins.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="56" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+        <state relative-caret-position="2220">
+          <caret line="148" column="8" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1364,6 +1197,118 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/form.content.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="9" selection-start-line="56" selection-start-column="7" selection-end-line="58" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/config/feature.run.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/common/feature.grid.schema.value.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="9" selection-start-line="3" selection-start-column="8" selection-end-line="37" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-category/form/category.form.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-category/form/category.form.tmpl.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-category/directives/amma-category-search.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-user/form/change-password/user.form.change.password.tmpl.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/mixins.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="96" column="58" selection-start-line="96" selection-start-column="58" selection-end-line="96" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/feature.form.tmpl.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-category/common/category.command.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="33" column="15" selection-start-line="19" selection-start-column="11" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.tmpl.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/tab-content.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/main-form.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/views/tab-form.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1384,50 +1329,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.command.tmpl.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-feature/list/feature.list.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-common/common/list.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+        <state relative-caret-position="420">
+          <caret line="28" column="15" selection-start-line="24" selection-start-column="11" selection-end-line="28" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-common/common/command.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.tmpl.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="148" column="8" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="8" />
+        <state relative-caret-position="210">
+          <caret line="14" column="85" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amma-category/common/category.command.service.ts">
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.tmpl.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="390">
+          <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/amma-feature/form/main/feature.form.main.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="12" selection-start-line="12" selection-start-column="7" selection-end-line="26" selection-end-column="12" />
+        <state relative-caret-position="90">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-common/common/form.main.content.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="15" selection-start-line="33" selection-start-column="11" selection-end-line="49" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/item/feature.form.items.item.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amma-feature/form/items/feature.form.items.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
           <folding />
         </state>
       </provider>

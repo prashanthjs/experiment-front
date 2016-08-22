@@ -10,21 +10,6 @@ module AmmaFeature.Form.Main {
             super($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaFeatureCommandService, $rootScope, FEATURE_FORM_EVENT_NAME);
         }
 
-        // openSecondDialog($event) {
-        //     this.dialogService.show({
-        //         controllerAs: 'dialogCtrl',
-        //         controller: function ($mdDialog) {
-        //             this.click = ()=> {
-        //                 $mdDialog.hide();
-        //             }
-        //         },
-        //         preserveScope: true,
-        //         autoWrap: true,
-        //         skipHide: true,
-        //         targetEvent: $event,
-        //         template: '<md-dialog class="confirm"><md-conent><md-button ng-click="dialogCtrl.click()">I am in a 2nd dialog!</md-button></md-conent></md-dialog>'
-        //     });
-        // }
     }
 
     angular

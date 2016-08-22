@@ -1,0 +1,31 @@
+include ../../../../amma-common/common/views/common
+
+- var scope = {controllerAlias: 'ammaFeatureFormItemsItemController', form: 'ammaFeatureFormItemsItemForm'};
+md-dialog(ng-cloak='', flex='')
+    md-toolbar
+        .md-toolbar-tools
+            h2 Add/Edit Option
+            span(flex='')
+            md-button.md-icon-button(ng-click= scope.controllerAlias + '.cancel()')
+                md-icon(md-font-icon='zmdi zmdi-close')
+    md-dialog-content
+        md-content.md-padding
+            +amma-form(scope)(flex='66')
+                div(layout='row', flex='')
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'name', 'Name')(required='')
+                        +amma-error-wrapper(scope, 'name')
+                            +amma-error-item('required') Please enter name
+
+                div(layout='row', flex='')
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'title', 'Title')
+                        +amma-error-wrapper(scope, 'title')
+                            +amma-error-item('required') Please enter title
+    md-dialog-actions
+        +amma-button-primary('Save & Close')(ng-click= scope.controllerAlias + '.saveAndClose($event)')
+        +amma-button-warning('Cancel')(ng-click= scope.controllerAlias + '.cancel($event)')
+
+
+
+
