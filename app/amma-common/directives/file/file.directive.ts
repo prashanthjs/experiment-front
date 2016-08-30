@@ -30,7 +30,7 @@ module AmmaCommon.directives.File {
                 };
 
                 const getToken = () => {
-                    if(!tokenModel(scope)){
+                    if (!tokenModel(scope)) {
                         tokenModel.assign(scope, getUniqueToken());
                     }
                     return tokenModel(scope);
@@ -45,7 +45,7 @@ module AmmaCommon.directives.File {
                 };
 
                 const getFiles = () => {
-                    return filesModel(scope)||[];
+                    return filesModel(scope) || [];
                 };
 
                 const addFile = (file)=> {
@@ -151,9 +151,7 @@ module AmmaCommon.directives.File {
                 });
 
                 const unbindTokenWatch = scope.$watch(tokenModel, (newValue, oldValue)=> {
-                    if (newValue !== oldValue) {
-                        loadFiles();
-                    }
+                    loadFiles();
                 });
 
 

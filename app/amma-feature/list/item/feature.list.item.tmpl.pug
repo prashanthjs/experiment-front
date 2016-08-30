@@ -1,0 +1,19 @@
+extends ../../../amma-common/common/views/tab-content
+
+block vars
+    - var scope = {controller:'AmmaFeatureListItemController', controllerAlias:'ammaFeatureListItemController'};
+
+block title
+    | Options
+
+block tabContent
+    div(kendo-grid=scope.controllerAlias + '.grid', flex='', options=scope.controllerAlias + '.gridOptions', k-rebind=scope.controllerAlias + '.gridOptions')
+
+block tabActions
+    +amma-button-primary('Add New')(ng-click= scope.controllerAlias + '.add($event)')
+    +amma-button-accent('Save')(ng-click= scope.controllerAlias + '.save($event)')
+    +amma-button-warning('Close')(ng-click= scope.controllerAlias + '.cancel($event)')
+
+
+
+

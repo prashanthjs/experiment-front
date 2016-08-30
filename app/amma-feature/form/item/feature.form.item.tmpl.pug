@@ -1,0 +1,45 @@
+include ../../../amma-common/common/views/common
+
+- var scope = {controllerAlias: 'ammaFeatureFormItemController', formName: 'ammaFeatureFormItemForm'};
+md-dialog(ng-cloak='', flex='')
+    md-toolbar
+        .md-toolbar-tools
+            h2(ng-if=scope.controllerAlias + '.isNew') Add Option
+            h2(ng-if='!' + scope.controllerAlias + '.isNew') Edit Option
+            span(flex='')
+            md-button.md-icon-button(ng-click= scope.controllerAlias + '.cancel()')
+                md-icon(md-font-icon='zmdi zmdi-close')
+    md-dialog-content
+        md-content.md-padding
+            +amma-form(scope)(flex='66')
+                section
+                    div(layout='row', flex='')
+                        +amma-form-item-container(scope)
+                            +amma-input(scope, '_id', 'Name', null,scope.controllerAlias + '.model._id')(required='', ng-disabled='!' + scope.controllerAlias + '.isNew')
+                            +amma-error-wrapper(scope, 'name')
+                                +amma-error-item('required') Please enter name
+
+                        +amma-form-item-container(scope)
+                            +amma-input(scope, 'title', 'Title')(required='true')
+                            +amma-error-wrapper(scope, 'title')
+                                +amma-error-item('required') Please enter title
+
+                section
+                   h2 Upload Images
+                   +amma-file-upload(scope, 'imageToken', 'Select Images', 'featureItem', '{{' + scope.controllerAlias + '.imageType}}')(ngf-pattern="'image/*'",ngf-accept="'image/*'",ngf-max-size="2MB")
+
+                section
+                    h2 Description
+                    div(layout='row', flex='')
+                        +amma-form-item-container(scope)
+                            +amma-text-area(scope, 'description', 'Description')
+
+
+
+    md-dialog-actions
+        +amma-button-primary('Save & Close')(ng-click= scope.controllerAlias + '.saveAndClose($event)', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
+        +amma-button-warning('Cancel')(ng-click= scope.controllerAlias + '.cancel($event)')
+
+
+
+

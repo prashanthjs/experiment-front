@@ -20,16 +20,13 @@ var AmmaFeature;
                     controller: 'AmmaFeatureFormController',
                     controllerAs: 'ammaFeatureFormController',
                     templateUrl: 'app/amma-feature/form/feature.form.tmpl.html',
-                    parent: angular.element(document.body),
                     targetEvent: ev,
+                    preserveScope: true,
                     autoWrap: true,
-                    openFrom: ev,
+                    skipHide: true,
                     locals: {
                         id: id
-                    },
-                    escapeToClose: false,
-                    clickOutsideToClose: false,
-                    fullscreen: true
+                    }
                 });
             };
             FeatureCommandService.prototype.removeDialog = function (id, event) {
@@ -49,6 +46,40 @@ var AmmaFeature;
                     });
                 }, function () {
                     defer.resolve();
+                });
+                return defer.promise;
+            };
+            FeatureCommandService.prototype.openFeatureItemDialog = function (dataItem, $event) {
+                return this.dialogService.show({
+                    controller: 'AmmaFeatureFormItemController',
+                    controllerAs: 'ammaFeatureFormItemController',
+                    templateUrl: 'app/amma-feature/form/item/feature.form.item.tmpl.html',
+                    targetEvent: $event,
+                    locals: {
+                        model: dataItem
+                    },
+                    preserveScope: true,
+                    autoWrap: true,
+                    skipHide: true
+                });
+            };
+            FeatureCommandService.prototype.removeFeatureItemDialog = function (dataItem, event) {
+                var id = dataItem._id || dataItem;
+                var defer = this.$q.defer();
+                var confirm = this.dialogService.confirm({
+                    preserveScope: true,
+                    autoWrap: true,
+                    skipHide: true
+                }).title('Would you like to delete ' + id + '?')
+                    .ariaLabel('Delete ' + id)
+                    .targetEvent(event)
+                    .ok('Yes')
+                    .cancel('No');
+                console.log(confirm);
+                this.dialogService.show(confirm).then(function () {
+                    defer.resolve(dataItem);
+                }, function () {
+                    defer.reject();
                 });
                 return defer.promise;
             };

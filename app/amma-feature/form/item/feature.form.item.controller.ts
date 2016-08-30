@@ -1,21 +1,31 @@
-module AmmaFeature.Form.Items.Item {
+module AmmaFeature.Form.Item {
 
     import IFormScope = AmmaCommon.Common.IFormScope;
     import CommandService = AmmaCommon.Common.CommandService;
     import FormMainContentController = AmmaCommon.Common.FormMainContentController;
     import FormContentController = AmmaCommon.Common.FormContentController;
 
-    export class FeatureFormItemsItemController {
+    export class FeatureFormItemController {
         public model;
         public dialogService;
+        public imageType;
+        public isNew = false;
         /* @ngInject */
-        constructor(model, $mdDialog) {
+        constructor(model, $mdDialog, FEATURE_IMAGE_TYPE) {
+            this.isNew = false;
+            if(!model){
+                this.isNew = true;
+            }
+            console.log(model);
             this.model = model || {};
             this.dialogService = $mdDialog;
+            this.imageType = FEATURE_IMAGE_TYPE;
         }
 
         saveAndClose($event) {
+            this.isNew = false;
             this.dialogService.hide(this.model);
+
         }
 
         cancel($event){
@@ -25,6 +35,6 @@ module AmmaFeature.Form.Items.Item {
 
     angular
         .module('amma-feature')
-        .controller('AmmaFeatureFormItemsItemController', FeatureFormItemsItemController);
+        .controller('AmmaFeatureFormItemController', FeatureFormItemController);
 }
 

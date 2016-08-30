@@ -130,9 +130,7 @@ var AmmaCommon;
                             }
                         });
                         var unbindTokenWatch = scope.$watch(tokenModel, function (newValue, oldValue) {
-                            if (newValue !== oldValue) {
-                                loadFiles();
-                            }
+                            loadFiles();
                         });
                         scope.$on('$destroy', function () {
                             unbindWatch();

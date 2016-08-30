@@ -13,7 +13,7 @@ var AmmaFeature;
                     priority: 0,
                 });
                 data.content.push({
-                    templateUrl: '/app/amma-feature/form/items/feature.form.items.tmpl.html',
+                    templateUrl: '/app/amma-feature/list/item/feature.list.item.tmpl.html',
                     priority: 50,
                 });
             });

@@ -7,31 +7,28 @@ module AmmaFeature.Common {
 
         protected dialogService;
         /* @ngInject */
-        constructor(AmmaFeatureRestService:RestService, AmmaEventEmitterService:EventEmitterService, $q:ng.IQService, FEATURE_BASE_EVENT_NAME:string, $mdDialog) {
+        constructor(AmmaFeatureRestService: RestService, AmmaEventEmitterService: EventEmitterService, $q: ng.IQService, FEATURE_BASE_EVENT_NAME: string, $mdDialog) {
             super(AmmaFeatureRestService, AmmaEventEmitterService, $q, FEATURE_BASE_EVENT_NAME);
             this.dialogService = $mdDialog;
         }
 
 
-        openForm(id:string, ev:any):ng.IPromise<any> {
+        openForm(id: string, ev: any): ng.IPromise<any> {
             return this.dialogService.show({
                 controller: 'AmmaFeatureFormController',
                 controllerAs: 'ammaFeatureFormController',
                 templateUrl: 'app/amma-feature/form/feature.form.tmpl.html',
-                parent: angular.element(document.body),
                 targetEvent: ev,
+                preserveScope: true,
                 autoWrap: true,
-                openFrom: ev,
+                skipHide: true,
                 locals: {
                     id: id
-                },
-                escapeToClose: false,
-                clickOutsideToClose: false,
-                fullscreen: true
+                }
             });
         }
 
-         removeDialog(id:string, event):ng.IPromise<any> {
+        removeDialog(id: string, event): ng.IPromise<any> {
             const defer = this.$q.defer();
             const confirm = this.dialogService.confirm()
                 .title('Would you like to delete ' + id + '?')
@@ -47,6 +44,43 @@ module AmmaFeature.Common {
                 });
             }, () => {
                 defer.resolve();
+            });
+            return defer.promise;
+        }
+
+        openFeatureItemDialog(dataItem, $event) {
+
+            return this.dialogService.show({
+                controller: 'AmmaFeatureFormItemController',
+                controllerAs: 'ammaFeatureFormItemController',
+                templateUrl: 'app/amma-feature/form/item/feature.form.item.tmpl.html',
+                targetEvent: $event,
+                locals: {
+                    model: dataItem
+                },
+                preserveScope: true,
+                autoWrap: true,
+                skipHide: true
+            });
+        }
+
+        removeFeatureItemDialog(dataItem, event): ng.IPromise<any> {
+            let id = dataItem._id || dataItem;
+            const defer = this.$q.defer();
+            const confirm = this.dialogService.confirm({
+                preserveScope: true,
+                autoWrap: true,
+                skipHide: true
+            }).title('Would you like to delete ' + id + '?')
+                .ariaLabel('Delete ' + id)
+                .targetEvent(event)
+                .ok('Yes')
+                .cancel('No');
+            console.log(confirm);
+            this.dialogService.show(confirm).then(() => {
+                defer.resolve(dataItem);
+            }, () => {
+                defer.reject();
             });
             return defer.promise;
         }
