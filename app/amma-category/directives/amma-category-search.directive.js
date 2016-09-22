@@ -12,10 +12,10 @@ var AmmaCategory;
         function CategorySearchDirective($parse) {
             return {
                 restrict: 'A',
-                require: 'ammaUserGroupSearch',
+                require: 'ammaCategorySearch',
                 controller: AmmaCategorySearchController,
                 link: function (scope, element, attrs, ctrl) {
-                    var ammaCategorySearchModel = $parse(attrs.ammaUserGroupSearch);
+                    var ammaCategorySearchModel = $parse(attrs.ammaCategorySearch);
                     ammaCategorySearchModel.assign(scope, ctrl.search);
                 }
             };
@@ -24,8 +24,8 @@ var AmmaCategory;
         var AmmaCategorySearchController = (function (_super) {
             __extends(AmmaCategorySearchController, _super);
             /** @ngInject */
-            function AmmaCategorySearchController($scope, AmmaUserGroupCommandService, $q) {
-                _super.call(this, $scope, AmmaUserGroupCommandService, $q);
+            function AmmaCategorySearchController($scope, AmmaCategoryCommandService, $q) {
+                _super.call(this, $scope, AmmaCategoryCommandService, $q);
             }
             return AmmaCategorySearchController;
         }(SearchDirectiveController));

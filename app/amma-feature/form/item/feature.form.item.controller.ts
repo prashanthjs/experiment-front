@@ -16,7 +16,6 @@ module AmmaFeature.Form.Item {
             if(!model){
                 this.isNew = true;
             }
-            console.log(model);
             this.model = model || {};
             this.dialogService = $mdDialog;
             this.imageType = FEATURE_IMAGE_TYPE;

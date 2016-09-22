@@ -7,13 +7,24 @@ var AmmaCommon;
             function SearchDirectiveController($scope, CommandService, $q) {
                 var _this = this;
                 this.search = function (query) {
-                    console.log(_this.commandService);
                     if (!_this.pendingSearch || !_this.debounceSearch()) {
                         _this.cancelSearch();
                         return _this.pendingSearch = _this.$q(function (resolve, reject) {
                             _this.cancelSearch = reject;
                             _this.commandService.search(query).then(function (response) {
-                                resolve(response);
+                                var temp = [];
+                                if (response && response.length) {
+                                    for (var i = 0; i < response.length; i++) {
+                                        if (_this.returnOnlyId) {
+                                            temp[i] = response[i]._id;
+                                        }
+                                        else {
+                                            temp[i] = response[i];
+                                        }
+                                        temp[i] = response[i];
+                                    }
+                                }
+                                resolve(temp);
                                 _this.refreshDebounce();
                             }, function () {
                                 reject();
@@ -26,6 +37,10 @@ var AmmaCommon;
                 this.commandService = CommandService;
                 this.cancelSearch = angular.noop;
                 this.$q = $q;
+                this.returnOnlyId = true;
+                if (this.$scope.hasOwnProperty('searchReturnOnlyId')) {
+                    this.returnOnlyId = this.$scope.searchReturnOnlyId;
+                }
             }
             SearchDirectiveController.prototype.refreshDebounce = function () {
                 this.lastSearch = 0;

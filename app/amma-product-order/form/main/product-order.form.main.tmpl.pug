@@ -1,0 +1,32 @@
+extends ../../../amma-common/common/views/tab-form
+
+block vars
+    - var scope = {controller:'AmmaProductOrderFormMainController', controllerAlias:'ammaProductOrderFormMainController', formName: 'ammaProductOrderMainForm'};;
+
+block title
+    | Main
+
+block formContent
+    section(layout='column', flex='')
+        div(layout='row', layout-align='end')
+            div(flex=10, ng-if="!!ammaProductOrderFormMainController.model.totalPrice.sell")
+                | Total Price: {{ammaProductOrderFormMainController.model.totalPrice.sell | currency}}
+            div(flex=10, ng-if="!ammaProductOrderFormMainController.model.totalPrice.sell")
+                | Total Price: {{0 | currency}}
+
+
+        md-tabs
+            md-tab(label='General')
+                div(layout='row', flex='')
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'referenceNumber', 'Reference Number')(required='')
+                        +amma-error-wrapper(scope, 'referenceNumber')
+                            +amma-error-item('required') Please enter reference number
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'status', 'Status')(required='')
+                        +amma-error-wrapper(scope, 'status')
+                            +amma-error-item('required') Please enter Status
+            ng-include(src='"/app/amma-product-order/form/main/user/product-order.form.main.user.tmpl.html"')
+            ng-include(src='"/app/amma-product-order/form/main/store/product-order.form.main.store.tmpl.html"')
+            ng-include(src='"/app/amma-product-order/form/main/inItem/product-order.form.main.inItem.tmpl.html"')
+            ng-include(src='"/app/amma-product-order/form/main/outItem/product-order.form.main.outItem.tmpl.html"')

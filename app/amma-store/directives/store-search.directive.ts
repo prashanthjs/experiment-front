@@ -8,9 +8,13 @@ module AmmaStore.directives {
             require: 'ammaStoreSearch',
             controller: AmmaStoreSearchController,
             link: (scope, element, attrs, ctrl: AmmaStoreSearchController)=> {
+                let ammaStoreReturnOnlyId = true;
+                if (attrs.hasOwnProperty('ammaStoreReturnOnlyId')) {
+                    ammaStoreReturnOnlyId = attrs.ammaStoreReturnOnlyId === 'true' ? true : false;
+                }
                 const ammaStoreSearchModel = $parse(attrs.ammaStoreSearch);
-                console.log(ctrl);
                 ammaStoreSearchModel.assign(scope, ctrl.search);
+                scope.searchReturnOnlyId = ammaStoreReturnOnlyId;
             }
         };
 

@@ -15,9 +15,13 @@ var AmmaStore;
                 require: 'ammaStoreSearch',
                 controller: AmmaStoreSearchController,
                 link: function (scope, element, attrs, ctrl) {
+                    var ammaStoreReturnOnlyId = true;
+                    if (attrs.hasOwnProperty('ammaStoreReturnOnlyId')) {
+                        ammaStoreReturnOnlyId = attrs.ammaStoreReturnOnlyId === 'true' ? true : false;
+                    }
                     var ammaStoreSearchModel = $parse(attrs.ammaStoreSearch);
-                    console.log(ctrl);
                     ammaStoreSearchModel.assign(scope, ctrl.search);
+                    scope.searchReturnOnlyId = ammaStoreReturnOnlyId;
                 }
             };
         }

@@ -3,21 +3,17 @@ section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='colum
     section(layout='row', layout-align='end center')
         md-card(flex='20')
             md-card-content(layout='row', layou-align='center center')
-                div(flex='') Is Locked
-                div(flex='20')
-                    md-switch.md-primary.margin-0(ng-model=scope.controllerAlias + '.model.isLocked', aria-label='isLocked?', ng-disabled='true')
-        md-card(flex='20')
-            md-card-content(layout='row', layou-align='center center')
                 div(flex='') Status
                 div(flex='20')
                     md-switch.md-primary.margin-0(ng-model=scope.controllerAlias + '.model.isActive', aria-label='isActive?', ng-disabled='true')
     section(flex='', layout='row')
         md-card(flex='30')
-            h2.md-title.left-padding Profile
+            h2.md-title.left-padding
+                = '{{' + scope.controllerAlias + '.model.title}}'
             md-divider
             md-card-content
-                div
-                    img(ng-repeat='image in ' + scope.controllerAlias + '.images', ng-click=scope.controllerAlias + '.openImage(image, $event)', src="{{image.url}}", style="cursor:pointer")
+                md-grid-list(flex='', md-cols='4', md-cols-xs='3', md-row-height='4:3', md-gutter='10px')
+                    md-grid-tile(md-rowspan='1', md-colspan='1', ng-repeat='image in ' + scope.controllerAlias + '.images', ng-click=scope.controllerAlias + '.openImage(image, $event)', ng-style="::{ 'background-image': 'url(' + image.url + ')', 'background-size' : 'cover', 'cursor':'pointer' }")
 
         md-card(flex='')
             h2.md-title.left-padding Details
@@ -27,46 +23,46 @@ section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='colum
                     div(flex='')
                         md-list(layout='column', flex='')
                             md-list-item(layout='row')
-                                .md-body-1(flex='') Productname
+                                .md-body-1(flex='') Name
                                 .md-list-item-text(flex='')
                                     .md-body-2
                                         ='{{' + scope.controllerAlias + '.model._id}}'
                             md-divider
                             md-list-item(layout='row')
-                                .md-body-1(flex='') First name
+                                .md-body-1(flex='') Title
                                 .md-list-item-text(flex='')
                                     .md-body-2
-                                        ='{{' + scope.controllerAlias + '.model.firstName}}'
+                                        ='{{' + scope.controllerAlias + '.model.title}}'
                             md-divider
                             md-list-item(layout='row')
-                                .md-body-1(flex='') Middle name
+                                .md-body-1(flex='') SKU
                                 .md-list-item-text(flex='')
                                     .md-body-2
-                                        ='{{' + scope.controllerAlias + '.model.middleName}}'
+                                        ='{{' + scope.controllerAlias + '.model.sku}}'
                             md-divider
                             md-list-item(layout='row')
-                                .md-body-1(flex='') Last name
+                                .md-body-1(flex='') Sell Price
                                 .md-list-item-text(flex='')
                                     .md-body-2
-                                        ='{{' + scope.controllerAlias + '.model.lastName}}'
+                                        ='{{' + scope.controllerAlias + '.model.price.sell | currency : symbol : fractionSize}}'
                             md-divider
                             md-list-item(layout='row')
-                                .md-body-1(flex='') Email
+                                .md-body-1(flex='') Cost Price
                                 .md-list-item-text(flex='')
                                     .md-body-2
-                                        ='{{' + scope.controllerAlias + '.model.email}}'
+                                        ='{{' + scope.controllerAlias + '.model.price.cost | currency : symbol : fractionSize}}'
                             md-divider
                             md-list-item(layout='row')
-                                .md-body-1(flex='') Gender
+                                .md-body-1(flex='') List Price
                                 .md-list-item-text(flex='')
                                     .md-body-2
-                                        ='{{' + scope.controllerAlias + '.model.gender}}'
+                                        ='{{' + scope.controllerAlias + '.model.price.list | currency : symbol : fractionSize}}'
                             md-divider
                             md-list-item(layout='row')
-                                .md-body-1(flex='') Dob
+                                .md-body-1(flex='') Categories
                                 .md-list-item-text(flex='')
-                                    .md-body-2
-                                        ='{{' + scope.controllerAlias + '.model.dob|date: "mediumDate"}}'
+                                    .md-body-2(ng-if=scope.controllerAlias + '.model.categories')
+                                        ='{{' + scope.controllerAlias + '.model.categories.join(", ")' + '}}'
                             md-divider
                     md-divider(vertial='')
                     div(flex='')
@@ -74,47 +70,140 @@ section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='colum
                             div(flex='')
                                 md-list(layout='column', flex='')
                                     md-list-item(layout='row')
-                                        .md-body-1(flex='') Address Line 1
+                                        .md-body-1(flex='') Features
                                         .md-list-item-text(flex='')
-                                            .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.address.addressLine1}}'
+                                            .md-body-2(ng-if=scope.controllerAlias + '.model.features')
+                                                ='{{' + scope.controllerAlias + '.model.features.join(", ")}}'
                                     md-divider
                                     md-list-item(layout='row')
-                                        .md-body-1(flex='') Address Line 2
+                                        .md-body-1(flex='') Tags
                                         .md-list-item-text(flex='')
-                                            .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.address.addressLine2}}'
+                                            .md-body-2(ng-if=scope.controllerAlias + '.model.tags')
+                                                ='{{' + scope.controllerAlias + '.model.tags.join(", ")}}'
                                     md-divider
                                     md-list-item(layout='row')
-                                        .md-body-1(flex='') Town
+                                        .md-body-1(flex='') Store
                                         .md-list-item-text(flex='')
                                             .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.address.town}}'
+                                                ='{{' + scope.controllerAlias + '.model.available.store.name}}'
+                                                span(ng-if=scope.controllerAlias + '.model.available.store.availableToChildren')
+                                                    |  | Available to sub stores
+                                                span(ng-if='!' + scope.controllerAlias + '.model.available.store.availableToChildren')
+                                                    |  | Not available to sub stores
                                     md-divider
                                     md-list-item(layout='row')
-                                        .md-body-1(flex='') County
+                                        .md-body-1(flex='') User Groups
                                         .md-list-item-text(flex='')
-                                            .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.address.county}}'
+                                            .md-body-2(ng-if=scope.controllerAlias + '.model.available.userGroup')
+                                                ='{{' + scope.controllerAlias + '.model.available.userGroup.join(", ")}}'
                                     md-divider
                                     md-list-item(layout='row')
-                                        .md-body-1(flex='') Country
+                                        .md-body-1(flex='') Promo Text
                                         .md-list-item-text(flex='')
                                             .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.address.country}}'
+                                                ='{{' + scope.controllerAlias + '.model.promoText}}'
                                     md-divider
-                                    md-list-item(layout='row')
-                                        .md-body-1(flex='') Postcode
-                                        .md-list-item-text(flex='')
-                                            .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.address.postcode}}'
-                                    md-divider
-                                    md-list-item(layout='row')
-                                        .md-body-1(flex='') Contact Number
-                                        .md-list-item-text(flex='')
-                                            .md-body-2
-                                                ='{{' + scope.controllerAlias + '.model.contactNumber}}'
-                                    md-divider
+
+
+    section(flex='', layout='row')
+        md-card(flex='')
+            h2.md-title.left-padding Inventory
+            md-divider
+            md-card-content
+                div(flex='')
+                    md-list(layout='column', flex='')
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Stock
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.inventory.stock !==  -1')
+                                    ='{{' + scope.controllerAlias + '.model.stock}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.inventory.stock == -1')
+                                    | Unlimited
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Minimum Quantity
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.inventory.quantity.min !==  -1')
+                                    ='{{' + scope.controllerAlias + '.model.inventory.quantity.min}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.inventory.quantity.min ==  -1')
+                                    | N/A
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Maximum Quantity
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.inventory.quantity.max !==  -1')
+                                    ='{{' + scope.controllerAlias + '.model.inventory.quantity.max}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.inventory.quantity.max ==  -1')
+                                    | N/A
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Step
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.inventory.quantity.step}}'
+                        md-divider
+        md-card(flex='')
+            h2.md-title.left-padding Shipping
+            md-divider
+            md-card-content
+                div(flex='')
+                    md-list(layout='column', flex='')
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Weight
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.weight !==  -1')
+                                    ='{{' + scope.controllerAlias + '.model.shipping.weight}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.weight ==  -1')
+                                    | N/A
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Free shipping
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    md-switch.md-primary.margin-0(ng-model=scope.controllerAlias + '.model.shipping.freeShipping', aria-label='isActive?', ng-disabled='true')
+
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Box length
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.box.length !=  -1')
+                                    ='{{' + scope.controllerAlias + '.model.shipping.box.length}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.box.length ==  -1')
+                                    | N/A
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Box width
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.box.width !=  -1')
+                                    ='{{' + scope.controllerAlias + '.model.shipping.box.width}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.box.width ==  -1')
+                                    | N/A
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Box Height
+                            .md-list-item-text(flex='')
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.box.height !=  -1')
+                                    ='{{' + scope.controllerAlias + '.model.shipping.box.height}}'
+                                .md-body-2(ng-if=scope.controllerAlias + '.model.shipping.box.height ==  -1')
+                                    | N/A
+                        md-divider
+                        md-divider
+
+    section(flex='', layout='row')
+        md-card(flex='')
+            h2.md-title.left-padding Short Description
+            md-divider
+            md-card-content
+                ='{{' + scope.controllerAlias + '.model.shortDescription}}'
+
+    section(flex='', layout='row')
+        md-card(flex='')
+            h2.md-title.left-padding Description
+            md-divider
+            md-card-content
+                div(ng-if=scope.controllerAlias + '.model.description', ng-bind-html=scope.controllerAlias + '.model.description')
+
+
     amma-content(amma-content-event=controllerAlias + '.eventName', amma-content-data=controllerAlias + '.eventData')
 .bottom-right
     md-button.md-fab.md-warn(aria-label='create', ng-click=scope.controllerAlias + '.create($event)')

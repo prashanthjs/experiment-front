@@ -15,8 +15,13 @@ var AmmaFeature;
                 require: 'ammaFeatureSearch',
                 controller: AmmaFeatureSearchController,
                 link: function (scope, element, attrs, ctrl) {
+                    var ammaFeatureReturnOnlyId = true;
+                    if (attrs.hasOwnProperty('ammaFeatureReturnOnlyId')) {
+                        ammaFeatureReturnOnlyId = attrs.ammaFeatureReturnOnlyId === 'true' ? true : false;
+                    }
                     var ammaFeatureSearchModel = $parse(attrs.ammaFeatureSearch);
                     ammaFeatureSearchModel.assign(scope, ctrl.search);
+                    scope.searchReturnOnlyId = ammaFeatureReturnOnlyId;
                 }
             };
         }

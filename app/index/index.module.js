@@ -31,7 +31,8 @@
             'amma-category',
             'amma-product',
             'amma-tag',
-            'amma-feature'
+            'amma-feature',
+            'amma-product-order'
         ])
 
         // set a constant for the API we are connecting to

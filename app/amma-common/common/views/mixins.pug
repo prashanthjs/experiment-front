@@ -27,6 +27,11 @@ mixin amma-input(scope, name, label, type, model)
         - model = scope.controllerAlias +'.model.'+name
     input(type=type, ng-model = model, name=name)&attributes(attributes)
 
+mixin amma-input-hidden(scope, name, model)
+    if !model
+        - model = scope.controllerAlias +'.model.'+name
+    input(type='hidden', ng-model = model, name=name)&attributes(attributes)
+
 mixin amma-text-angular(scope, name, label, model)
     if label
         label=label
@@ -132,36 +137,96 @@ mixin amma-categories(scope, name, label, model)
         md-selected-item= name + '_selectedItem',
         md-search-text= name + '_searchText',
         md-items='item in ' + name + '_categorySearch(' + name + '_searchText)',
-        md-item-text='item._id',
+        md-item-text='item',
         placeholder='Select categories',
         amma-category-search = name + '_categorySearch')
-            span(md-highlight-text=name + '_searchText') {{item._id}}
+            span(md-highlight-text=name + '_searchText') {{item}}
         md-chip-template
             span
                 | {{$chip._id || $chip}}
 
 mixin amma-stores(scope, name, label, model)
-    label
-        =label
     if !model
         - model =  scope.controllerAlias +'.model.'+name
-    md-chips(
-    name=name,
-    md-autocomplete-snap='',
-    ng-model=model,
-    md-require-match='true',
+
+    md-autocomplete(
+    md-selected-item= model,
+    md-search-text= name + '_searchText',
+    md-items='item in ' + name + '_storeSearch(' + name + '_searchText)',
+    md-item-text='item',
+    md-require-match,
+    placeholder='Select store',
+    md-floating-label = label,
+    amma-store-search = name + '_storeSearch',
     )&attributes(attributes)
-        md-autocomplete(
-        md-selected-item= name + '_selectedItem',
-        md-search-text= name + '_searchText',
-        md-items='item in ' + name + '_storeSearch(' + name + '_searchText)',
-        md-item-text='item._id',
-        placeholder='Select stores',
-        amma-store-search = name + '_storeSearch')
-            span(md-highlight-text=name + '_searchText') {{item._id}}
-        md-chip-template
-            span
-                | {{$chip._id || $chip}}
+        md-item-template
+            span(md-highlight-text=name + '_searchText')
+                | {{item}}
+        block
+
+
+
+mixin amma-store-autocomplete-full(scope, name, label, model)
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+
+    md-autocomplete(
+    md-selected-item= model,
+    md-search-text= name + '_searchText',
+    md-items='item in ' + name + '_storeSearch(' + name + '_searchText)',
+    md-item-text='item._id',
+    md-require-match,
+    placeholder='Search store',
+    md-floating-label = label,
+    amma-store-search = name + '_storeSearch',
+    amma-store-search-only-id = 'false',
+    )&attributes(attributes)
+        md-item-template
+            span(md-highlight-text=name + '_searchText')
+                | {{item._id}}
+        block
+
+mixin amma-user-autocomplete-full(scope, name, label, model)
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+
+    md-autocomplete(
+    md-selected-item= model,
+    md-search-text= name + '_searchText',
+    md-items='item in ' + name + '_userSearch(' + name + '_searchText)',
+    md-item-text='item._id',
+    md-require-match,
+    placeholder='Search user',
+    md-floating-label = label,
+    amma-user-search = name + '_userSearch',
+    amma-user-search-only-id = 'false',
+    )&attributes(attributes)
+        md-item-template
+            span(md-highlight-text=name + '_searchText')
+                | {{item._id}}
+        block
+
+
+mixin amma-product-autocomplete-full(scope, name, label, model)
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+
+    md-autocomplete(
+    md-selected-item= model,
+    md-search-text= name + '_searchText',
+    md-items='item in ' + name + '_productSearch(' + name + '_searchText)',
+    md-item-text='item._id',
+    md-require-match,
+    placeholder='Search product',
+    md-floating-label = label,
+    amma-product-search = name + '_productSearch',
+    amma-product-search-only-id = 'false',
+    )&attributes(attributes)
+        md-item-template
+            span(md-highlight-text=name + '_searchText')
+                | {{item._id}}
+        block
+
 
 mixin amma-user-groups(scope, name, label, model)
     label
@@ -178,13 +243,59 @@ mixin amma-user-groups(scope, name, label, model)
         md-selected-item= name + '_selectedItem',
         md-search-text= name + '_searchText',
         md-items='item in ' + name + '_userGroupSearch(' + name + '_searchText)',
-        md-item-text='item._id',
+        md-item-text='item',
         placeholder='Select user groups',
         amma-user-group-search = name + '_userGroupSearch')
-            span(md-highlight-text=name + '_searchText') {{item._id}}
+            span(md-highlight-text=name + '_searchText') {{item}}
         md-chip-template
             span
                 | {{$chip._id || $chip}}
+
+mixin amma-product-features(scope, name, label, model)
+    label
+        =label
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    md-chips(
+    name=name,
+    ng-model=model,
+    md-require-match='true',
+    md-autocomplete-snap='',
+    )&attributes(attributes)
+        md-autocomplete(
+        md-selected-item= name + '_selectedItem',
+        md-search-text= name + '_searchText',
+        md-items='item in ' + name + '_featureSearch(' + name + '_searchText)',
+        md-item-text='item',
+        placeholder='Select features',
+        amma-feature-search = name + '_featureSearch')
+            span(md-highlight-text=name + '_searchText') {{item}}
+        md-chip-template
+            span
+                | {{$chip._id || $chip}}
+
+mixin amma-product-tags(scope, name, label, model)
+    label
+        =label
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+    md-chips(
+    name=name,
+    ng-model=model,
+    md-autocomplete-snap='',
+    )&attributes(attributes)
+        md-autocomplete(
+        md-selected-item= name + '_selectedItem',
+        md-search-text= name + '_searchText',
+        md-items='item in ' + name + '_tagSearch(' + name + '_searchText)',
+        md-item-text='item',
+        placeholder='Select tags',
+        amma-tag-search = name + '_tagSearch')
+            span(md-highlight-text=name + '_searchText') {{item}}
+        md-chip-template
+            span
+                | {{$chip._id || $chip}}
+        block
 
 mixin amma-chips(scope, name, label, model)
     label
@@ -228,4 +339,57 @@ mixin amma-address(scope, modelPath)
                 +amma-error-item('required') Please enter Postcode
 
 
+mixin amma-order-item(scope, keyString, name )
+    div(layout='row', layout-align='end center')
+        +amma-button-primary('Add')(ng-click= scope.controllerAlias + '.add' + name + '($event)')
+    md-table-container
+        table(md-table='')
+            thead(md-head='')
+                tr(md-row='')
+                    th(md-column='')
+                        span Id
+                    th(md-column='')
+                        span Title
+                    th(md-column='')
+                        span Sell price
+                    th(md-column='')
+                        span Cost price
+                    th(md-column='')
+                        span List Price
+                    th(md-column='') Actions
+            tbody(md-body='')
+                tr(md-row='', ng-show=scope.controllerAlias + '.' + keyString + ' && ' + scope.controllerAlias + '.' + keyString + '.length' , ng-repeat='(key,item) in ' + scope.controllerAlias + '.' + keyString)
+                    td(md-cell='')
+                        +amma-form-item-container(scope)
+                            input(type='text', ng-model = 'item._id' , name=name + '_itemId_{{$index}}')(required='')
+                            div(ng-messages=scope.formName + '["' + name + '_itemId_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["' + name + '_itemId_"+$index].$touched')
+                                +amma-error-item('required') Please enter Item Id
+
+                    td(md-cell='')
+                        +amma-form-item-container(scope)
+                            input(type='text', ng-model = 'item.title' , name=name + '_itemTitle_{{$index}}')(required='')
+                            div(ng-messages=scope.formName + '["' + name + '_itemTitle_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["' + name + '_itemTitle_"+$index].$touched')
+                                +amma-error-item('required') Please enter Title
+                    td(md-cell='')
+                        +amma-form-item-container(scope)
+                            input(type='number', ng-model = 'item.price.sell' , name=name + '_itemSellPrice_{{$index}}')(required='')
+                            div(ng-messages=scope.formName + '["' + name + '_itemSellPrice_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["' + name + '_itemSellPrice_"+$index].$touched')
+                                +amma-error-item('required') Please enter sell price
+                                +amma-error-item('number') Please enter valid price
+                    td(md-cell='')
+                        +amma-form-item-container(scope)
+                            input(type='number', ng-model = 'item.price.cost' , name=name + '_itemCostPrice_{{$index}}')
+                            div(ng-messages=scope.formName + '["' + name + '_itemCostPrice_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["' + name + '_itemCostPrice_"+$index].$touched')
+                                +amma-error-item('number') Please enter valid price
+                    td(md-cell='')
+                        +amma-form-item-container(scope)
+                            input(type='number', ng-model = 'item.price.list' , name=name + '_itemListPrice_{{$index}}')
+                            div(ng-messages=scope.formName + '["' + name + '_itemListPrice_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["' + name + '_itemListPrice_"+$index].$touched')
+                                +amma-error-item('number') Please enter valid price
+
+                    td(md-cell='')
+                        md-button.md-fab.md-warn.md-raised.md-mini(aria-label='Delete', ng-click=scope.controllerAlias + '.remove' + name + '(key, $event)')
+                            md-icon(md-font-icon='fa fa-times')
+                tr(md-row='', ng-show='!' + scope.controllerAlias + '.' + keyString + ' || !' + scope.controllerAlias + '.' + keyString + '.length')
+                    td(md-cell='', colspan='6') Currently there are no items
 

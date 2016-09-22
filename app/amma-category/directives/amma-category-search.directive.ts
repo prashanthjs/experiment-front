@@ -5,10 +5,10 @@ module AmmaCategory.directives {
     export function CategorySearchDirective($parse): ng.IDirective {
         return {
             restrict: 'A',
-            require: 'ammaUserGroupSearch',
+            require: 'ammaCategorySearch',
             controller: AmmaCategorySearchController,
             link: (scope, element, attrs: any, ctrl: any)=> {
-                const ammaCategorySearchModel = $parse(attrs.ammaUserGroupSearch);
+                const ammaCategorySearchModel = $parse(attrs.ammaCategorySearch);
                 ammaCategorySearchModel.assign(scope, ctrl.search);
             }
         };
@@ -17,8 +17,8 @@ module AmmaCategory.directives {
 
     export class AmmaCategorySearchController extends SearchDirectiveController {
         /** @ngInject */
-        constructor($scope, AmmaUserGroupCommandService, $q) {
-            super($scope, AmmaUserGroupCommandService, $q);
+        constructor($scope, AmmaCategoryCommandService, $q) {
+            super($scope, AmmaCategoryCommandService, $q);
         }
 
     }

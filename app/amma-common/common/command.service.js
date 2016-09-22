@@ -47,7 +47,6 @@ var AmmaCommon;
                         skip: 0,
                         take: limit
                     };
-                    console.log(_this.restService);
                     return _this.getList(data);
                 };
                 this.restService = restService;

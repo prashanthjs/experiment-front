@@ -18,6 +18,7 @@ var AmmaCommon;
             FormMainContentController.prototype.loadModel = function () {
                 var _this = this;
                 this.id = null;
+                this.model = {};
                 if (this.eventData && this.eventData.id) {
                     this.id = this.eventData.id;
                     this.loaderService.setLoaderActive(true);

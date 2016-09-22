@@ -11,6 +11,7 @@ module AmmaCommon.Common {
 
         loadModel() {
             this.id = null;
+            this.model = {};
             if (this.eventData && this.eventData.id) {
                 this.id = this.eventData.id;
                 this.loaderService.setLoaderActive(true);
@@ -25,7 +26,7 @@ module AmmaCommon.Common {
             }
         }
 
-        afterLoadModel(){
+        afterLoadModel() {
 
         }
 
@@ -38,7 +39,7 @@ module AmmaCommon.Common {
                 this.eventData.model = resp;
                 this.notify(this.eventData);
                 this.afterSubmit();
-                if(!close) {
+                if (!close) {
                     this.loadModel();
 
                 } else {

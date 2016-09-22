@@ -11,17 +11,18 @@ module AmmaProduct.View {
         protected uploadType = 'productProfile';
 
         /* @ngInject */
-        constructor(AmmaProductCommandService: ProductCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService: GalleryCommandService, $state, $rootScope, $scope, PRODUCT_CONTENT_EVENT_NAME) {
+        constructor(AmmaProductCommandService: ProductCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService: GalleryCommandService, $state, $rootScope, $scope, PRODUCT_CONTENT_EVENT_NAME, PRODUCT_PROFILE_IMAGE_TYPE) {
             super(AmmaProductCommandService, AmmaMessageService, $stateParams, AmmaGalleryCommandService, $state, $rootScope, $scope, PRODUCT_CONTENT_EVENT_NAME);
             this.listRoute = 'triangular.amma-product-list';
             this.viewRoute = 'triangular.amma-product-view';
+            this.uploadType = PRODUCT_PROFILE_IMAGE_TYPE;
 
         }
 
         afterLoad() {
             this.images = null;
-            if (this.model && this.model.profilePicToken) {
-                this.galleryCommandService.get(this.uploadType, this.model.profilePicToken, null)
+            if (this.model && this.model.imageToken) {
+                this.galleryCommandService.get(this.uploadType, this.model.imageToken, null)
                     .then((response)=> {
                         this.images = response.data.files;
                     }, (error)=> {

@@ -57,7 +57,6 @@ module AmmaCommon.Common {
                 skip: 0,
                 take: limit
             };
-            console.log(this.restService);
             return this.getList(data);
         };
 
