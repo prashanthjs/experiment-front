@@ -16,10 +16,10 @@ var AmmaProductOrder;
                 function ProductOrderFormMainController($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaProductOrderCommandService, $rootScope, PRODUCT_ORDER_FORM_EVENT_NAME) {
                     var _this = this;
                     _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaProductOrderCommandService, $rootScope, PRODUCT_ORDER_FORM_EVENT_NAME);
-                    this.caluclateOrderPrice = function () {
+                    this.updateOrderPrice = function () {
                         _this.commandService.calcOrderPrice(_this.model);
                     };
-                    $scope.orderPrice = this.caluclateOrderPrice;
+                    $scope.updateOrderPrice = this.updateOrderPrice;
                 }
                 return ProductOrderFormMainController;
             }(FormMainContentController));

@@ -25,6 +25,14 @@ var AmmaProductOrder;
                     }
                 }
             });
+            $stateProvider
+                .state('triangular.amma-product-order-view', {
+                url: '/product-orders/:id',
+                templateUrl: 'app/amma-product-order/view/product-order.view.tmpl.html',
+                // set the controller to load for this page
+                controller: 'AmmaProductOrderViewController',
+                controllerAs: 'ammaProductOrderViewController'
+            });
             triMenuProvider.addMenu({
                 name: 'ProductOrders',
                 icon: 'zmdi zmdi-grade',

@@ -11,9 +11,22 @@ var AmmaCommon;
             __extends(ViewMainController, _super);
             /* @ngInject */
             function ViewMainController(CommandService, AmmaMessageService, $stateParams, GalleryCommandService, $state, $rootScope, $scope, eventName) {
+                var _this = this;
                 _super.call(this, AmmaMessageService);
                 this.viewRoute = '';
                 this.listRoute = '';
+                this.getModel = function () {
+                    return _this.model;
+                };
+                this.setModel = function (model) {
+                    _this.model = model;
+                };
+                this.updateModel = function (key, value) {
+                    if (!_this.model) {
+                        _this.model = {};
+                    }
+                    objectPath.set(_this.model, key, value);
+                };
                 this.commandService = CommandService;
                 this.params = $stateParams;
                 this.eventData = $stateParams;
@@ -24,6 +37,9 @@ var AmmaCommon;
                 this.$scope = $scope;
                 this.load();
                 this.registerEvents();
+                $scope.getModel = this.getModel;
+                $scope.setModel = this.setModel;
+                $scope.updateModel = this.updateModel;
             }
             ViewMainController.prototype.load = function () {
                 var _this = this;

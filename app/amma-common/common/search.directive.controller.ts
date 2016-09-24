@@ -37,7 +37,6 @@ module AmmaCommon.Common {
                                 } else {
                                     temp[i] = response[i];
                                 }
-                                temp[i] = response[i];
                             }
                         }
                         resolve(temp);

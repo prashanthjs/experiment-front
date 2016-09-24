@@ -12,15 +12,15 @@ var AmmaProductOrder;
                         this.dialogService = $mdDialog;
                         this.$scope = $scope;
                     }
-                    ProductOrderFormMainInItemController.prototype.add = function (model, $event) {
-                        this.edit(null, model, $event);
+                    ProductOrderFormMainInItemController.prototype.add = function ($event) {
+                        this.edit(null, $event);
                     };
-                    ProductOrderFormMainInItemController.prototype.edit = function (key, model, $event) {
+                    ProductOrderFormMainInItemController.prototype.edit = function (key, $event) {
                         var _this = this;
-                        console.log(key);
+                        var model = this.$scope.getModel();
                         var dataItem = null;
-                        if (!objectPath.has(model, 'inItems')) {
-                            objectPath.set(model, 'inItems', []);
+                        if (!model || !objectPath.has(model, 'inItems')) {
+                            this.$scope.updateModel('inItems', []);
                         }
                         if (key !== null && model && model.inItems && model.inItems[key]) {
                             dataItem = angular.extend({}, model.inItems[key]);
@@ -28,13 +28,14 @@ var AmmaProductOrder;
                         var promise = this.openItemDialog(dataItem, $event);
                         promise.then(function (item) {
                             if (item) {
+                                var inItems = _this.$scope.getModel().inItems;
                                 if (key === null) {
-                                    model.inItems.push(item);
+                                    inItems.push(item);
                                 }
                                 else {
-                                    model.inItems[key] = item;
+                                    inItems[key] = item;
                                 }
-                                _this.$scope.orderPrice();
+                                _this.$scope.updateOrderPrice();
                             }
                         }, function () {
                         });
@@ -53,8 +54,9 @@ var AmmaProductOrder;
                             skipHide: true
                         });
                     };
-                    ProductOrderFormMainInItemController.prototype.remove = function (key, model, event) {
+                    ProductOrderFormMainInItemController.prototype.remove = function (key, event) {
                         var _this = this;
+                        var model = this.$scope.getModel();
                         var dataItem = model.inItems[key];
                         var id = dataItem._id;
                         var confirm = this.dialogService.confirm({

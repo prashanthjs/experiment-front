@@ -5,15 +5,17 @@ module AmmaProductOrder.Form.Main.Store {
     import FormMainContentController = AmmaCommon.Common.FormMainContentController;
 
     export class ProductOrderFormMainStoreController {
+        private $scope;
         /* @ngInject */
-        constructor() {
+        constructor($scope) {
+            this.$scope = $scope;
         }
 
-        storeChange(item, model) {
-            objectPath.set(model, 'store.name', item.title);
-            objectPath.set(model, 'store.email', item.email);
-            objectPath.set(model, 'store.contactNumber', item.contactNumber);
-            objectPath.set(model, 'store._id', item._id);
+        itemChange(item) {
+            this.$scope.updateModel('store.name', item.title);
+            this.$scope.updateModel('store.email', item.email);
+            this.$scope.updateModel('store.contactNumber', item.contactNumber);
+            this.$scope.updateModel('store._id', item._id);
         }
     }
 

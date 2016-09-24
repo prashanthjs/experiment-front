@@ -8,10 +8,10 @@ module AmmaProductOrder.Form.Main {
         /* @ngInject */
         constructor($scope: any, $mdDialog, AmmaMessageService, triLoaderService, AmmaProductOrderCommandService, $rootScope, PRODUCT_ORDER_FORM_EVENT_NAME) {
             super($scope, $mdDialog, AmmaMessageService, triLoaderService, AmmaProductOrderCommandService, $rootScope, PRODUCT_ORDER_FORM_EVENT_NAME);
-            $scope.orderPrice = this.caluclateOrderPrice;
+            $scope.updateOrderPrice = this.updateOrderPrice;
         }
 
-        caluclateOrderPrice = ()=> {
+        updateOrderPrice = ()=> {
             this.commandService.calcOrderPrice(this.model);
         };
     }

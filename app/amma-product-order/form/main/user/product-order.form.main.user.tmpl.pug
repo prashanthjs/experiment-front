@@ -7,7 +7,7 @@ md-tab(label='User')
         div(layout='column', flex='', ng-controller = scope.childController + ' as ' + scope.childControllerAlias)
             section
                 div(layout='row', flex='')
-                    +amma-user-autocomplete-full(scope,'searchUser', 'Search User', scope.childController + '.searchUser')(md-selected-item-change=scope.childControllerAlias + ".userChange(item, " + scope.controllerAlias + ".model)", flex='', class="md-icon-float")
+                    +amma-user-autocomplete-full(scope,'searchUser', 'Search User', scope.childController + '.searchUser')(md-selected-item-change=scope.childControllerAlias + ".itemChange(item)", flex='', class="md-icon-float")
                         md-icon(md-font-icon='fa fa-search')
 
 

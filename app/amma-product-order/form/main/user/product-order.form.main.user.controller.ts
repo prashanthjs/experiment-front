@@ -5,19 +5,23 @@ module AmmaProductOrder.Form.Main.User {
     import FormMainContentController = AmmaCommon.Common.FormMainContentController;
 
     export class ProductOrderFormMainUserController {
+        private $scope;
         /* @ngInject */
-        constructor() {
+        constructor($scope) {
+            this.$scope = $scope;
         }
 
-        userChange(item, model) {
-            objectPath.set(model, 'user.name.firstName', item.firstName);
-            objectPath.set(model, 'user.name.lastName', item.lastName);
-            objectPath.set(model, 'user.name.middleName', item.middleName);
-            objectPath.set(model, 'user.email', item.email);
-            objectPath.set(model, 'user._id', item._id);
-            objectPath.set(model, 'user.contactNumber', item.contactNumber);
-            objectPath.set(model, 'address.shipping', angular.copy(item.address));
-            objectPath.set(model, 'address.billing', angular.copy(item.address));
+        itemChange(item) {
+            console.log(item);
+            this.$scope.updateModel('user.name.firstName', item.firstName);
+            this.$scope.updateModel('user.name.firstName', item.firstName);
+            this.$scope.updateModel('user.name.lastName', item.lastName);
+            this.$scope.updateModel('user.name.middleName', item.middleName);
+            this.$scope.updateModel('user.email', item.email);
+            this.$scope.updateModel('user._id', item._id);
+            this.$scope.updateModel('user.contactNumber', item.contactNumber);
+            this.$scope.updateModel('address.shipping', angular.copy(item.address));
+            this.$scope.updateModel('address.billing', angular.copy(item.address));
         }
     }
 

@@ -90,8 +90,8 @@ md-dialog(ng-cloak='', flex='')
 
 
     md-dialog-actions
-        +amma-button-primary('Save & Close')(ng-click= scope.controllerAlias + '.saveAndClose($event)', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
-        +amma-button-warning('Cancel')(ng-click= scope.controllerAlias + '.cancel($event)')
+        +amma-button-primary('Save & Close')(ng-click= scope.controllerAlias + '.saveAndClose()', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
+        +amma-button-warning('Cancel')(ng-click= scope.controllerAlias + '.cancel()')
 
 
 

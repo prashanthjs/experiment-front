@@ -49,33 +49,33 @@ module AmmaProductOrder.Form.Main.InItem.Item {
         }
 
 
-        saveAndClose($event) {
+        saveAndClose() {
             this.dialogService.hide(this.dataItem);
         }
 
-        cancel($event) {
+        cancel() {
             this.dialogService.hide();
         }
 
-        addInItem($event) {
+        addInItem() {
             if (!objectPath.has(this.dataItem, 'inItems')) {
                 this.set('inItems', []);
             }
             this.dataItem.inItems.push({});
         }
 
-        removeInItem(key, $event) {
+        removeInItem(key) {
             this.dataItem.inItems.splice(key, 1);
         }
 
-        addOutItem($event) {
+        addOutItem() {
             if (!objectPath.has(this.dataItem, 'outItems')) {
                 this.set('outItems', []);
             }
             this.dataItem.outItems.push({});
         }
 
-        removeOutItem(key, $event) {
+        removeOutItem(key) {
             this.dataItem.outItems.splice(key, 1);
         }
     }

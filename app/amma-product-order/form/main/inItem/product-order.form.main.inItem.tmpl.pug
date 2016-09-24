@@ -7,7 +7,7 @@ md-tab(label='In Items')
         div(layout='column', flex='', ng-controller = scope.childController + ' as ' + scope.childControllerAlias)
             section
                 div(layout='row', layout-align='end center')
-                    +amma-button-primary('Add')(ng-click= scope.childControllerAlias + '.add(' + scope.controllerAlias + '.model,$event)')
+                    +amma-button-primary('Add')(ng-click= scope.childControllerAlias + '.add($event)')
 
                 md-table-container
                     table(md-table='')
@@ -31,9 +31,9 @@ md-tab(label='In Items')
                                 td(md-cell='') {{product.qty}}
                                 td(md-cell='') {{product.totalPrice.sell|currency}}
                                 td(md-cell='')
-                                    md-button.md-fab.md-primary.md-raised.md-mini(aria-label='Edit', ng-click=scope.childControllerAlias + '.edit(key, ' + scope.controllerAlias + '.model, $event)')
+                                    md-button.md-fab.md-primary.md-raised.md-mini(aria-label='Edit', ng-click=scope.childControllerAlias + '.edit(key,$event)')
                                         md-icon(md-font-icon='fa fa-edit')
-                                    md-button.md-fab.md-warn.md-raised.md-mini(aria-label='Delete', ng-click=scope.childControllerAlias + '.remove(key, ' + scope.controllerAlias + '.model, $event)')
+                                    md-button.md-fab.md-warn.md-raised.md-mini(aria-label='Delete', ng-click=scope.childControllerAlias + '.remove(key,$event)')
                                         md-icon(md-font-icon='fa fa-times')
                             tr(md-row='', ng-show='!' + scope.controllerAlias + '.model.inItems || !' + scope.controllerAlias + '.model.inItems.length')
                                 td(md-cell='', colspan='6') Currently there are no products

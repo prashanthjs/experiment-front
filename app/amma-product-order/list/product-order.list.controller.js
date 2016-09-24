@@ -13,6 +13,7 @@ var AmmaProductOrder;
             /* @ngInject */
             function ProductOrderListController(AmmaProductOrderGridService, AmmaProductOrderCommandService, AmmaMessageService, $state) {
                 _super.call(this, AmmaProductOrderGridService, AmmaProductOrderCommandService, AmmaMessageService, $state);
+                this.viewRoute = 'triangular.amma-product-order-view';
             }
             return ProductOrderListController;
         }(ListController));

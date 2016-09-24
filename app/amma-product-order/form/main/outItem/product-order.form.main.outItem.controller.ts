@@ -13,17 +13,18 @@ module AmmaProductOrder.Form.Main.OutItem {
             this.$scope = $scope;
         }
 
-        addOutItem(model, $event) {
-            if (!objectPath.has(model, 'outItems')) {
-                objectPath.set(model, 'outItems', [])
+        addOutItem() {
+            let model = this.$scope.getModel();
+            if (!model || !objectPath.has(model, 'outItems')) {
+                this.$scope.updateModel('outItems', [])
             }
             model.outItems.push({});
-
         }
 
-        removeOutItem(key, model, $event) {
+        removeOutItem(key) {
+            let model = this.$scope.getModel();
             model.outItems.splice(key, 1);
-            this.$scope.orderPrice();
+            this.$scope.updateOrderPrice();
         }
     }
 

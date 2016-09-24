@@ -8,13 +8,14 @@ var AmmaProductOrder;
             (function (Store) {
                 var ProductOrderFormMainStoreController = (function () {
                     /* @ngInject */
-                    function ProductOrderFormMainStoreController() {
+                    function ProductOrderFormMainStoreController($scope) {
+                        this.$scope = $scope;
                     }
-                    ProductOrderFormMainStoreController.prototype.storeChange = function (item, model) {
-                        objectPath.set(model, 'store.name', item.title);
-                        objectPath.set(model, 'store.email', item.email);
-                        objectPath.set(model, 'store.contactNumber', item.contactNumber);
-                        objectPath.set(model, 'store._id', item._id);
+                    ProductOrderFormMainStoreController.prototype.itemChange = function (item) {
+                        this.$scope.updateModel('store.name', item.title);
+                        this.$scope.updateModel('store.email', item.email);
+                        this.$scope.updateModel('store.contactNumber', item.contactNumber);
+                        this.$scope.updateModel('store._id', item._id);
                     };
                     return ProductOrderFormMainStoreController;
                 }());

@@ -32,6 +32,7 @@
             'amma-product',
             'amma-tag',
             'amma-feature',
+            'amma-product-order-status',
             'amma-product-order'
         ])
 

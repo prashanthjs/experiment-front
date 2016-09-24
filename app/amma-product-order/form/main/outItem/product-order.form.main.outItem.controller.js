@@ -11,15 +11,17 @@ var AmmaProductOrder;
                     function ProductOrderFormMainOutItemController($scope) {
                         this.$scope = $scope;
                     }
-                    ProductOrderFormMainOutItemController.prototype.addOutItem = function (model, $event) {
-                        if (!objectPath.has(model, 'outItems')) {
-                            objectPath.set(model, 'outItems', []);
+                    ProductOrderFormMainOutItemController.prototype.addOutItem = function () {
+                        var model = this.$scope.getModel();
+                        if (!model || !objectPath.has(model, 'outItems')) {
+                            this.$scope.updateModel('outItems', []);
                         }
                         model.outItems.push({});
                     };
-                    ProductOrderFormMainOutItemController.prototype.removeOutItem = function (key, model, $event) {
+                    ProductOrderFormMainOutItemController.prototype.removeOutItem = function (key) {
+                        var model = this.$scope.getModel();
                         model.outItems.splice(key, 1);
-                        this.$scope.orderPrice();
+                        this.$scope.updateOrderPrice();
                     };
                     return ProductOrderFormMainOutItemController;
                 }());

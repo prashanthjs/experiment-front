@@ -16,15 +16,16 @@ module AmmaProductOrder.Form.Main.InItem {
             this.$scope = $scope;
         }
 
-        add(model, $event) {
-            this.edit(null, model, $event);
+        add($event) {
+            this.edit(null, $event);
         }
 
-        edit(key, model, $event) {
-            console.log(key);
+        edit(key, $event) {
+            let model = this.$scope.getModel();
             let dataItem = null;
-            if (!objectPath.has(model, 'inItems')) {
-                objectPath.set(model, 'inItems', []);
+
+            if (!model || !objectPath.has(model, 'inItems')) {
+                this.$scope.updateModel('inItems', []);
             }
             if (key !== null && model && model.inItems && model.inItems[key]) {
                 dataItem = angular.extend({}, model.inItems[key]);
@@ -32,13 +33,14 @@ module AmmaProductOrder.Form.Main.InItem {
             const promise = this.openItemDialog(dataItem, $event);
             promise.then((item)=> {
                 if (item) {
+                    let inItems = this.$scope.getModel().inItems;
 
                     if (key === null) {
-                        model.inItems.push(item);
+                        inItems.push(item);
                     } else {
-                        model.inItems[key] = item;
+                        inItems[key] = item;
                     }
-                    this.$scope.orderPrice();
+                    this.$scope.updateOrderPrice();
                 }
             }, ()=> {
 
@@ -61,7 +63,8 @@ module AmmaProductOrder.Form.Main.InItem {
         }
 
 
-        remove(key, model, event) {
+        remove(key, event) {
+            let model = this.$scope.getModel();
             let dataItem = model.inItems[key];
             let id = dataItem._id;
             const confirm = this.dialogService.confirm({

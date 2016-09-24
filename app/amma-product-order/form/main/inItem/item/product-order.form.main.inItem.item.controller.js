@@ -41,28 +41,28 @@ var AmmaProductOrder;
                         ProductOrderFormMainInItemItemController.prototype.set = function (key, value) {
                             objectPath.set(this.dataItem, key, value);
                         };
-                        ProductOrderFormMainInItemItemController.prototype.saveAndClose = function ($event) {
+                        ProductOrderFormMainInItemItemController.prototype.saveAndClose = function () {
                             this.dialogService.hide(this.dataItem);
                         };
-                        ProductOrderFormMainInItemItemController.prototype.cancel = function ($event) {
+                        ProductOrderFormMainInItemItemController.prototype.cancel = function () {
                             this.dialogService.hide();
                         };
-                        ProductOrderFormMainInItemItemController.prototype.addInItem = function ($event) {
+                        ProductOrderFormMainInItemItemController.prototype.addInItem = function () {
                             if (!objectPath.has(this.dataItem, 'inItems')) {
                                 this.set('inItems', []);
                             }
                             this.dataItem.inItems.push({});
                         };
-                        ProductOrderFormMainInItemItemController.prototype.removeInItem = function (key, $event) {
+                        ProductOrderFormMainInItemItemController.prototype.removeInItem = function (key) {
                             this.dataItem.inItems.splice(key, 1);
                         };
-                        ProductOrderFormMainInItemItemController.prototype.addOutItem = function ($event) {
+                        ProductOrderFormMainInItemItemController.prototype.addOutItem = function () {
                             if (!objectPath.has(this.dataItem, 'outItems')) {
                                 this.set('outItems', []);
                             }
                             this.dataItem.outItems.push({});
                         };
-                        ProductOrderFormMainInItemItemController.prototype.removeOutItem = function (key, $event) {
+                        ProductOrderFormMainInItemItemController.prototype.removeOutItem = function (key) {
                             this.dataItem.outItems.splice(key, 1);
                         };
                         return ProductOrderFormMainInItemItemController;

@@ -9,8 +9,25 @@ var AmmaCommon;
     (function (Common) {
         var FormMainContentController = (function (_super) {
             __extends(FormMainContentController, _super);
-            function FormMainContentController() {
-                _super.apply(this, arguments);
+            /* @ngInject */
+            function FormMainContentController($scope, $mdDialog, AmmaMessageService, triLoaderService, CommandService, $rootScope, eventName) {
+                var _this = this;
+                _super.call(this, $scope, $mdDialog, AmmaMessageService, triLoaderService, CommandService, $rootScope, eventName);
+                this.getModel = function () {
+                    return _this.model;
+                };
+                this.setModel = function (model) {
+                    _this.model = model;
+                };
+                this.updateModel = function (key, value) {
+                    if (!_this.model) {
+                        _this.model = {};
+                    }
+                    objectPath.set(_this.model, key, value);
+                };
+                $scope.getModel = this.getModel;
+                $scope.setModel = this.setModel;
+                $scope.updateModel = this.updateModel;
             }
             FormMainContentController.prototype.handleInit = function () {
                 this.loadModel();

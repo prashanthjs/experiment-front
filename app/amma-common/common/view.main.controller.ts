@@ -31,6 +31,9 @@ module AmmaCommon.Common {
             this.$scope = $scope;
             this.load();
             this.registerEvents();
+            $scope.getModel = this.getModel;
+            $scope.setModel = this.setModel;
+            $scope.updateModel = this.updateModel;
         }
 
         load() {
@@ -119,9 +122,24 @@ module AmmaCommon.Common {
 
         }
 
-        handleReload(){
+        handleReload() {
             this.load();
         }
+
+        getModel = () => {
+            return this.model;
+        };
+
+        setModel = (model) => {
+            this.model = model;
+        };
+
+        updateModel = (key, value)=> {
+            if (!this.model) {
+                this.model = {};
+            }
+            objectPath.set(this.model, key, value);
+        };
     }
 }
 

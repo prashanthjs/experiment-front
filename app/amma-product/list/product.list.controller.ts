@@ -34,10 +34,6 @@ module AmmaProduct.List {
             this.edit(null, event);
         }
 
-        view(id: string, event) {
-            this.$state.go(this.viewRoute, {id: id});
-        }
-
         remove(id, $event) {
             this.commandService.removeDialog(id, $event).then(()=> {
                 this.messageService.displaySuccessMessage('Successfully deleted');

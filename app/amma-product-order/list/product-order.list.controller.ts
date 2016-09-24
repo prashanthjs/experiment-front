@@ -10,6 +10,7 @@ module AmmaProductOrder.List {
         /* @ngInject */
         constructor(AmmaProductOrderGridService:ProductOrderGridService, AmmaProductOrderCommandService:ProductOrderCommandService, AmmaMessageService, $state) {
             super(AmmaProductOrderGridService, AmmaProductOrderCommandService, AmmaMessageService, $state);
+            this.viewRoute = 'triangular.amma-product-order-view';
         }
     }
 

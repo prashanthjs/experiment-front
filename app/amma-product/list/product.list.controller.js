@@ -28,9 +28,6 @@ var AmmaProduct;
             ProductListController.prototype.create = function (event) {
                 this.edit(null, event);
             };
-            ProductListController.prototype.view = function (id, event) {
-                this.$state.go(this.viewRoute, { id: id });
-            };
             ProductListController.prototype.remove = function (id, $event) {
                 var _this = this;
                 this.commandService.removeDialog(id, $event).then(function () {

@@ -7,7 +7,7 @@ md-tab(label='Store')
         div(layout='column', flex='', ng-controller = scope.childController + ' as ' + scope.childControllerAlias)
             section
                 div(layout='row', flex='')
-                    +amma-store-autocomplete-full(scope,'searchStore', 'Search Store', scope.childController + '.searchStore')(md-selected-item-change=scope.childControllerAlias + ".storeChange(item, " + scope.controllerAlias + ".model)", flex='', class="md-icon-float")
+                    +amma-store-autocomplete-full(scope,'searchStore', 'Search Store', scope.childController + '.searchStore')(md-selected-item-change=scope.childControllerAlias + ".itemChange(item)", flex='', class="md-icon-float")
                         md-icon(md-font-icon='fa fa-search')
 
                 div(layout='row', flex='')

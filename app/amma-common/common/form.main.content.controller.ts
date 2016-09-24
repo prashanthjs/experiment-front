@@ -5,6 +5,14 @@ module AmmaCommon.Common {
         public id;
         public model;
 
+        /* @ngInject */
+        constructor($scope, $mdDialog, AmmaMessageService, triLoaderService, CommandService, $rootScope, eventName) {
+            super($scope, $mdDialog, AmmaMessageService, triLoaderService, CommandService, $rootScope, eventName);
+            $scope.getModel = this.getModel;
+            $scope.setModel = this.setModel;
+            $scope.updateModel = this.updateModel;
+        }
+
         handleInit() {
             this.loadModel();
         }
@@ -54,6 +62,21 @@ module AmmaCommon.Common {
         afterSubmit() {
 
         }
+
+        getModel = () => {
+            return this.model;
+        };
+
+        setModel = (model) => {
+            this.model = model;
+        };
+
+        updateModel = (key, value)=> {
+            if (!this.model) {
+                this.model = {};
+            }
+            objectPath.set(this.model, key, value);
+        };
     }
 }
 

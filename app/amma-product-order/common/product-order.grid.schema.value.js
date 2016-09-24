@@ -8,31 +8,22 @@ var AmmaProductOrder;
                 serverPaging: true,
                 serverSorting: true,
                 serverFiltering: true,
-                schema: {
-                    model: {
-                        fields: {}
-                    }
-                }
             },
             sortable: true,
             pageable: true,
             filterable: true,
             columns: [
                 {
-                    field: '_id',
-                    title: 'Order Id'
-                },
-                {
                     field: 'referenceNumber',
                     title: 'Reference Number'
                 },
                 {
                     field: 'user._id',
-                    title: 'user._id'
+                    title: 'User'
                 },
                 {
                     field: 'store._id',
-                    title: 'store'
+                    title: 'Store'
                 },
                 {
                     field: 'status',
