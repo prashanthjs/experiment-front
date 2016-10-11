@@ -154,7 +154,7 @@ mixin amma-stores(scope, name, label, model)
     md-search-text= name + '_searchText',
     md-items='item in ' + name + '_storeSearch(' + name + '_searchText)',
     md-item-text='item',
-     md-require-match='',
+    md-require-match='',
     placeholder='Select store',
     md-floating-label = label,
     amma-store-search = name + '_storeSearch',
@@ -175,7 +175,7 @@ mixin amma-store-autocomplete-full(scope, name, label, model)
     md-search-text= name + '_searchText',
     md-items='item in ' + name + '_storeSearch(' + name + '_searchText)',
     md-item-text='item._id',
-     md-require-match='',
+    md-require-match='',
     placeholder='Search store',
     md-floating-label = label,
     amma-store-search = name + '_storeSearch',
@@ -206,7 +206,7 @@ mixin amma-user-autocomplete-full(scope, name, label, model)
                 | {{item._id}}
         block
 
-mixin amma-product-order-status-autocomplete(scope, name, label, model)
+mixin amma-order-status-autocomplete(scope, name, label, model)
     if !model
         - model =  scope.controllerAlias +'.model.'+name
 
@@ -218,11 +218,51 @@ mixin amma-product-order-status-autocomplete(scope, name, label, model)
     md-require-match='',
     placeholder='Search order status',
     md-floating-label = label,
-    amma-product-order-status-search = name + '_orderStatusSearch',
+    amma-order-status-search = name + '_orderStatusSearch',
     )&attributes(attributes)
         md-item-template
             span(md-highlight-text=name + '_searchText')
                 | {{item}}
+        block
+
+
+mixin amma-payment-method-autocomplete-full(scope, name, label, model)
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+
+    md-autocomplete(
+    md-selected-item= model,
+    md-search-text= name + '_searchText',
+    md-items='item in ' + name + '_paymentMethodSearch(' + name + '_searchText)',
+    md-item-text='item._id',
+    placeholder='Search payment method',
+    md-floating-label = label,
+    amma-payment-method-search-only-id = 'false',
+    amma-payment-method-search = name + '_paymentMethodSearch',
+    )&attributes(attributes)
+        md-item-template
+            span(md-highlight-text=name + '_searchText')
+                | {{item._id}}
+        block
+
+
+mixin amma-shipping-method-autocomplete-full(scope, name, label, model)
+    if !model
+        - model =  scope.controllerAlias +'.model.'+name
+
+    md-autocomplete(
+    md-selected-item= model,
+    md-search-text= name + '_searchText',
+    md-items='item in ' + name + '_shippingMethodSearch(' + name + '_searchText)',
+    md-item-text='item._id',
+    placeholder='Search shipping method',
+    md-floating-label = label,
+    amma-shipping-method-search-only-id = 'false',
+    amma-shipping-method-search = name + '_shippingMethodSearch',
+    )&attributes(attributes)
+        md-item-template
+            span(md-highlight-text=name + '_searchText')
+                | {{item._id}}
         block
 
 
@@ -235,7 +275,6 @@ mixin amma-product-autocomplete-full(scope, name, label, model)
     md-search-text= name + '_searchText',
     md-items='item in ' + name + '_productSearch(' + name + '_searchText)',
     md-item-text='item._id',
-     md-require-match='',
     placeholder='Search product',
     md-floating-label = label,
     amma-product-search = name + '_productSearch',

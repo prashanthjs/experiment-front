@@ -1,0 +1,343 @@
+- var scope = {controllerAlias: 'ammaOrderViewController'}
+section.overlay-10.padded-content-page.overflow-hidden.full-height(layout='column', flex='')
+    section(layout='row')
+        md-card(flex)
+            md-card-content(layout='row')
+                h1.md-title.left-padding
+                    = 'Order: {{' + scope.controllerAlias + '.model.referenceNumber}}'
+
+    section(layout='row')
+
+        section(flex='', layout='column')
+
+            section(flex ='', layout='row')
+                md-card(flex = '')
+                    md-card-content(layout='row')
+                        md-list(layout='column', flex='')
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Placed Date
+                                .md-list-item-text(flex='70')
+                                    .md-body-2
+                                        = '{{' + scope.controllerAlias + '.model.createdAt|date:"medium"}}'
+
+                md-card(flex = '')
+                    md-card-content(layout='row')
+                        md-list(layout='column', flex='')
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Status
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        = '{{' + scope.controllerAlias + '.model.status}}'
+
+            section(flex='', layout='row')
+                md-card(flex='')
+                    h2.md-title.left-padding Order Details
+                    md-divider
+                    md-card-content
+                        md-table-container
+                            table(md-table='')
+                                thead(md-head='')
+                                    tr(md-row='')
+                                        th(md-column='')
+                                            span Product
+                                        th(md-column='')
+                                            span Price
+                                        th(md-column='')
+                                            span QTY
+                                        th(md-column='') Subtotal
+                                tbody(md-body='')
+                                    tr(md-row='', ng-show=scope.controllerAlias + '.model.inItems && ' + scope.controllerAlias + '.model.inItems.length' , ng-repeat='product in ' + scope.controllerAlias + '.model.inItems')
+                                        td(md-cell='')
+                                            h4 {{product.title}}
+                                            div(layout-margin='20')
+                                                span.md-body-2 Product ID:
+                                                span {{product._id}}
+                                            div(layout-margin='20')
+                                                span.md-body-2 Product SKU:
+                                                span {{product._id}}
+                                            div(layout-margin='20')
+                                                span.md-body-2 Product Price:
+                                                span {{product.price.sell||0 | currency}}
+                                            div(layout-margin='20', ng-if='product.inItems && product.inItems.length')
+                                                span.md-body-2
+                                                    | In Items
+                                                div(layout-margin='20')
+                                                    div(ng-repeat='inItem in product.inItems')
+                                                        | {{inItem.title}}: {{inItem.price.sell||0 |currency}}
+                                            div(layout-margin='20', ng-if='product.outItems && product.outItems.length')
+                                                span.md-body-2
+                                                    | Out Items
+                                                div(layout-margin='20')
+                                                    div(ng-repeat='outItem in product.outItems')
+                                                        | {{outItem.title}}: {{outItem.price.sell||0|currency}}
+                                        td(md-cell='')
+                                            span
+                                                = '{{' + scope.controllerAlias + '.productSubTotal(product)||0 | currency}}'
+                                        td(md-cell='') {{product.qty}}
+                                        td(md-cell='') {{product.totalPrice.sell|currency}}
+                                    tr(md-row='', ng-show='!' + scope.controllerAlias + '.model.inItems || !' + scope.controllerAlias + '.model.inItems.length')
+                                        td(md-cell='', colspan='6') Currently there are no products
+
+
+
+            section(flex='', layout='row', layout-align='end center')
+                md-card(flex='30' )
+                    md-card-content()
+                        md-list(layout='column')
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Subtotal
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.subTotal||0 | currency}}'
+                            md-divider
+
+                            md-list-item(layout='row', ng-repeat-start='outItem in ' + scope.controllerAlias + '.model.outItems')
+                                .md-body-1(flex='') {{outItem.title}}
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        | {{outItem.price.sell||0 | currency}}
+                            md-divider(ng-repeat-end='')
+
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Total
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.totalPrice.sell||0 | currency}}'
+
+            section(flex='', ng-if=scope.controllerAlias + '.model.notes.staff')
+                md-card
+                    h2.md-title.left-padding Staff notes
+                    md-divider
+                    md-card-content
+                        ='{{' + scope.controllerAlias + '.model.notes.staff}}'
+
+            section(flex='', ng-if=scope.controllerAlias + '.model.notes.customer')
+                md-card
+                    h2.md-title.left-padding Customer notes
+                    md-divider
+                    md-card-content
+                        ='{{' + scope.controllerAlias + '.model.notes.customer}}'
+
+            section(flex='', ng-if=scope.controllerAlias + '.model.payment && ' + scope.controllerAlias + '.model.payment.length')
+                md-card
+                    h2.md-title.left-padding Payment Information
+                    md-divider
+                    md-card-content
+                        div(ng-repeat='payment in ' + scope.controllerAlias + '.model.payment')
+                            h4
+                                | {{payment.title}}
+                            div(layout='row',flex='')
+                                md-list(layout='column', flex='')
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Reference
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{payment.reference|| 'N/A'}}
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Amount
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{payment.amount|currency}}
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Created At
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{payment.createdAt|date:'medium'}}
+                                    md-divider
+                                md-divider(vertical='')
+                                md-list(layout='column', flex='')
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Customer notes
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{payment.notes.customer||'N/A'}}
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Staff notes
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{payment.notes.staff||'N/A'}}
+                                    md-divider
+
+            section(flex='', ng-if=scope.controllerAlias + '.model.shipping && ' + scope.controllerAlias + '.model.shipping.length')
+                md-card
+                    h2.md-title.left-padding Shipping Information
+                    md-divider
+                    md-card-content
+                        div(ng-repeat='shipping in ' + scope.controllerAlias + '.model.shipping')
+                            h4
+                                | {{shipping.title}}
+                            div(layout='row',flex='')
+                                md-list(layout='column', flex='')
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Tracking Number
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{shipping.trackingNumber|| 'N/A'}}
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Created At
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{shipping.createdAt|date:'medium'}}
+                                    md-divider
+                                md-divider(vertical='')
+                                md-list(layout='column', flex='')
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Customer notes
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{shipping.notes.customer||'N/A'}}
+                                    md-divider
+                                    md-list-item(layout='row')
+                                        .md-body-1(flex='') Staff notes
+                                        .md-list-item-text(flex='')
+                                            .md-body-2
+                                                | {{shipping.notes.staff||'N/A'}}
+                                    md-divider
+
+
+
+            amma-content(amma-content-event=controllerAlias + '.eventName', amma-content-data=controllerAlias + '.eventData')
+
+        section(flex='30', layout='column')
+            md-card(flex='')
+                h2.md-title.left-padding User details
+                md-divider
+                md-card-content
+                    md-list(layout='column', flex='')
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Username
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.user._id}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Name
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.user.name.firstName}} {{' + scope.controllerAlias + '.model.user.name.middleName}} {{' + scope.controllerAlias + '.model.user.name.lastName}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Email
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.user.email}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Contact Number
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.user.contactNumber}}'
+
+            md-card(flex='')
+                h2.md-title.left-padding Store details
+                md-divider
+                md-card-content
+                    md-list(layout='column', flex='')
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Store Id
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.store._id}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Name
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.store.name}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Email
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.store.email}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Contact Number
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.store.contactNumber}}'
+
+            md-card(flex='')
+                h2.md-title.left-padding Billing details
+                md-divider
+                md-card-content
+                    md-list(layout='column', flex='')
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Address
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        span
+                                            ='{{' + scope.controllerAlias + '.model.address.billing.addressLine1}}'
+                                        span(ng-if=scope.controllerAlias + '.model.address.billing.addressLine2')
+                                            =', {{' + scope.controllerAlias + '.model.address.billing.addressLine2}}'
+
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Town & county
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.address.billing.town}}, {{' + scope.controllerAlias + '.model.address.billing.county}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Postcode
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.address.billing.postcode}}'
+                            md-divider
+                            md-list-item(layout='row')
+                                .md-body-1(flex='') Country
+                                .md-list-item-text(flex='')
+                                    .md-body-2
+                                        ='{{' + scope.controllerAlias + '.model.address.billing.country}}'
+
+            md-card(flex='')
+                h2.md-title.left-padding Shipping details
+                md-divider
+                md-card-content
+                    md-list(layout='column', flex='')
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Address
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    span
+                                        ='{{' + scope.controllerAlias + '.model.address.shipping.addressLine1}}'
+                                    span(ng-if=scope.controllerAlias + '.model.address.shipping.addressLine2')
+                                        =', {{' + scope.controllerAlias + '.model.address.shipping.addressLine2}}'
+
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Town & county
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.address.shipping.town}}, {{' + scope.controllerAlias + '.model.address.shipping.county}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Postcode
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.address.shipping.postcode}}'
+                        md-divider
+                        md-list-item(layout='row')
+                            .md-body-1(flex='') Country
+                            .md-list-item-text(flex='')
+                                .md-body-2
+                                    ='{{' + scope.controllerAlias + '.model.address.shipping.country}}'
+
+.bottom-right
+    md-button.md-fab.md-warn(aria-label='create', ng-click=scope.controllerAlias + '.create($event)')
+        md-icon(md-font-icon='zmdi zmdi-plus')
+
+    md-button.md-fab.md-accent(aria-label='list', ui-sref='{{' + scope.controllerAlias + '.listRoute}}')
+        md-icon(md-font-icon='fa fa-table')
+
+    md-button.md-fab.md-warn.md-hue-2(aria-label='Remove', ng-click=scope.controllerAlias + '.remove($event)')
+        md-icon(md-font-icon='fa fa-times')
+
+
+
+    md-button.md-fab.md-primary(aria-label='Edit', ng-click=scope.controllerAlias + '.edit($event)')
+        md-icon(md-font-icon='zmdi zmdi-edit')

@@ -1,0 +1,46 @@
+include ../../../../../amma-common/common/views/common
+
+- var scope = {controller:'AmmaOrderFormMainShippingItemController', controllerAlias:'ammaOrderFormMainShippingItemController', formName: 'ammaOrderMainShippingItemForm'};
+md-dialog(ng-cloak='', flex='')
+    md-toolbar
+        .md-toolbar-tools
+            h2 Add shipping details
+            span(flex='')
+            md-button.md-icon-button(ng-click= scope.controllerAlias + '.cancel()')
+                md-icon(md-font-icon='zmdi zmdi-close')
+    md-dialog-content
+        md-content.md-padding
+            +amma-form(scope)(flex='66')
+                div(layout='row', flex='')
+                    +amma-shipping-method-autocomplete-full(scope,'searchShipping', 'Search shipping method', scope.controllerAlias + '.searchShipping')(md-selected-item-change=scope.controllerAlias + ".itemChange(item)", flex='', class="md-icon-float")
+                        md-icon(md-font-icon='fa fa-search')
+                div(layout='column', flex='')
+                    section
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'shippingId', 'Shipping Id', null, scope.controllerAlias + '.dataItem._id')
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'shippingTitle', 'Title', null, scope.controllerAlias + '.dataItem.title')(required='')
+                                +amma-error-wrapper(scope, 'shippingTitle')
+                                    +amma-error-item('required') Please enter title
+
+
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'shippingTrackingNumber', 'Reference', null, scope.controllerAlias + '.dataItem.trackingNumber')
+
+                    div(layout='row', flex='')
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-text-area(scope, 'shippingCustomerNotes', 'Customer Notes', scope.controllerAlias + '.dataItem.notes.customer' )(md-maxlength='150')
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-text-area(scope, 'shippingStaffNotes', 'Staff Notes', scope.controllerAlias + '.dataItem.notes.staff')(md-maxlength='150')
+
+    md-dialog-actions
+        +amma-button-primary('Save & Close')(ng-click= scope.controllerAlias + '.saveAndClose()', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
+        +amma-button-warning('Cancel')(ng-click= scope.controllerAlias + '.cancel()')
+
+
+

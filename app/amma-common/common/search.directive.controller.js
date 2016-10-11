@@ -7,6 +7,10 @@ var AmmaCommon;
             function SearchDirectiveController($scope, CommandService, $q) {
                 var _this = this;
                 this.search = function (query) {
+                    var returnOnlyId = true;
+                    if (objectPath.has(_this.$scope, 'searchReturnOnlyId')) {
+                        returnOnlyId = _this.$scope.searchReturnOnlyId;
+                    }
                     if (!_this.pendingSearch || !_this.debounceSearch()) {
                         _this.cancelSearch();
                         return _this.pendingSearch = _this.$q(function (resolve, reject) {
@@ -15,12 +19,13 @@ var AmmaCommon;
                                 var temp = [];
                                 if (response && response.length) {
                                     for (var i = 0; i < response.length; i++) {
-                                        if (_this.returnOnlyId) {
+                                        if (returnOnlyId) {
                                             temp[i] = response[i]._id;
                                         }
                                         else {
                                             temp[i] = response[i];
                                         }
+                                        console.log(temp[i]);
                                     }
                                 }
                                 resolve(temp);
@@ -36,10 +41,6 @@ var AmmaCommon;
                 this.commandService = CommandService;
                 this.cancelSearch = angular.noop;
                 this.$q = $q;
-                this.returnOnlyId = true;
-                if (this.$scope.hasOwnProperty('searchReturnOnlyId')) {
-                    this.returnOnlyId = this.$scope.searchReturnOnlyId;
-                }
             }
             SearchDirectiveController.prototype.refreshDebounce = function () {
                 this.lastSearch = 0;

@@ -9,7 +9,6 @@ module AmmaCommon.Common {
         protected cachedQuery;
         protected lastSearch;
         protected $q: ng.IQService;
-        protected returnOnlyId;
 
         /** @ngInject */
         constructor($scope, CommandService, $q) {
@@ -17,13 +16,13 @@ module AmmaCommon.Common {
             this.commandService = CommandService;
             this.cancelSearch = angular.noop;
             this.$q = $q;
-            this.returnOnlyId = true;
-            if (this.$scope.hasOwnProperty('searchReturnOnlyId')) {
-                this.returnOnlyId = this.$scope.searchReturnOnlyId;
-            }
         }
 
         search = (query) => {
+            let returnOnlyId = true;
+            if (objectPath.has(this.$scope, 'searchReturnOnlyId')) {
+                returnOnlyId = this.$scope.searchReturnOnlyId;
+            }
             if (!this.pendingSearch || !this.debounceSearch()) {
                 this.cancelSearch();
                 return this.pendingSearch = this.$q((resolve, reject) => {
@@ -32,11 +31,12 @@ module AmmaCommon.Common {
                         let temp = [];
                         if (response && response.length) {
                             for (let i = 0; i < response.length; i++) {
-                                if (this.returnOnlyId) {
+                                if (returnOnlyId) {
                                     temp[i] = response[i]._id;
                                 } else {
                                     temp[i] = response[i];
                                 }
+                                console.log(temp[i]);
                             }
                         }
                         resolve(temp);

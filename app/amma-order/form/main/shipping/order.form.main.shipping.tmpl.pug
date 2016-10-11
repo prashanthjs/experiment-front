@@ -1,0 +1,34 @@
+include ../../../../amma-common/common/views/common
+
+- var scope = {controller:'AmmaOrderFormMainController', controllerAlias:'ammaOrderFormMainController', formName: 'ammaOrderMainForm', childController : 'AmmaOrderFormMainShippingController', childControllerAlias: 'ammaOrderFormMainShippingController'};
+
+md-tab(label='Shipping')
+    md-content
+        div(layout='column', flex='', ng-controller = scope.childController + ' as ' + scope.childControllerAlias)
+            section
+                div(layout='row', layout-align='end center')
+                    +amma-button-primary('Add')(ng-click= scope.childControllerAlias + '.add($event)')
+
+                md-table-container
+                    table(md-table='')
+                        thead(md-head='')
+                            tr(md-row='')
+                                th(md-column='')
+                                    span Id
+                                th(md-column='')
+                                    span Title
+                                th(md-column='')
+                                    span Tracking Number
+                                th(md-column='') Actions
+                        tbody(md-body='')
+                            tr(md-row='', ng-show=scope.controllerAlias + '.model.shipping && ' + scope.controllerAlias + '.model.shipping.length' , ng-repeat='(key,shipping) in ' + scope.controllerAlias + '.model.shipping')
+                                td(md-cell='') {{shipping._id}}
+                                td(md-cell='') {{shipping.title}}
+                                td(md-cell='') {{shipping.trackingNumber}}
+                                td(md-cell='')
+                                    md-button.md-fab.md-primary.md-raised.md-mini(aria-label='Edit', ng-click=scope.childControllerAlias + '.edit(key,$event)')
+                                        md-icon(md-font-icon='fa fa-edit')
+                                    md-button.md-fab.md-warn.md-raised.md-mini(aria-label='Delete', ng-click=scope.childControllerAlias + '.remove(key,$event)')
+                                        md-icon(md-font-icon='fa fa-times')
+                            tr(md-row='', ng-show='!' + scope.controllerAlias + '.model.shipping || !' + scope.controllerAlias + '.model.shipping.length')
+                                td(md-cell='', colspan='5') Currently there are no items

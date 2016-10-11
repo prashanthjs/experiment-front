@@ -1,0 +1,50 @@
+include ../../../../amma-common/common/views/common
+
+- var scope = {controller:'AmmaOrderFormMainController', controllerAlias:'ammaOrderFormMainController', formName: 'ammaOrderMainForm', childController : 'AmmaOrderFormMainUserController', childControllerAlias: 'ammaOrderFormMainUserController'};
+
+md-tab(label='User')
+    md-content
+        div(layout='column', flex='', ng-controller = scope.childController + ' as ' + scope.childControllerAlias)
+            section
+                div(layout='row', flex='')
+                    +amma-user-autocomplete-full(scope,'searchUser', 'Search User', scope.childController + '.searchUser')(md-selected-item-change=scope.childControllerAlias + ".itemChange(item)", flex='', class="md-icon-float")
+                        md-icon(md-font-icon='fa fa-search')
+
+
+                div(layout='row', flex='')
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'firstName', 'First name', null, scope.controllerAlias + '.model.user.name.firstName')(required='')
+                        +amma-error-wrapper(scope, 'firstName')
+                            +amma-error-item('required') Please enter your first name
+
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'middleName', 'Middle name', null, scope.controllerAlias + '.model.user.name.middleName')
+
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'lastName', 'Last name', null, scope.controllerAlias + '.model.user.name.lastName')(required='')
+                        +amma-error-wrapper(scope, 'lastName')
+                            +amma-error-item('required') Please enter your last name
+
+                div(layout='row', flex='')
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'userId', 'Username', null, scope.controllerAlias + '.model.user._id')(ng-disabled = 'true')
+
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'email', 'Email', 'email', scope.controllerAlias + '.model.user.email')(required='')
+                        +amma-error-wrapper(scope, 'email')
+                            +amma-error-item('required') Please enter your email
+
+                    +amma-form-item-container(scope)
+                        +amma-input(scope, 'contactNumber', 'Contact Number', null, scope.controllerAlias + '.model.user.contactNumber')
+
+            section
+                h2 Billing Address
+                +amma-address(scope, scope.controllerAlias + '.model.address.billing')
+
+
+            section
+                h2 Shipping Address
+                +amma-address(scope, scope.controllerAlias + '.model.address.shipping')
+
+
+

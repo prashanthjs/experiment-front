@@ -1,0 +1,97 @@
+include ../../../../../amma-common/common/views/common
+
+- var scope = {controller:'AmmaOrderFormMainInItemItemController', controllerAlias:'ammaOrderFormMainInItemItemController', formName: 'ammaOrderMainInItemItemForm'};
+md-dialog(ng-cloak='', flex='')
+    md-toolbar
+        .md-toolbar-tools
+            h2 Add Product
+            span(flex='')
+            md-button.md-icon-button(ng-click= scope.controllerAlias + '.cancel()')
+                md-icon(md-font-icon='zmdi zmdi-close')
+    md-dialog-content
+        md-content.md-padding
+            +amma-form(scope)(flex='66')
+                div(layout='column', flex='')
+                    section
+                        div(layout='row', flex='')
+                            +amma-product-autocomplete-full(scope,'searchProduct', 'Search Product', scope.controllerAlias + '.searchProduct')(md-selected-item-change=scope.controllerAlias + ".itemChange(item)", flex='', class="md-icon-float")
+                                md-icon(md-font-icon='fa fa-search')
+
+
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productId', 'Product Id', null, scope.controllerAlias + '.dataItem._id')(ng-disabled = 'true')
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productTitle', 'Title', null, scope.controllerAlias + '.dataItem.title')(required='')
+                                +amma-error-wrapper(scope, 'productTitle')
+                                    +amma-error-item('required') Please enter title
+
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productSku', 'SKU', null, scope.controllerAlias + '.dataItem.sku')
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productQty', 'Quantity', 'number', scope.controllerAlias + '.dataItem.qty')(required='', ng-step=scope.controllerAlias + '.stepQty', ng-min=scope.controllerAlias + '.minQty', ng-max=scope.controllerAlias + '.maxQty')
+                                +amma-error-wrapper(scope, 'productQty')
+                                    +amma-error-item('required') Please enter quantity
+                                    +amma-error-item('min') Invalid min Quantity
+                                    +amma-error-item('max') Invalid max Quantity
+
+
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productSellPrice', 'Sell price', 'number', scope.controllerAlias + '.dataItem.price.sell')(required='', min='0')
+                                +amma-error-wrapper(scope, 'productSellPrice')
+                                    +amma-error-item('required') Please enter sell price
+                                    +amma-error-item('min') Invalid sell price
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productCostPrice', 'Cost price', 'number', scope.controllerAlias + '.dataItem.price.cost')(min='0')
+                                +amma-error-wrapper(scope, 'productCostPrice')
+                                    +amma-error-item('min') Invalid cost price
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productListPrice', 'List price', 'number', scope.controllerAlias + '.dataItem.price.list')(min='0')
+                                +amma-error-wrapper(scope, 'productListPrice')
+                                    +amma-error-item('min') Invalid list price
+
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productWeight', 'Weight','number', scope.controllerAlias + '.dataItem.shipping.weight')(min='0')
+                                +amma-error-wrapper(scope, 'productWeight')
+                                    +amma-error-item('required') Please enter weight
+                                    +amma-error-item('min') Invalid weight
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productBoxLength', 'Box length','number', scope.controllerAlias + '.dataItem.shipping.box.length')( min='0')
+                                +amma-error-wrapper(scope, 'productBoxLength')
+                                    +amma-error-item('required') Please enter box length
+                                    +amma-error-item('min') Invalid box length
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productBoxWidth', 'Box width','number', scope.controllerAlias + '.dataItem.shipping.box.width')( min='0')
+                                +amma-error-wrapper(scope, 'productBoxWidth')
+                                    +amma-error-item('required') Please enter box width
+                                    +amma-error-item('min') Invalid box width
+
+                            +amma-form-item-container(scope)
+                                +amma-input(scope, 'productBoxHeight', 'Box height','number', scope.controllerAlias + '.dataItem.shipping.box.height')( min='0')
+                                +amma-error-wrapper(scope, 'productBoxHeight')
+                                    +amma-error-item('required') Please enter box height
+                                    +amma-error-item('min') Invalid box height
+                    section
+                        h3 In Items
+                        +amma-order-item(scope, 'dataItem.inItems', 'InItem' )
+
+                    section
+                        h3 Out Items
+                        +amma-order-item(scope, 'dataItem.outItems', 'OutItem' )
+
+
+    md-dialog-actions
+        +amma-button-primary('Save & Close')(ng-click= scope.controllerAlias + '.saveAndClose()', ng-disabled=scope.formName + '.$invalid', md-autofocus='')
+        +amma-button-warning('Cancel')(ng-click= scope.controllerAlias + '.cancel()')
+
+
+

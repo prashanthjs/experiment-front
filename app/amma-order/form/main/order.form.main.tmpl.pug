@@ -1,0 +1,40 @@
+extends ../../../amma-common/common/views/tab-form
+
+block vars
+    - var scope = {controller:'AmmaOrderFormMainController', controllerAlias:'ammaOrderFormMainController', formName: 'ammaOrderMainForm'};;
+
+block title
+    | Main
+
+block formContent
+    section(layout='column', flex='')
+        div(layout='row', layout-align='end')
+            div(flex=10)
+                = 'Total Price: {{' + scope.controllerAlias + '.model.totalPrice.sell|| 0 | currency}}'
+
+        md-tabs
+            md-tab(label='General')
+                md-content(layout='column',flex='', layout-padding='')
+                    div(layout='row', flex='')
+                        +amma-form-item-container(scope)
+                            +amma-input(scope, 'referenceNumber', 'Reference Number')(required='')
+                            +amma-error-wrapper(scope, 'referenceNumber')
+                                +amma-error-item('required') Please enter reference number
+                        +amma-order-status-autocomplete(scope,'orderStatus', 'Search order status', scope.controllerAlias + '.model.status')( required='',flex='')
+                            +amma-error-wrapper(scope, 'orderStatus')
+                                +amma-error-item('required') Please select order status
+                    div(layout='row', flex='')
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-text-area(scope, 'customerNotes', 'Customer Notes', scope.controllerAlias + '.model.notes.customer' )(md-maxlength='150')
+                        div(layout='row', flex='')
+                            +amma-form-item-container(scope)
+                                +amma-text-area(scope, 'staffNotes', 'Staff Notes', scope.controllerAlias + '.model.notes.staff')(md-maxlength='150')
+
+
+            ng-include(src='"/app/amma-order/form/main/user/order.form.main.user.tmpl.html"')
+            ng-include(src='"/app/amma-order/form/main/store/order.form.main.store.tmpl.html"')
+            ng-include(src='"/app/amma-order/form/main/inItem/order.form.main.inItem.tmpl.html"')
+            ng-include(src='"/app/amma-order/form/main/outItem/order.form.main.outItem.tmpl.html"')
+            ng-include(src='"/app/amma-order/form/main/payment/order.form.main.payment.tmpl.html"')
+            ng-include(src='"/app/amma-order/form/main/shipping/order.form.main.shipping.tmpl.html"')

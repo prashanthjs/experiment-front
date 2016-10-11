@@ -1,0 +1,60 @@
+include ../../../../amma-common/common/views/common
+
+- var scope = {controller:'AmmaOrderFormMainController', controllerAlias:'ammaOrderFormMainController', formName: 'ammaOrderMainForm', childController : 'AmmaOrderFormMainOutItemController', childControllerAlias: 'ammaOrderFormMainOutItemController'};
+
+md-tab(label='Out Items')
+    md-content
+        div(layout='column', flex='', ng-controller = scope.childController + ' as ' + scope.childControllerAlias)
+            section
+                div(layout='row', layout-align='end center')
+                    +amma-button-primary('Add New')(ng-click= scope.childControllerAlias + '.addOutItem()')
+                md-table-container
+                    table(md-table='')
+                        thead(md-head='')
+                            tr(md-row='')
+                                th(md-column='')
+                                    span Id
+                                th(md-column='')
+                                    span Title
+                                th(md-column='')
+                                    span Sell price
+                                th(md-column='')
+                                    span Cost price
+                                th(md-column='')
+                                    span List Price
+                                th(md-column='') Actions
+                        tbody(md-body='')
+                            tr(md-row='', ng-show=scope.controllerAlias + '.model.outItems && ' + scope.controllerAlias + '.model.outItems.length' , ng-repeat='(key,item) in ' + scope.controllerAlias + '.model.outItems')
+                                td(md-cell='')
+                                    +amma-form-item-container(scope)
+                                        input(type='text', ng-model = 'item._id' , name= 'outItem_itemId_{{$index}}')(required='')
+                                        div(ng-messages=scope.formName + '["outItem_itemId_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["outItem_itemId_"+$index].$touched')
+                                            +amma-error-item('required') Please enter Item Id
+
+                                td(md-cell='')
+                                    +amma-form-item-container(scope)
+                                        input(type='text', ng-model = 'item.title' , name='outItem_itemTitle_{{$index}}')(required='')
+                                        div(ng-messages=scope.formName + '["outItem_itemTitle_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["outItem_itemTitle_"+$index].$touched')
+                                            +amma-error-item('required') Please enter Title
+                                td(md-cell='')
+                                    +amma-form-item-container(scope)
+                                        input(type='number', ng-model = 'item.price.sell' , name='outItem_itemSellPrice_{{$index}}')(required='', ng-change='updateOrderPrice()')
+                                        div(ng-messages=scope.formName + '["outItem_itemSellPrice_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["outItem_itemSellPrice_"+$index].$touched')
+                                            +amma-error-item('required') Please enter sell price
+                                            +amma-error-item('number') Please enter valid price
+                                td(md-cell='')
+                                    +amma-form-item-container(scope)
+                                        input(type='number', ng-model = 'item.price.cost' , name='outItem_itemCostPrice_{{$index}}')(ng-change='updateOrderPrice()')
+                                        div(ng-messages=scope.formName + '["outItem_itemCostPrice_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["outItem_itemCostPrice_"+$index].$touched')
+                                            +amma-error-item('number') Please enter valid price
+                                td(md-cell='')
+                                    +amma-form-item-container(scope)
+                                        input(type='number', ng-model = 'item.price.list' , name='outItem_itemListPrice_{{$index}}')(ng-change='updateOrderPrice()')
+                                        div(ng-messages=scope.formName + '["outItem_itemListPrice_"+$index].$error', md-auto-hide='false', ng-show=scope.formName + '["outItem_itemListPrice_"+$index].$touched')
+                                            +amma-error-item('number') Please enter valid price
+
+                                td(md-cell='')
+                                    md-button.md-fab.md-warn.md-raised.md-mini(aria-label='Delete', ng-click=scope.childControllerAlias + '.removeOutItem(key)')
+                                        md-icon(md-font-icon='fa fa-times')
+                            tr(md-row='', ng-show='!' + scope.controllerAlias + '.model.outItems || !' + scope.controllerAlias + '.model.outItems.length')
+                                td(md-cell='', colspan='6') Currently there are no items
